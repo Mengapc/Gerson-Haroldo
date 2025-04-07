@@ -49,8 +49,8 @@ Tema: Gambito
  
  ## 📚 História
 
- | Ideias | 
- |------|
+ | Ideias | Resumos |
+ |------| --------------- |
  | Ideia 1  | - Um menino no halloween vestido de super-herói entra sem querer em uma casa de sustos procurando por doces batendo porta em porta, o jogo se passa dentro dessa casa de sustos e o menino está imaginando todos os inimigos dentro da casa. Ele deve lutar com os inimigos para escapar.|
  | Ideia 2  | - Um menino foi para uma casa de susto no halloween, tomou um susto enorme, sofreu uma parada cardíaca foi parar no hospital e agora você está jogando dentro do sonho de coma, onde ele tem pesadelos com o que viu dentro da casa, distorcidos e assustadores. | 
  | Ideia 3  | - Mesmo menino está tendo um pesadelo numa noite de halloween, ou seja, ele sonha em ser um herói e está lutando contra seus medos. | 
