@@ -141,11 +141,7 @@ Mecânica do altar (Sacrifício de armas)
 
  ## 👿 Inimigos 
 
-Seguindo a teoria de são os medos do mlk 
-
-###Medos (inimigos) 
-
- 
+### Medos (inimigos(Seguindo a teoria de são os medos do mlk )) 
 
 Medo de esmagamento: Pilar que pula em cima de player 
 
@@ -160,7 +156,7 @@ Medo de esmagamento: Pilar que pula em cima de player
  | Escuro | Bicho sombra ridículo. |
  
 
-###Ideias de boss
+### Ideias de boss
 
 Medo do futuro: Boss final do nível do medo da solidão, seria o próprio jogador mais velho e no futuro com qual ele deve lutar 
 
