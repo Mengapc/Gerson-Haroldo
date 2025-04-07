@@ -51,9 +51,9 @@ Tema: Gambito
 
  | Ideias | Resumos |
  |--------| --------------- |
- | Ideia 1  | - Um menino no halloween vestido de super-herói entra sem querer em uma casa de sustos procurando por doces batendo porta em porta, o jogo se passa dentro dessa casa de sustos e o menino está imaginando todos os inimigos dentro da casa. Ele deve lutar com os inimigos para escapar.|
- | Ideia 2  | - Um menino foi para uma casa de susto no halloween, tomou um susto enorme, sofreu uma parada cardíaca foi parar no hospital e agora você está jogando dentro do sonho de coma, onde ele tem pesadelos com o que viu dentro da casa, distorcidos e assustadores. | 
- | Ideia 3  | - Mesmo menino está tendo um pesadelo numa noite de halloween, ou seja, ele sonha em ser um herói e está lutando contra seus medos. | 
+ |  1  | - Um menino no halloween vestido de super-herói entra sem querer em uma casa de sustos procurando por doces batendo porta em porta, o jogo se passa dentro dessa casa de sustos e o menino está imaginando todos os inimigos dentro da casa. Ele deve lutar com os inimigos para escapar.|
+ |  2  | - Um menino foi para uma casa de susto no halloween, tomou um susto enorme, sofreu uma parada cardíaca foi parar no hospital e agora você está jogando dentro do sonho de coma, onde ele tem pesadelos com o que viu dentro da casa, distorcidos e assustadores. | 
+ |  3  | - Mesmo menino está tendo um pesadelo numa noite de halloween, ou seja, ele sonha em ser um herói e está lutando contra seus medos. | 
 
  - Ideia 3 foi escolhida 
 
@@ -143,7 +143,7 @@ Mecânica do altar (Sacrifício de armas)
 
 Seguindo a teoria de são os medos do mlk 
 
-Medos (inimigos): 
+- Medos (inimigos) 
 
  
 
@@ -159,6 +159,10 @@ Queda alta: Uma morte grande que arremessa o jogador para cima.
 
 Medo do escuro: Bicho sombra ridículo 
 
+- Ideias de boss
+
+Medo do futuro: Boss final do nível do medo da solidão, seria o próprio jogador mais velho e no futuro com qual ele deve lutar 
+
  
 
  ## 💻️ Ideias de nível
@@ -167,14 +171,6 @@ Medo do escuro: Bicho sombra ridículo
  |------|---------|
  | Medo de solidão | Não há nenhum inimigo na tela, apenas vários bonecos de pelúcia que te ajudam. |
  | Medo do escuro | Nível com visão limitado devido a ausência da luz. |
-
- 
-
-Ideias de boss: 
-
- 
-
-Medo do futuro: Boss final do nível do medo da solidão, seria o próprio jogador mais velho e no futuro com qual ele deve lutar 
 
  
 
