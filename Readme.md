@@ -180,8 +180,10 @@ Eventos:
 
  ## 🔎 Inspirações 
 
-https://store.steampowered.com/app/390290/Bulb_Boy/ 
-Inimigos: https://store.steampowered.com/app/1245620/ELDEN_RING/ 
-Player: https://store.steampowered.com/app/424840/Little_Nightmares/ 
+ | Jogos | Inspirou | Link |
+ |------|---------| -------|
+ | Bulb Boy | Inspiração | - [Link](https://store.steampowered.com/app/390290/Bulb_Boy/ ) |
+ | Elden Ring | Inimigos | - [Link](https://store.steampowered.com/app/1245620/ELDEN_RING/) |
+ | Little Nightmares | Player | - [Link](https://store.steampowered.com/app/424840/Little_Nightmares/ ) |
 
-![alt text](https://www.google.com/url?sa=i&url=https%3A%2F%2Fstore.steampowered.com%2Fapp%2F424840%2FLittle_Nightmares%2F%3Fl%3Dportuguese&psig=AOvVaw0CBOQ9SEIIvmwu9j6OyY--&ust=1744134125699000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCICdg967xowDFQAAAAAdAAAAABAE)
+![littlenightmares](https://github.com/user-attachments/assets/46bd2138-b2b2-4160-b49f-3a192773f952)
