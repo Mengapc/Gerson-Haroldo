@@ -143,7 +143,7 @@ Mecânica do altar (Sacrifício de armas)
 
 Seguindo a teoria de são os medos do mlk 
 
-- Medos (inimigos) 
+###Medos (inimigos) 
 
  
 
@@ -151,15 +151,16 @@ Medo de esmagamento: Pilar que pula em cima de player
 
  
 
-MORTE (várias versões) 
+### MORTE (várias versões) 
 
-Afogamento: (Cabeça de barril) suga o player para perto e tenta afogar ele com sua cabeça (barril) cheia de água 
+ | Tipo | Descrição |
+ |------|---------|
+ | Afogamento | (Cabeça de barril) suga o player para perto e tenta afogar ele com sua cabeça (barril) cheia de água. |
+ | Queda alta | Uma morte grande que arremessa o jogador para cima. |
+ | Escuro | Bicho sombra ridículo. |
+ 
 
-Queda alta: Uma morte grande que arremessa o jogador para cima. 
-
-Medo do escuro: Bicho sombra ridículo 
-
-- Ideias de boss
+###Ideias de boss
 
 Medo do futuro: Boss final do nível do medo da solidão, seria o próprio jogador mais velho e no futuro com qual ele deve lutar 
 
@@ -167,7 +168,7 @@ Medo do futuro: Boss final do nível do medo da solidão, seria o próprio jogad
 
  ## 💻️ Ideias de nível
 
- | Aulas | Resumos |
+ | Tipo | Descrição |
  |------|---------|
  | Medo de solidão | Não há nenhum inimigo na tela, apenas vários bonecos de pelúcia que te ajudam. |
  | Medo do escuro | Nível com visão limitado devido a ausência da luz. |
