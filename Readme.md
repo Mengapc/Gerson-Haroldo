@@ -18,6 +18,9 @@ Repositório relacionada ao projeto, contendo resumos sobre Git e GitHub e ideia
  ```
  git push -u origin main
  ```
+ ```
+ git pull origin main
+ ```
 
 ## 📚️📚️ Links de Auxílio
 
