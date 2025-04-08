@@ -31,9 +31,6 @@ Repositório para armazenar resumos sobre Git e GitHub, e mais informações sob
  - [Documentação GitHub](https://docs.github.com/)
  - [Github Material de Apoio](https://github.com/elidianaandrade/dio-curso-git-github)
  - [Apresentação Versionamento de Código](https://academiapme-my.sharepoint.com/:p:/g/personal/renato_dio_me/EYjkgVZuUv5HsVgJUEPv1_oB_QWs8MFBY_PBQ2UAtLqucg?rtime=FOF68ttW3Ug)
- ## 🔎 Referências
- - [Digital Innovation One]().
- 
 
 
 # Ideias e Propostas
@@ -169,7 +166,9 @@ Medo do futuro: Boss final do nível do medo da solidão, seria o próprio jogad
 
 Eventos: 
 
- ## 🔎 Inspirações 
+ ## 🔎 Inspirações e Referências
+
+  - [Digital Innovation One](https://web.dio.me/home).
 
  | Jogos | Inspirou | Link |
  |------|---------| -------|
