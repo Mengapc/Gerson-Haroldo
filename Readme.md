@@ -2,7 +2,7 @@
 
 Repositório relacionada ao projeto, contendo resumos sobre Git e GitHub e ideias sobre as features do jogo.
 
-# Documentação - Links, tutoriais, etc
+# Documentação - Links, tutoriais, etc.
 
  ## 💻️ Comandos do git
 
@@ -20,6 +20,9 @@ Repositório relacionada ao projeto, contendo resumos sobre Git e GitHub e ideia
  ```
  ```
  git pull origin main
+ ```
+ ```
+ git checkout <nome_da_branch>
  ```
 
 ## 📚️📚️ Links de Auxílio
@@ -42,15 +45,15 @@ Tema escolhido: Gambito
 Mecânicas únicas:
 · A mecânica única do jogo está relacionada ao tema Gambito, onde o jogador deve sacrificar sua arma para avançar os níveis
 
-· Outra mecânica única que existe no jogo é o altar do sacrifício, no qual o jogador tem que decidir se deve abrir mão de TODAS as suas armas afim de ganhar um item aleatório. Essa mecânica também reflete ao tema porque adiciona o pensamento estratégico que o tema Gambito tem.
+· Outra mecânica única que existe no jogo é o altar do sacrifício, na qual o jogador escolhe "reciclar" armas coletadas, com o objetivo de receber uma arma melhor com uma raridade melhor.
 
-Mecânica de movimento: Top-Down
- 
+Câmera: Isométrica / Top Down
+
  ## 📚 História
 
  | Ideias | Resumos |
  |--------| --------------- |
- |  1  | - Um menino no halloween vestido de super-herói entra sem querer em uma casa de sustos procurando por doces batendo porta em porta, o jogo se passa dentro dessa casa de sustos e o menino está imaginando todos os inimigos dentro da casa. Ele deve lutar com os inimigos para escapar.|
+ |  1  | - Um menino no halloween vestido de super-herói entra sem querer em uma casa de sustos procurando por doces batendo porta em porta. O jogo se passa dentro dessa casa de sustos e o menino está imaginando todos os inimigos dentro da casa lutando com os inimigos para escapar.|
  |  2  | - Um menino foi para uma casa de susto no halloween, tomou um susto enorme, sofreu uma parada cardíaca foi parar no hospital e agora você está jogando dentro do sonho de coma, onde ele tem pesadelos com o que viu dentro da casa, distorcidos e assustadores. | 
  |  3  | - Mesmo menino está tendo um pesadelo numa noite de halloween, ou seja, ele sonha em ser um herói e está lutando contra seus medos. | 
 
@@ -60,13 +63,18 @@ Mecânica de movimento: Top-Down
 
  ## 💻️ Mecânicas 
 
- 
+
+Movimentação do personagem (Dash)
+
+Nível base protótipo
+
+Inimigos dropam as armas
+
+Gemas (efeitos) de cada arma
 
 IA (Inteligência artificial) dos inimigos 
 
-Altar de sacrifício de armas 
-
-Movimentação do personagem 
+Altar de sacrifício de armas (loja)
 
 Ataque/comportamento de cada tipo das armas (martelo, espada e cajado) 
 
@@ -118,7 +126,7 @@ O conteúdo gerado por IA pode estar incorreto., Picture
 
  ## 👀 Supostamentes 
 
-Evolução de habilidades: Velocidade de ataque, Velocidade e Vida 
+Evolução de habilidades: Velocidade de ataque, Velocidade e Vida
 
 JOGO SERÁ FINITO, com fim 
 
@@ -126,11 +134,7 @@ Loja
 
 Bossfight 
 
- 
-
-Para o MVP: Menu inicial com botão de play, créditos e sair 
-
-Nível 1 
+Para o MVP: Menu inicial com botão de play, créditos e sair  
 
 Inteligência artificial de inimigos (pesquisar sobre navmesh) 
 
@@ -140,11 +144,7 @@ Mecânica do altar (Sacrifício de armas)
 
  ## 👿 Inimigos 
 
-### Medos (inimigos(Seguindo a teoria de são os medos do mlk )) 
-
-Medo de esmagamento: Pilar que pula em cima de player 
-
- 
+### Medos (inimigos) 
 
 ### MORTE (várias versões) 
 
@@ -152,12 +152,14 @@ Medo de esmagamento: Pilar que pula em cima de player
  |------|---------|
  | Afogamento | (Cabeça de barril) suga o player para perto e tenta afogar ele com sua cabeça (barril) cheia de água. |
  | Queda alta | Uma morte grande que arremessa o jogador para cima. |
- | Escuro | Bicho sombra ridículo. |
+ | Escuro | Bicho sombra genérico. |
+ | Esmagamento | Pilar que pula em cima de player. |
  
 
 ### Ideias de boss
 
-Medo do futuro: Boss final do nível do medo da solidão, seria o próprio jogador mais velho e no futuro com qual ele deve lutar 
+Medo do futuro: Boss final do nível do medo da solidão, seria o próprio jogador mais velho e no futuro com qual ele deve lutar
+Mdeo do escuro: Boss final do nível do medo do escuro
 
  
 
