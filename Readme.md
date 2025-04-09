@@ -183,7 +183,7 @@ Ao final de cada fase, o jogador deve sacrificar uma arma em um altar sagrado.
 Esse sacrifício é obrigatório para acessar a próxima fase.
 A raridade da arma sacrificada influencia diretamente na dificuldade da fase seguinte:
 
-Armas comuns → próxima fase muito mais difícil.
+Armas comuns → próxima fase muito mais difícil.                                       
 Armas raras ou lendárias → próxima fase mais equilibrada.
 
 - O jogador deve decidir entre:
