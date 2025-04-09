@@ -221,7 +221,7 @@ Eventos:
  ## 🔎 Inspirações e Referências
 
   - [Digital Innovation One](https://web.dio.me/home).
-  - [Git branches bug]([https://web.dio.me/home](https://graphite.dev/guides/git-branch-not-showing-all-branches).
+  - [Git branches bug](https://graphite.dev/guides/git-branch-not-showing-all-branches).
 
  | Jogos | Inspirou | Link |
  |------|---------| -------|
