@@ -98,21 +98,22 @@ Habilidades das gemas
 
 Ataque de cada um dos tipos de arm 
 
-Gena:
-Fogo/Lava
-Galático
-Gelo/Frio
-Vento/Ar
-Veneno/Ácido
-Terra
-Pedra
-Água/Mar
-Ouro/Divino
-Cristais/Pedras precisoas
-Planta/Vinhas
-Unicórnio/Arco íris
-Pelúcia
-Videogame/hacker
+| Gemas |
+|--------|
+| Fogo/Lava |
+| Galático |
+| Gelo/Frio |
+| Vento/Ar |
+| Veneno/Ácido |
+| Pedra |
+| Água/Mar |
+| Ouro/Divino |
+| Cristais/Pedras preciosas |
+| Planta/Vinhas |
+| Unicórnio/Arco íris |
+| Pelúcia |
+| Videogame/hacker |
+| Gatinho |
 
  ## 🎮 Balanceamento 
 
