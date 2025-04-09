@@ -6,24 +6,35 @@ Repositório relacionada ao projeto, contendo resumos sobre Git e GitHub e ideia
 
  ## 💻️ Comandos do git
 
+### 🔹 Inicializar repositório
  ```
  git init
  ```
+### 🔹 Adicionar arquivos para commit
  ```
  git add .
  ```
+### 🔹 Fazer commit com mensagem
  ```
  git commit -m "Nome_commit"
  ```
+### 🔹 Enviar mudanças para o repositório remoto (main)
  ```
  git push -u origin main
  ```
+### 🔹 Atualizar sua branch com as mudanças da main (do remoto)
  ```
  git pull origin main
  ```
+### 🔹 Trocar de branch
  ```
  git checkout <nome_da_branch>
  ```
+ ### 🔹 Junta as mudanças da sua branch na main
+ ```
+ git merge <nome_da_branch>
+ ```
+
 
 ## 📚️📚️ Links de Auxílio
 
