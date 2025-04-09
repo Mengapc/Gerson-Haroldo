@@ -83,6 +83,7 @@ Câmera: Isométrica / Top Down
 
  ## 💻️ Mecânicas 
 
+Mecânica do altar (Sacrifício de armas)
 
 Movimentação do personagem (Dash)
 
@@ -103,6 +104,12 @@ Cada inimigo spawna aleatoriamente com um desses tipos de arma
 Geração procedural do mapa 
 
 Geração procedural de armas 
+ 
+ ### 👀 Supostamentes 
+
+Evolução de habilidades: Velocidade de ataque, Velocidade e Vida 
+
+Bossfight 
 
 ## ⚒️ Itens
 
@@ -144,46 +151,45 @@ Geração procedural de armas
 
  ## 🎮 Balanceamento 
 
+### 1. Player
+##### 1.1 Vida
+ - Quantidade de dano que o jogador pode receber antes de ser derrotado.
+##### 1.2 Velocidade de ataque
+ - Frequência com que o jogador pode desferir ataques.
+##### 1.3 Velocidade de movimento
+ - Rapidez com que o jogador se move pelo cenário.
+##### 1.4 Habilidades 
+ - Poderes ou ações especiais que o jogador pode utilizar em combate ou exploração.
+### 2. Inimigos
+##### 2.1 Vida
+ - Resistência dos inimigos ao dano causado pelo jogador.
+##### 2.2 Velocidade de ataque
+ - Tempo entre um ataque e outro dos inimigos.
+##### 2.3 Velocidade de movimento
+ - Rapidez com que os inimigos se deslocam e perseguem o jogador.
+### 3. Sistemas
+##### 3.1 Cooldown de tomar e dar dano
+ - Intervalo mínimo entre um golpe recebido ou causado, evitando spam de dano.
+##### 3.2 Progressão de dificuldade
+ - Sistema que torna o jogo gradualmente mais desafiador conforme o avanço do jogador.
+##### 3.3 Sistema de Sacrifício e Progressão – Mecânica de Jogo
+ - Sistema central que liga narrativa e gameplay por meio de escolhas estratégicas.
+
+ - Conceito central:
+A dificuldade da próxima fase é determinada pela raridade da arma sacrificada ao final da fase anterior.
+
+ - Mecânica:
+Ao final de cada fase, o jogador deve sacrificar uma arma em um altar sagrado.
+Esse sacrifício é obrigatório para acessar a próxima fase.
+A raridade da arma sacrificada influencia diretamente na dificuldade da fase seguinte:
+
+Armas comuns → próxima fase muito mais difícil.
+Armas raras ou lendárias → próxima fase mais equilibrada.
+
+- O jogador deve decidir entre:
+Manter uma boa arma para lutar mais fácil agora, e sofrer depois.
+Ou abrir mão de uma arma poderosa agora, para garantir um caminho mais seguro depois.
  
-
-Vida do player e inimigo 
-
-Velocidade de ataque para o player e inimigo 
-
-Cooldown de tomar e dar dano 
-
-Velocidade de movimento do player e inimigo 
-
-Habilidades 
-
-Progressão de dificuldade de tudo acima 
-
-Dificuldade das fases futuras é definido pela qualidade do sacrifício do nível anterior Diagrama
-
-O conteúdo gerado por IA pode estar incorreto., Picture 
-
- 
-
- 
-
- ## 👀 Supostamentes 
-
-Evolução de habilidades: Velocidade de ataque, Velocidade e Vida
-
-JOGO SERÁ FINITO, com fim 
-
-Loja 
-
-Bossfight 
-
-Para o MVP: Menu inicial com botão de play, créditos e sair  
-
-Inteligência artificial de inimigos (pesquisar sobre navmesh) 
-
-Mecânica do altar (Sacrifício de armas) 
-
- 
-
  ## 👿 Inimigos 
 
 ### Medos (inimigos) 
@@ -215,7 +221,7 @@ Eventos:
  ## 🔎 Inspirações e Referências
 
   - [Digital Innovation One](https://web.dio.me/home).
-  - [Git branches bug]([https://web.dio.me/home](https://graphite.dev/guides/git-branch-not-showing-all-branches)).
+  - [Git branches bug]([https://web.dio.me/home](https://graphite.dev/guides/git-branch-not-showing-all-branches).
 
  | Jogos | Inspirou | Link |
  |------|---------| -------|
