@@ -1,4 +1,4 @@
-# ExC3 - Arthur Polak Furman, Gabriel Dias, Gabriel Furlan Mengarelli e Guilherme Alves
+# EXP3 - Arthur Polak Furman, Gabriel Dias, Gabriel Furlan Mengarelli e Guilherme Alves
 
 Repositório relacionada ao projeto, contendo resumos sobre Git e GitHub e ideias sobre as features do jogo.
 
@@ -104,19 +104,26 @@ Geração procedural do mapa
 
 Geração procedural de armas 
 
-Raridades (baseado no nível de poder da arma) 
+## ⚒️ Itens
 
-Separado em:  
+ | Armas | 1ª Parte | 2ª Parte | 3ª Parte |
+ |------|-------|--------|--------|
+ | Espada | Cabo | Lâmina | Gema |
+ | Martelo | Cabo | Cabeça | Gema |
+ | Cajado | Corpo | Ponta | Gema |
 
-Espada: cabo, lâmina e guarda 
+## ✨ Raridades
 
-Martelo: Cabo, cabeça e gema 
+| | Tipos |
+|--|--------|
+|1| Comum |
+|2| Incomum |
+|3| Raro |
+|4| Épico |
+|5| Lendário |
 
-Cajado: Corpo, ponta e gema 
 
-Habilidades das gemas 
-
-Ataque de cada um dos tipos de arm 
+### 💎 Habilidades das gemas
 
 | Gemas |
 |--------|
@@ -208,6 +215,7 @@ Eventos:
  ## 🔎 Inspirações e Referências
 
   - [Digital Innovation One](https://web.dio.me/home).
+  - [Git branches bug]([https://web.dio.me/home](https://graphite.dev/guides/git-branch-not-showing-all-branches)).
 
  | Jogos | Inspirou | Link |
  |------|---------| -------|
