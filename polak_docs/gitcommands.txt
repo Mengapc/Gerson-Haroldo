@@ -1,0 +1,18 @@
+1. Navegar até a pasta do projeto
+
+2. Atualizar o main local para o atual do github
+git pull origin main
+
+3. Fiz um arquivo foda, atualizar o q eu quero dar commit
+git add .
+
+4. Cria uma alteração no local
+git commit -m "título commit"
+
+5. Empurra essa alteração para remoto (atualiza de vez)
+git push
+
+Caso eu queira atualizar minha branch com os arquivos da main:
+(dentro da branch)
+git merge main
+git push -u origin <my_branch>
