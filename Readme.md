@@ -22,9 +22,17 @@ Repositório relacionada ao projeto, contendo resumos sobre Git e GitHub e ideia
  ```
  git push -u origin main
  ```
+### Após a primeira vez, você pode usar apenas:
+ ```
+ git push
+ ```
 ### 🔹 Atualizar sua branch com as mudanças da main (do remoto)
  ```
  git pull origin main
+ ```
+### Após a primeira vez, você pode usar apenas:
+ ```
+ git pull
  ```
 ### 🔹 Trocar de branch
  ```
@@ -34,6 +42,7 @@ Repositório relacionada ao projeto, contendo resumos sobre Git e GitHub e ideia
  ```
  git merge <nome_da_branch>
  ```
+Exemplo: Se estiver na main e rodar git merge minha-branch, as mudanças da minha-branch serão aplicadas na main.
 
 
 ## 📚️📚️ Links de Auxílio
