@@ -74,7 +74,7 @@ Gemas (efeitos) de cada arma
 
 IA (Inteligência artificial) dos inimigos 
 
-Altar de sacrifício de armas (loja)
+Loja: você entrega dois itens de raridade baixa, para conseguir um item de raridade maior: 2 x 1
 
 Ataque/comportamento de cada tipo das armas (martelo, espada e cajado) 
 
@@ -98,7 +98,21 @@ Habilidades das gemas
 
 Ataque de cada um dos tipos de arm 
 
- 
+Gena:
+Fogo/Lava
+Galático
+Gelo/Frio
+Vento/Ar
+Veneno/Ácido
+Terra
+Pedra
+Água/Mar
+Ouro/Divino
+Cristais/Pedras precisoas
+Planta/Vinhas
+Unicórnio/Arco íris
+Pelúcia
+Videogame/hacker
 
  ## 🎮 Balanceamento 
 
@@ -159,9 +173,7 @@ Mecânica do altar (Sacrifício de armas)
 ### Ideias de boss
 
 Medo do futuro: Boss final do nível do medo da solidão, seria o próprio jogador mais velho e no futuro com qual ele deve lutar
-Mdeo do escuro: Boss final do nível do medo do escuro
-
- 
+Mdeo do escuro: Boss final do nível do medo do escuro 
 
  ## 💻️ Ideias de nível
 
@@ -169,10 +181,6 @@ Mdeo do escuro: Boss final do nível do medo do escuro
  |------|---------|
  | Medo de solidão | Não há nenhum inimigo na tela, apenas vários bonecos de pelúcia que te ajudam. |
  | Medo do escuro | Nível com visão limitado devido a ausência da luz. |
-
- 
-
- 
 
 Eventos: 
 
