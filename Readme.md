@@ -56,6 +56,9 @@ Exemplo: Se estiver na main e rodar git merge minha-branch, as mudanças da minh
  - [Documentação GitHub](https://docs.github.com/)
  - [Github Material de Apoio](https://github.com/elidianaandrade/dio-curso-git-github)
  - [Apresentação Versionamento de Código](https://academiapme-my.sharepoint.com/:p:/g/personal/renato_dio_me/EYjkgVZuUv5HsVgJUEPv1_oB_QWs8MFBY_PBQ2UAtLqucg?rtime=FOF68ttW3Ug)
+ - [Mapa Procedural 2D](https://www.youtube.com/watch?v=-QOCX6SVFsk&list=PLcRSafycjWFenI87z7uZHFv6cUG2Tzu9v&pp=0gcJCV8EOCosWNin)
+ - [CineMachine](https://www.youtube.com/watch?v=wB-EQH7jvFY)
+
 
 
 # Tema e Mecânica
