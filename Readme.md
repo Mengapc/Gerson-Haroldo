@@ -44,22 +44,24 @@ Repositório relacionada ao projeto, contendo resumos sobre Git e GitHub e ideia
  ```
 Exemplo: Se estiver na main e rodar git merge minha-branch, as mudanças da minha-branch serão aplicadas na main.
 
+## ⚠ Lidando com conflitos de merge
+### 🔹 Abortar um merge com conflitos
 
-## 📚️📚️ Links de Auxílio
+Se durante um merge houver conflitos e você quiser cancelar o processo:
+ ```
+ git merge --abort
+ ```
 
- | Aulas | Resumos |
- |------|---------|
- | Git LFS em Unity | - [Link](https://www.youtube.com/watch?v=_ewoEQFEURg) |
- | Arquivos base git | - [Link](https://www.patreon.com/posts/63076977) |
-
- - [Documentação Git](https://git-scm.com/doc)
- - [Documentação GitHub](https://docs.github.com/)
- - [Github Material de Apoio](https://github.com/elidianaandrade/dio-curso-git-github)
- - [Apresentação Versionamento de Código](https://academiapme-my.sharepoint.com/:p:/g/personal/renato_dio_me/EYjkgVZuUv5HsVgJUEPv1_oB_QWs8MFBY_PBQ2UAtLqucg?rtime=FOF68ttW3Ug)
- - [Mapa Procedural 2D](https://www.youtube.com/watch?v=-QOCX6SVFsk&list=PLcRSafycjWFenI87z7uZHFv6cUG2Tzu9v&pp=0gcJCV8EOCosWNin)
- - [CineMachine](https://www.youtube.com/watch?v=wB-EQH7jvFY)
-
-
+### 🔹 Manter somente os arquivos da branch atual
+Caso você queira forçar o Git a manter os arquivos da branch atual durante um merge, ignorando os da outra branch:
+ ```
+ git merge <nome-da-branch> --strategy-option=ours
+ ```
+- Isso resolve todos os conflitos automaticamente, mantendo a versão da branch em que você está.
+Em seguida, finalize com:
+ ```
+git commit -m "Merge mantendo arquivos da branch atual"
+ ```
 
 # Tema e Mecânica
 
@@ -80,8 +82,7 @@ Câmera: Isométrica / Top Down
  |  2  | - Um menino foi para uma casa de susto no halloween, tomou um susto enorme, sofreu uma parada cardíaca foi parar no hospital e agora você está jogando dentro do sonho de coma, onde ele tem pesadelos com o que viu dentro da casa, distorcidos e assustadores. | 
  |  3  | - Mesmo menino está tendo um pesadelo numa noite de halloween, ou seja, ele sonha em ser um herói e está lutando contra seus medos. | 
 
- - Ideia 3 foi escolhida 
-
+ ### ⭐️⭐️ Ideia 3 foi escolhida
  
 
  ## 💻️ Mecânicas 
@@ -221,10 +222,36 @@ Mdeo do escuro: Boss final do nível do medo do escuro
 
 Eventos: 
 
- ## 🔎 Inspirações e Referências
+## 📚️📚️ Links de Auxílio
 
-  - [Digital Innovation One](https://web.dio.me/home).
-  - [Git branches bug](https://graphite.dev/guides/git-branch-not-showing-all-branches).
+ | Aulas | Resumos |
+ |------|---------|
+ | Git LFS em Unity | - [Link](https://www.youtube.com/watch?v=_ewoEQFEURg) |
+ | Arquivos base git | - [Link](https://www.patreon.com/posts/63076977) |
+
+ - [Digital Innovation One](https://web.dio.me/home).
+ - [Documentação Git](https://git-scm.com/doc)
+ - [Documentação GitHub](https://docs.github.com/)
+ - [Github Material de Apoio](https://github.com/elidianaandrade/dio-curso-git-github)
+ - [Apresentação Versionamento de Código](https://academiapme-my.sharepoint.com/:p:/g/personal/renato_dio_me/EYjkgVZuUv5HsVgJUEPv1_oB_QWs8MFBY_PBQ2UAtLqucg?rtime=FOF68ttW3Ug)
+
+### 🐛🐛 Resolução de bugs
+
+ - [Git branches bug](https://graphite.dev/guides/git-branch-not-showing-all-branches).
+
+ ## 🎬️🎬️ Vídeos de Auxílio
+ 
+ ### 1 - [Mapa Procedural 2D](https://www.youtube.com/watch?v=-QOCX6SVFsk&list=PLcRSafycjWFenI87z7uZHFv6cUG2Tzu9v&pp=0gcJCV8EOCosWNin)
+ 
+[![Watch the video](https://i.sstatic.net/Vp2cE.png)](https://www.youtube.com/watch?v=-QOCX6SVFsk&list=PLcRSafycjWFenI87z7uZHFv6cUG2Tzu9v&pp=0gcJCV8EOCosWNin)
+ 
+ ### 2 - [CineMachine](https://www.youtube.com/watch?v=wB-EQH7jvFY)
+ 
+[![Watch the video](https://i.sstatic.net/Vp2cE.png)](https://www.youtube.com/watch?v=wB-EQH7jvFY)
+
+
+ 
+ ## 🔎 Inspirações e Referências
 
  | Jogos | Inspirou | Link |
  |------|---------| -------|
