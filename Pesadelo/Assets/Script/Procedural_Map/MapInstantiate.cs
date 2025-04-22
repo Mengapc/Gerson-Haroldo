@@ -1,10 +1,11 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 public class MapInstantiate : MonoBehaviour
 {
-    // Prefabs para o chão, paredes e cantos
+    // Prefabs para o chï¿½o, paredes e cantos
     [SerializeField]
     private GameObject FloorPrefab, WallPrefab, CornerL, CornerU, Cantos4, ParedeDupla;
 
@@ -12,14 +13,14 @@ public class MapInstantiate : MonoBehaviour
     [SerializeField]
     private GameObject SpawnRoomPrefab, ShopRoomPrefab;
 
-    // Métodos para acessar os prefabs das salas especiais
+    // Mï¿½todos para acessar os prefabs das salas especiais
     public GameObject GetSpawnRoomPrefab() => SpawnRoomPrefab;
     public GameObject GetShopRoomPrefab() => ShopRoomPrefab;
 
-    // Dicionário que armazena os tiles (objetos) instanciados, com a posição como chave
+    // Dicionï¿½rio que armazena os tiles (objetos) instanciados, com a posiï¿½ï¿½o como chave
     public Dictionary<Vector3Int, GameObject> instantiatedTiles = new Dictionary<Vector3Int, GameObject>();
 
-    // Método para pintar os tiles do chão, chamando PaintSingleTile para cada posição
+    // Mï¿½todo para pintar os tiles do chï¿½o, chamando PaintSingleTile para cada posiï¿½ï¿½o
     public void PaintFloorTiles(IEnumerable<Vector3Int> floorPositions)
     {
         foreach (var position in floorPositions)
@@ -28,42 +29,45 @@ public class MapInstantiate : MonoBehaviour
         }
     }
 
-    // Método auxiliar para pintar um único tile (piso ou qualquer outro objeto)
+    // Mï¿½todo auxiliar para pintar um ï¿½nico tile (piso ou qualquer outro objeto)
     private void PaintSingleTile(Vector3Int position, GameObject prefab)
     {
-        // Se o tile ainda não foi instanciado naquela posição
+        // Se o tile ainda nï¿½o foi instanciado naquela posiï¿½ï¿½o
         if (!instantiatedTiles.ContainsKey(position))
         {
-            // Cria o objeto na posição (considerando o eixo y fixo em 0)
+            // Cria o objeto na posiï¿½ï¿½o (considerando o eixo y fixo em 0)
             var tilePosition = new Vector3(position.x, 0, position.z);
             var newTile = Instantiate(prefab, tilePosition, Quaternion.identity);
 
-            // Armazena o novo tile no dicionário
+            // Armazena o novo tile no dicionï¿½rio
             instantiatedTiles[position] = newTile;
         }
     }
 
-    // Método para limpar todos os objetos instanciados
+    // Mï¿½todo para limpar todos os objetos instanciados
     public void Clear()
+{
+    Debug.Log($"NÃºmero de elementos no dicionÃ¡rio antes da limpeza: {instantiatedTiles.Count}");
+
+    foreach (var tile in instantiatedTiles.Values)
     {
-        // Exibe o número de objetos no dicionário antes de limpar
-        Debug.Log($"Número de elementos no dicionário antes da limpeza: {instantiatedTiles.Count}");
-
-        // Destrói todos os objetos no dicionário
-        foreach (var tile in instantiatedTiles.Values)
-        {
-            Destroy(tile);
-        }
-
-        // Limpa o dicionário
-        instantiatedTiles.Clear();
-
-        // Força a coleta de lixo, caso haja objetos pendentes para remoção
-        GC.Collect();
+        Destroy(tile);
     }
 
+    instantiatedTiles.Clear();
+    GC.Collect();
 
-    // Método para pintar uma parede simples em uma direção específica (esquerda, direita, frente ou trás)
+    var leftovers = GameObject.FindObjectsByType<GameObject>(FindObjectsSortMode.None)
+        .Where(go => go.name.Contains("Parede(Clone)")).ToList();
+
+    foreach (var go in leftovers)
+    {
+        Destroy(go);
+    }
+}
+
+
+    // Mï¿½todo para pintar uma parede simples em uma direï¿½ï¿½o especï¿½fica (esquerda, direita, frente ou trï¿½s)
     public void PaintSingleBasicWall(Vector3Int position, Vector3Int direction)
 {
     if (!instantiatedTiles.ContainsKey(position))

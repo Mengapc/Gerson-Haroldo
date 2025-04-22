@@ -7,7 +7,7 @@ using Random = UnityEngine.Random;
 
 public class RoomFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator
 {
-    // Tamanho mínimo que uma sala pode ter
+    // Tamanho mï¿½nimo que uma sala pode ter
     [SerializeField]
     private int minRoomWidth = 4, minRoomHeigth = 4;
 
@@ -15,29 +15,30 @@ public class RoomFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator
     [SerializeField]
     private int dungeonWidth = 20, dungeonHeigth = 20;
 
-    // Espaço vazio ao redor das salas
+    // Espaï¿½o vazio ao redor das salas
     [SerializeField]
     [Range(0, 10)]
     private int offset = 1;
 
-    // Se as salas vão ser geradas com random walk ou não
+    // Se as salas vï¿½o ser geradas com random walk ou nï¿½o
     [SerializeField]
     private bool randomWalkRooms = false;
 
-    // Chance de uma sala ser removida após a divisão do espaço
+    // Chance de uma sala ser removida apï¿½s a divisï¿½o do espaï¿½o
     [SerializeField, Range(0f, 1f)]
     private float removalChance = 0.4f;
 
-    // Espaço extra entre as salas (evita que fiquem coladas)
+    // Espaï¿½o extra entre as salas (evita que fiquem coladas)
     [SerializeField]
     private int spacingMargin = 2;
 
-    // Método principal de geração procedural chamado pela base
+    public PlayerMovement playerMovementScript;  // ReferÃªncia ao script que contÃ©m a movimentaÃ§Ã£o e spawn
+
+    // Mï¿½todo principal de geraï¿½ï¿½o procedural chamado pela base
     protected override void RunProceduralGeneration()
     {
         CreateRooms();
     }
-
     private void CreateRooms()
     {
         MapInstantiater.Clear();
@@ -60,7 +61,7 @@ public class RoomFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator
         specialRooms.Add(spawnRoom);
         specialRooms.Add(shopRoom);
 
-        // Instancia as salas especiais no centro da área
+        // Instancia as salas especiais no centro da ï¿½rea
         Vector3Int spawnCenter = Vector3Int.RoundToInt(spawnRoom.center);
         Vector3Int shopCenter = Vector3Int.RoundToInt(shopRoom.center);
 
@@ -79,13 +80,13 @@ public class RoomFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator
 
         // ============================
 
-        // Remove algumas salas (mas já removemos as especiais antes)
+        // Remove algumas salas (mas jï¿½ removemos as especiais antes)
         roomsList = FilterRooms(roomsList, removalChance);
 
-        // Aplica espaçamento extra
+        // Aplica espaï¿½amento extra
         roomsList = ApplySpacing(roomsList, spacingMargin);
 
-        Debug.Log($"Número de salas normais após filtragem: {roomsList.Count}");
+        Debug.Log($"Nï¿½mero de salas normais apï¿½s filtragem: {roomsList.Count}");
 
         HashSet<Vector3Int> floor = randomWalkRooms ? CreateRoomsRandomly(roomsList) : CreateSimpleRooms(roomsList);
 
@@ -101,6 +102,8 @@ public class RoomFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator
 
         MapInstantiater.PaintFloorTiles(floor);
         WallGenerator.CreateWalls(floor, MapInstantiater);
+
+        StartCoroutine(DelayedSpawn());
     }
 
     // Gera salas com random walk dentro dos limites da sala original
@@ -112,12 +115,12 @@ public class RoomFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator
             var roomBounds = roomsList[i];
             var roomCenter = new Vector3Int(Mathf.RoundToInt(roomBounds.center.x), 0, Mathf.RoundToInt(roomBounds.center.z));
 
-            // Caminhada aleatória para criar um formato irregular de sala
+            // Caminhada aleatï¿½ria para criar um formato irregular de sala
             var roomFloor = RunRandomWalk(randomWalkParameters, roomCenter);
 
             foreach (var position in roomFloor)
             {
-                // Garante que o chão gerado fique dentro dos limites da sala (com margem)
+                // Garante que o chï¿½o gerado fique dentro dos limites da sala (com margem)
                 if (position.x >= (roomBounds.xMin + offset) && position.x <= (roomBounds.xMax - offset) &&
                     position.z >= (roomBounds.zMin + offset) && position.z <= (roomBounds.zMax - offset))
                 {
@@ -137,14 +140,14 @@ public class RoomFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator
 
         while (roomCenters.Count > 0)
         {
-            // Encontra a sala mais próxima
+            // Encontra a sala mais prï¿½xima
             Vector3Int closest = FindClosestPointTo(currentRoomCenter, roomCenters);
             roomCenters.Remove(closest);
 
             // Cria um corredor entre as duas salas
             HashSet<Vector3Int> newCorridor = CreateCorridor(currentRoomCenter, closest);
 
-            // Atualiza o ponto de referência
+            // Atualiza o ponto de referï¿½ncia
             currentRoomCenter = closest;
             corridors.UnionWith(newCorridor);
         }
@@ -175,7 +178,7 @@ public class RoomFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator
         return corridor;
     }
 
-    // Acha o centro de sala mais próximo
+    // Acha o centro de sala mais prï¿½ximo
     private Vector3Int FindClosestPointTo(Vector3Int currentRoomCenter, List<Vector3Int> roomCenters)
     {
         Vector3Int closest = Vector3Int.zero;
@@ -193,7 +196,7 @@ public class RoomFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator
         return closest;
     }
 
-    // Cria salas simples, preenchendo o retângulo interno com piso
+    // Cria salas simples, preenchendo o retï¿½ngulo interno com piso
     private HashSet<Vector3Int> CreateSimpleRooms(List<BoundsInt> roomsList)
     {
         HashSet<Vector3Int> floor = new HashSet<Vector3Int>();
@@ -212,7 +215,7 @@ public class RoomFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator
         return floor;
     }
 
-    // Remove salas com base em uma chance aleatória
+    // Remove salas com base em uma chance aleatï¿½ria
     private List<BoundsInt> FilterRooms(List<BoundsInt> roomsList, float removalChance)
     {
         List<BoundsInt> filteredRooms = new List<BoundsInt>();
@@ -227,7 +230,7 @@ public class RoomFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator
         return filteredRooms;
     }
 
-    // Diminui o tamanho das salas pra deixar espaço entre elas
+    // Diminui o tamanho das salas pra deixar espaï¿½o entre elas
     private List<BoundsInt> ApplySpacing(List<BoundsInt> roomsList, int spacingMargin)
     {
         List<BoundsInt> spacedRooms = new List<BoundsInt>();
@@ -239,7 +242,7 @@ public class RoomFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator
                 room.size - new Vector3Int(spacingMargin * 2, 0, spacingMargin * 2)
             );
 
-            // Só adiciona se ainda tiver tamanho positivo
+            // Sï¿½ adiciona se ainda tiver tamanho positivo
             if (newRoom.size.x > 0 && newRoom.size.z > 0)
             {
                 spacedRooms.Add(newRoom);
@@ -247,4 +250,19 @@ public class RoomFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator
         }
         return spacedRooms;
     }
+
+    private IEnumerator DelayedSpawn()
+    {
+    yield return null; // Espera 1 frame
+
+    if (playerMovementScript != null)
+    {
+        playerMovementScript.Spawn();
+    }
+    else
+    {
+        Debug.LogError("playerMovementScript nÃ£o estÃ¡ atribuÃ­do.");
+    }
+}
+
 }

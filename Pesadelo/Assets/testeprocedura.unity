@@ -428,6 +428,8 @@ GameObject:
   - component: {fileID: 499037109}
   - component: {fileID: 499037108}
   - component: {fileID: 499037107}
+  - component: {fileID: 499037111}
+  - component: {fileID: 499037112}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -463,7 +465,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2
-  character: {fileID: 499037105}
+  player: {fileID: 499037105}
+  spawnRoomName: Spawn(Clone)
 --- !u!136 &499037108
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -540,6 +543,47 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 499037105}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &499037111
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 499037105}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f45c15a5ca08e75e1bba54a9cbc2e004, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 499037105}
+  spawnRoomName: Spawn
+--- !u!54 &499037112
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 499037105}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!114 &563896535 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1381321627471419759, guid: 4bd9fe0c31950e04d9dca9909c8ed839, type: 3}
@@ -1187,6 +1231,10 @@ PrefabInstance:
       propertyPath: MapInstantiater
       value: 
       objectReference: {fileID: 563896535}
+    - target: {fileID: 4042337607789921999, guid: c663d678fd069f4418734d966f4badaa, type: 3}
+      propertyPath: playerMovementScript
+      value: 
+      objectReference: {fileID: 499037107}
     - target: {fileID: 4042337607789921999, guid: c663d678fd069f4418734d966f4badaa, type: 3}
       propertyPath: randomWalkParameters
       value: 
