@@ -20,10 +20,10 @@ public class RoomFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator
     private bool randomWalkRooms = false;
 
     [SerializeField, Range(0f, 1f)]
-    private float removalChance = 0.4f; // Chance de remover salas após a geração
+    private float removalChance = 0.4f; // Chance de remover salas apï¿½s a geraï¿½ï¿½o
 
     [SerializeField]
-    private int spacingMargin = 2; // Espaço extra entre as salas
+    private int spacingMargin = 2; // Espaï¿½o extra entre as salas
 
     protected override void RunProceduralGeneration()
     {
@@ -35,7 +35,7 @@ public class RoomFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator
         // Limpa o mapa anterior antes de gerar um novo
         MapInstantiater.Clear();
 
-        // Certificando-se de que o tamanho da dungeon está correto
+        // Certificando-se de que o tamanho da dungeon estï¿½ correto
         var roomsList = ProceduralGenerationAlgorithms.BinarySpacePartitioning(
             new BoundsInt(new Vector3Int(startPosition.x, 0, startPosition.z), new Vector3Int(dungeonWidth, 1, dungeonHeigth)),
             minRoomWidth, minRoomHeigth);
@@ -43,10 +43,10 @@ public class RoomFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator
         // Aplica um filtro para remover algumas salas aleatoriamente
         roomsList = FilterRooms(roomsList, removalChance);
 
-        // Aplica um espaçamento extra entre salas
+        // Aplica um espaï¿½amento extra entre salas
         roomsList = ApplySpacing(roomsList, spacingMargin);
 
-        Debug.Log($"Número de salas geradas após filtragem: {roomsList.Count}");
+        Debug.Log($"Nï¿½mero de salas geradas apï¿½s filtragem: {roomsList.Count}");
 
         HashSet<Vector3Int> floor = randomWalkRooms ? CreateRoomsRandomly(roomsList) : CreateSimpleRooms(roomsList);
 
@@ -59,7 +59,7 @@ public class RoomFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator
         HashSet<Vector3Int> corridors = ConnectRooms(roomCenters);
         floor.UnionWith(corridors);
 
-        // Pinta o chão e cria as paredes
+        // Pinta o chï¿½o e cria as paredes
         MapInstantiater.PaintFloorTiles(floor);
         WallGenerator.CreateWalls(floor, MapInstantiater);
     }

@@ -42,7 +42,7 @@ public class CorridorFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator
 
         }
 
-        // Instancia o chão usando o MapInstantiater
+        // Instancia o chï¿½o usando o MapInstantiater
         MapInstantiater.PaintFloorTiles(floorPositions);
 
         // Gera paredes em torno dos corredores
@@ -51,12 +51,15 @@ public class CorridorFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator
 
     private List<Vector3Int> IncreaseCorridorSizeByOne(List<Vector3Int> corridor)
     {
+
+    private List<Vector3Int> IncreaseCorridorSizeByOne(List<Vector3Int> corridor)
+    {
         List<Vector3Int> newCorridor = new List<Vector3Int>();
         Vector3Int previousDirection = Vector3Int.zero;
 
         for (int i = 0; i < corridor.Count; i++)
         {
-            if (i == 0) // Se for o primeiro elemento, simplesmente adiciona ele e pula a lógica de direção
+            if (i == 0) // Se for o primeiro elemento, simplesmente adiciona ele e pula a lï¿½gica de direï¿½ï¿½o
             {
                 newCorridor.Add(corridor[i]);
                 continue;
@@ -159,4 +162,5 @@ public class CorridorFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator
         }
         return corridors;
     }
+}
 }
