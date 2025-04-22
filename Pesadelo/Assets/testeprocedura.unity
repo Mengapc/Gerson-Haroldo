@@ -93,7 +93,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 20201, guid: 0000000000000000f000000000000000, type: 0}
   m_LightingSettings: {fileID: 0}
 --- !u!196 &4
 NavMeshSettings:
@@ -246,25 +246,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 203980506}
-  - component: {fileID: 203980505}
-  - component: {fileID: 203980504}
-  m_Layer: 0
-  m_Name: Main Camera
-  m_TagString: MainCamera
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!81 &203980504
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 203980503}
+  m_GameObject: {fileID: 151679253}
   m_Enabled: 1
 --- !u!20 &203980505
 Camera:
@@ -1138,7 +1120,7 @@ PrefabInstance:
     - target: {fileID: 948541215896044483, guid: 9794601793d41be46ac1e2c4db8494a7, type: 3}
       propertyPath: m_Camera
       value: 
-      objectReference: {fileID: 203980505}
+      objectReference: {fileID: 0}
     - target: {fileID: 3942731612091986732, guid: 9794601793d41be46ac1e2c4db8494a7, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -1834,7 +1816,6 @@ PrefabInstance:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
-  - {fileID: 203980506}
   - {fileID: 151679255}
   - {fileID: 196615844426131656}
   - {fileID: 1480842501}
