@@ -63,6 +63,23 @@ Em seguida, finalize com:
 git commit -m "Merge mantendo arquivos da branch atual"
  ```
 
+### 🔹 Sobre conflitos de merge e UserSettings
+Arquivos como Pesadelo/UserSettings/Layouts/default-6000.dwlt costumam causar conflitos de merge.
+
+🧹 Como remover do versionamento
+ - Se já estiverem no Git, use:
+ ```
+git rm -r --cached Pesadelo/UserSettings/
+ ```
+ - Depois disso, faça um commit e envie ao repositório remoto:
+ ```
+git commit -m "Removendo UserSettings do versionamento"
+ ```
+ ```
+git push
+ ```
+
+
 # Tema e Mecânica
 
 Tema escolhido: Gambito
