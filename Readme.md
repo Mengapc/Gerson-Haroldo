@@ -63,6 +63,23 @@ Em seguida, finalize com:
 git commit -m "Merge mantendo arquivos da branch atual"
  ```
 
+### 🔹 Sobre conflitos de merge e UserSettings
+Arquivos como Pesadelo/UserSettings/Layouts/default-6000.dwlt costumam causar conflitos de merge.
+
+🧹 Como remover do versionamento
+ - Se já estiverem no Git, use:
+ ```
+git rm -r --cached Pesadelo/UserSettings/
+ ```
+ - Depois disso, faça um commit e envie ao repositório remoto:
+ ```
+git commit -m "Removendo UserSettings do versionamento"
+ ```
+ ```
+git push
+ ```
+
+
 # Tema e Mecânica
 
 Tema escolhido: Gambito
@@ -228,8 +245,12 @@ Eventos:
  |------|---------|
  | Git LFS em Unity | - [Link](https://www.youtube.com/watch?v=_ewoEQFEURg) |
  | Arquivos base git | - [Link](https://www.patreon.com/posts/63076977) |
+ | Unity - Collaborating with version control| [Link](https://learn.unity.com/tutorial/collaborate-with-plastic-scm#631f4f5dedbc2a27152629c3) |
+ | Substituir arquivos locais | [Link](https://stackoverflow.com/questions/1125968/how-do-i-force-git-pull-to-overwrite-local-files) |
+ 
 
- - [Digital Innovation One](https://web.dio.me/home).
+
+ - [Digital Innovation One](https://web.dio.me/home).https://learn.unity.com/tutorial/collaborate-with-plastic-scm#631f4f5dedbc2a27152629c3
  - [Documentação Git](https://git-scm.com/doc)
  - [Documentação GitHub](https://docs.github.com/)
  - [Github Material de Apoio](https://github.com/elidianaandrade/dio-curso-git-github)
