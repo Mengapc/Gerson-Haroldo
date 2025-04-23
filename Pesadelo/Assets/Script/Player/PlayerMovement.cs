@@ -54,8 +54,8 @@ public void Spawn()
     // Só faz o teleport se a sala de spawn mudou
     if (currentSpawnRoom != lastSpawnRoom)
     {
-        Vector3 spawnPosition = currentSpawnRoom.GetComponent<Renderer>().bounds.center;
-        player.transform.position = spawnPosition;
+        Vector3 spawnPosition = currentSpawnRoom.transform.position;
+            player.transform.position = spawnPosition + Vector3.up;
         lastSpawnRoom = currentSpawnRoom; // Atualiza a referência
         Debug.Log("Teleportado para nova sala de spawn: " + spawnPosition);
     }
