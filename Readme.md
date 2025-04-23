@@ -245,8 +245,8 @@ Eventos:
  |------|---------|
  | Git LFS em Unity | - [Link](https://www.youtube.com/watch?v=_ewoEQFEURg) |
  | Arquivos base git | - [Link](https://www.patreon.com/posts/63076977) |
- | Unity - Collaborating with version control| https://learn.unity.com/tutorial/collaborate-with-plastic-scm#631f4f5dedbc2a27152629c3 |
- | Substituir arquivos locais | https://stackoverflow.com/questions/1125968/how-do-i-force-git-pull-to-overwrite-local-files |
+ | Unity - Collaborating with version control| [Link](https://learn.unity.com/tutorial/collaborate-with-plastic-scm#631f4f5dedbc2a27152629c3) |
+ | Substituir arquivos locais | [Link](https://stackoverflow.com/questions/1125968/how-do-i-force-git-pull-to-overwrite-local-files) |
  
 
 
