@@ -1,57 +1,79 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UIElements;
 using Random = UnityEngine.Random;
 
 public class RoomFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator
 {
-    // Tamanho m�nimo que uma sala pode ter
-    [SerializeField]
-    private int minRoomWidth = 4, minRoomHeigth = 4;
+    [SerializeField] private int minRoomWidth = 4, minRoomHeigth = 4;
 
-    // Tamanho total da dungeon
-    [SerializeField]
-    private int dungeonWidth = 20, dungeonHeigth = 20;
+    [SerializeField] private int dungeonWidth = 20, dungeonHeigth = 20;
 
-    // Espa�o vazio ao redor das salas
-    [SerializeField]
-    [Range(0, 10)]
-    private int offset = 1;
+    [SerializeField] [Range(0, 10)] private int offset = 1;
 
-    // Se as salas v�o ser geradas com random walk ou n�o
-    [SerializeField]
-    private bool randomWalkRooms = false;
+    [SerializeField] private bool randomWalkRooms = false;
 
-    // Chance de uma sala ser removida ap�s a divis�o do espa�o
-    [SerializeField, Range(0f, 1f)]
-    private float removalChance = 0.4f;
+    [SerializeField, Range(0f, 1f)] private float removalChance = 0.4f;
 
-    // Espa�o extra entre as salas (evita que fiquem coladas)
-    [SerializeField]
-    private int spacingMargin = 2;
+    [SerializeField] private int spacingMargin = 2;
 
-    public PlayerMovement playerMovementScript;  // Referência ao script que contém a movimentação e spawn
+    [SerializeField] private int corridorWidth = 3; // largura dos corredores
 
-    // M�todo principal de gera��o procedural chamado pela base
+    [SerializeField] private bool useCustomSeed = false;
+
+    [SerializeField] private int customSeed = 0;
+
+    public PlayerMovement playerMovementScript;
+
+    // Salva a seed
+    private void SaveSeed(int seed)
+    {
+        PlayerPrefs.SetInt("CustomSeed", seed); // Salva a seed nas preferencias do player
+        PlayerPrefs.Save(); // Garante que a seed seja salva
+    }
+
+    // Carrega a seed salva, ou gera uma nova seed aleatória
+    private int LoadSeed()
+    {
+        if (PlayerPrefs.HasKey("CustomSeed"))
+        {
+            return PlayerPrefs.GetInt("CustomSeed"); // Carrega a seed salva
+        }
+        return Random.Range(1, 1000000); // Se não houver seed salva, gera uma nova
+    }
+
+
     protected override void RunProceduralGeneration()
     {
         CreateRooms();
     }
+
     private void CreateRooms()
     {
+        // Usar a seed salva ou gerar uma nova
+        if (useCustomSeed)
+        {
+            customSeed = LoadSeed(); // Carrega a seed salva
+            SaveSeed(customSeed); // Salva a seed dnv
+            Random.InitState(customSeed);
+        }
+        else
+        {
+            customSeed = Random.Range(1, 1000000); // Gera uma nova seed
+            SaveSeed(customSeed); // Salva essa seed nas preferencias do player
+            Random.InitState(customSeed);
+            Debug.Log("Seed Do Mapa: " + customSeed);
+        }
+
         MapInstantiater.Clear();
 
         var roomsList = ProceduralGenerationAlgorithms.BinarySpacePartitioning(
             new BoundsInt(new Vector3Int(startPosition.x, 0, startPosition.z),
             new Vector3Int(dungeonWidth, 1, dungeonHeigth)), minRoomWidth, minRoomHeigth);
 
-        // ===== SALAS ESPECIAIS =====
         List<BoundsInt> specialRooms = new List<BoundsInt>();
         List<Vector3Int> roomCenters = new List<Vector3Int>();
 
-        // Seleciona aleatoriamente duas salas para serem especiais
         var spawnRoom = roomsList[Random.Range(0, roomsList.Count)];
         roomsList.Remove(spawnRoom);
 
@@ -61,7 +83,6 @@ public class RoomFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator
         specialRooms.Add(spawnRoom);
         specialRooms.Add(shopRoom);
 
-        // Instancia as salas especiais no centro da �rea
         Vector3Int spawnCenter = Vector3Int.RoundToInt(spawnRoom.center);
         Vector3Int shopCenter = Vector3Int.RoundToInt(shopRoom.center);
 
@@ -74,29 +95,21 @@ public class RoomFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator
         mapInstantiate.instantiatedTiles[spawnCenter] = spawnInstance;
         mapInstantiate.instantiatedTiles[shopCenter] = shopInstance;
 
-        // Salva os centros para conectar depois
         roomCenters.Add(spawnCenter);
         roomCenters.Add(shopCenter);
 
-        // ============================
-
-        // Remove algumas salas (mas j� removemos as especiais antes)
         roomsList = FilterRooms(roomsList, removalChance);
-
-        // Aplica espa�amento extra
         roomsList = ApplySpacing(roomsList, spacingMargin);
 
-        Debug.Log($"N�mero de salas normais ap�s filtragem: {roomsList.Count}");
+        Debug.Log($"Número de salas normais após filtragem: {roomsList.Count}");
 
         HashSet<Vector3Int> floor = randomWalkRooms ? CreateRoomsRandomly(roomsList) : CreateSimpleRooms(roomsList);
 
-        // Adiciona os centros das salas comuns
         foreach (var room in roomsList)
         {
             roomCenters.Add(Vector3Int.RoundToInt(room.center));
         }
 
-        // Conecta todas as salas (especiais + normais)
         HashSet<Vector3Int> corridors = ConnectRooms(roomCenters);
         floor.UnionWith(corridors);
 
@@ -106,21 +119,16 @@ public class RoomFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator
         StartCoroutine(DelayedSpawn());
     }
 
-    // Gera salas com random walk dentro dos limites da sala original
     private HashSet<Vector3Int> CreateRoomsRandomly(List<BoundsInt> roomsList)
     {
         HashSet<Vector3Int> floor = new HashSet<Vector3Int>();
-        for (int i = 0; i < roomsList.Count; i++)
+        foreach (var roomBounds in roomsList)
         {
-            var roomBounds = roomsList[i];
             var roomCenter = new Vector3Int(Mathf.RoundToInt(roomBounds.center.x), 0, Mathf.RoundToInt(roomBounds.center.z));
-
-            // Caminhada aleat�ria para criar um formato irregular de sala
             var roomFloor = RunRandomWalk(randomWalkParameters, roomCenter);
 
             foreach (var position in roomFloor)
             {
-                // Garante que o ch�o gerado fique dentro dos limites da sala (com margem)
                 if (position.x >= (roomBounds.xMin + offset) && position.x <= (roomBounds.xMax - offset) &&
                     position.z >= (roomBounds.zMin + offset) && position.z <= (roomBounds.zMax - offset))
                 {
@@ -131,7 +139,6 @@ public class RoomFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator
         return floor;
     }
 
-    // Conecta os centros das salas com corredores simples em L
     private HashSet<Vector3Int> ConnectRooms(List<Vector3Int> roomCenters)
     {
         HashSet<Vector3Int> corridors = new HashSet<Vector3Int>();
@@ -140,45 +147,39 @@ public class RoomFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator
 
         while (roomCenters.Count > 0)
         {
-            // Encontra a sala mais pr�xima
             Vector3Int closest = FindClosestPointTo(currentRoomCenter, roomCenters);
             roomCenters.Remove(closest);
 
-            // Cria um corredor entre as duas salas
             HashSet<Vector3Int> newCorridor = CreateCorridor(currentRoomCenter, closest);
-
-            // Atualiza o ponto de refer�ncia
-            currentRoomCenter = closest;
             corridors.UnionWith(newCorridor);
+
+            currentRoomCenter = closest;
         }
+
         return corridors;
     }
 
-    // Cria um corredor em L ligando dois pontos
-    private HashSet<Vector3Int> CreateCorridor(Vector3Int currentRoomCenter, Vector3Int destination)
+    private HashSet<Vector3Int> CreateCorridor(Vector3Int start, Vector3Int end)
     {
-        HashSet<Vector3Int> corridor = new HashSet<Vector3Int>();
-        var position = currentRoomCenter;
+        List<Vector3Int> corridor = new List<Vector3Int>();
+        Vector3Int position = start;
         corridor.Add(position);
 
-        // Primeiro anda na vertical (eixo Z)
-        while (position.z != destination.z)
+        while (position.z != end.z)
         {
-            position += destination.z > position.z ? Vector3Int.forward : Vector3Int.back;
+            position += end.z > position.z ? Vector3Int.forward : Vector3Int.back;
             corridor.Add(position);
         }
 
-        // Depois anda na horizontal (eixo X)
-        while (position.x != destination.x)
+        while (position.x != end.x)
         {
-            position += destination.x > position.x ? Vector3Int.right : Vector3Int.left;
+            position += end.x > position.x ? Vector3Int.right : Vector3Int.left;
             corridor.Add(position);
         }
 
-        return corridor;
+        return CorridorUtils.IncreaseCorridorSize(corridor, corridorWidth); // ✅ largura definida pela variável
     }
 
-    // Acha o centro de sala mais pr�ximo
     private Vector3Int FindClosestPointTo(Vector3Int currentRoomCenter, List<Vector3Int> roomCenters)
     {
         Vector3Int closest = Vector3Int.zero;
@@ -193,10 +194,10 @@ public class RoomFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator
                 closest = position;
             }
         }
+
         return closest;
     }
 
-    // Cria salas simples, preenchendo o ret�ngulo interno com piso
     private HashSet<Vector3Int> CreateSimpleRooms(List<BoundsInt> roomsList)
     {
         HashSet<Vector3Int> floor = new HashSet<Vector3Int>();
@@ -212,14 +213,13 @@ public class RoomFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator
                 }
             }
         }
+
         return floor;
     }
 
-    // Remove salas com base em uma chance aleat�ria
     private List<BoundsInt> FilterRooms(List<BoundsInt> roomsList, float removalChance)
     {
         List<BoundsInt> filteredRooms = new List<BoundsInt>();
-
         foreach (var room in roomsList)
         {
             if (Random.value > removalChance)
@@ -230,7 +230,6 @@ public class RoomFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator
         return filteredRooms;
     }
 
-    // Diminui o tamanho das salas pra deixar espa�o entre elas
     private List<BoundsInt> ApplySpacing(List<BoundsInt> roomsList, int spacingMargin)
     {
         List<BoundsInt> spacedRooms = new List<BoundsInt>();
@@ -242,27 +241,26 @@ public class RoomFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator
                 room.size - new Vector3Int(spacingMargin * 2, 0, spacingMargin * 2)
             );
 
-            // S� adiciona se ainda tiver tamanho positivo
             if (newRoom.size.x > 0 && newRoom.size.z > 0)
             {
                 spacedRooms.Add(newRoom);
             }
         }
+
         return spacedRooms;
     }
 
     private IEnumerator DelayedSpawn()
     {
-    yield return null; // Espera 1 frame
+        yield return null;
 
-    if (playerMovementScript != null)
-    {
-        playerMovementScript.Spawn();
+        if (playerMovementScript != null)
+        {
+            playerMovementScript.Spawn();
+        }
+        else
+        {
+            Debug.LogError("playerMovementScript não está atribuído.");
+        }
     }
-    else
-    {
-        Debug.LogError("playerMovementScript não está atribuído.");
-    }
-}
-
 }
