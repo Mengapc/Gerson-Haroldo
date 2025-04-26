@@ -26,7 +26,7 @@ public class SimpleRandomWalkDungeonGenerator : AbstractDungeonGenerator
     {
         var currentPosition = position;
         HashSet<Vector3Int> floorPositions = new HashSet<Vector3Int>();
-        for (int i = 0; i < parameters.Iterations; i++) 
+        for (int i = 0; i < parameters.Iterations; i++)
         {
             var path = ProceduralGenerationAlgorithms.SimpleRandomWalk(currentPosition, parameters.WalkLength);
             floorPositions.UnionWith(path);

@@ -49,60 +49,60 @@ public class CorridorFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator
         WallGenerator.CreateWalls(floorPositions, MapInstantiater);
     }
 
-private List<Vector3Int> IncreaseCorridorSizeByOne(List<Vector3Int> corridor)
-{
-    List<Vector3Int> newCorridor = new List<Vector3Int>();
-
-    for (int i = 0; i < corridor.Count; i++)
+    private List<Vector3Int> IncreaseCorridorSizeByOne(List<Vector3Int> corridor)
     {
-        Vector3Int current = corridor[i];
-        Vector3Int direction = Vector3Int.zero;
+        List<Vector3Int> newCorridor = new List<Vector3Int>();
 
-        if (i > 0)
-            direction = corridor[i] - corridor[i - 1];
-        else if (i < corridor.Count - 1)
-            direction = corridor[i + 1] - corridor[i];
-
-        direction = ClampToCardinal(direction);
-
-        // Adiciona o bloco central
-        newCorridor.Add(current);
-
-        // Se estiver indo em X, adiciona blocos em Z (para dar largura)
-        if (direction == Vector3Int.left || direction == Vector3Int.right)
+        for (int i = 0; i < corridor.Count; i++)
         {
-            newCorridor.Add(current + Vector3Int.forward);
-            newCorridor.Add(current + Vector3Int.back);
+            Vector3Int current = corridor[i];
+            Vector3Int direction = Vector3Int.zero;
+
+            if (i > 0)
+                direction = corridor[i] - corridor[i - 1];
+            else if (i < corridor.Count - 1)
+                direction = corridor[i + 1] - corridor[i];
+
+            direction = ClampToCardinal(direction);
+
+            // Adiciona o bloco central
+            newCorridor.Add(current);
+
+            // Se estiver indo em X, adiciona blocos em Z (para dar largura)
+            if (direction == Vector3Int.left || direction == Vector3Int.right)
+            {
+                newCorridor.Add(current + Vector3Int.forward);
+                newCorridor.Add(current + Vector3Int.back);
+            }
+            // Se estiver indo em Z, adiciona blocos em X
+            else if (direction == Vector3Int.forward || direction == Vector3Int.back)
+            {
+                newCorridor.Add(current + Vector3Int.right);
+                newCorridor.Add(current + Vector3Int.left);
+            }
+            // No caso de estar parado ou num ponto de virada, adiciona cruzado
+            else
+            {
+                newCorridor.Add(current + Vector3Int.right);
+                newCorridor.Add(current + Vector3Int.left);
+                newCorridor.Add(current + Vector3Int.forward);
+                newCorridor.Add(current + Vector3Int.back);
+            }
         }
-        // Se estiver indo em Z, adiciona blocos em X
-        else if (direction == Vector3Int.forward || direction == Vector3Int.back)
-        {
-            newCorridor.Add(current + Vector3Int.right);
-            newCorridor.Add(current + Vector3Int.left);
-        }
-        // No caso de estar parado ou num ponto de virada, adiciona cruzado
-        else
-        {
-            newCorridor.Add(current + Vector3Int.right);
-            newCorridor.Add(current + Vector3Int.left);
-            newCorridor.Add(current + Vector3Int.forward);
-            newCorridor.Add(current + Vector3Int.back);
-        }
+
+        return newCorridor;
     }
 
-    return newCorridor;
-}
-
-// Garante que a direção seja um dos 4 cardeais
-private Vector3Int ClampToCardinal(Vector3Int direction)
-{
-    if (Mathf.Abs(direction.x) > Mathf.Abs(direction.z))
-        return new Vector3Int(Math.Sign(direction.x), 0, 0);
-    else if (Mathf.Abs(direction.z) > 0)
-        return new Vector3Int(0, 0, Math.Sign(direction.z));
-    else
-        return Vector3Int.zero;
-}
+    // Garante que a direção seja um dos 4 cardeais
+    private Vector3Int ClampToCardinal(Vector3Int direction)
+    {
+        if (Mathf.Abs(direction.x) > Mathf.Abs(direction.z))
+            return new Vector3Int(Math.Sign(direction.x), 0, 0);
+        else if (Mathf.Abs(direction.z) > 0)
+            return new Vector3Int(0, 0, Math.Sign(direction.z));
+        else
+            return Vector3Int.zero;
+    }
 
     private Vector3Int GetDirection90From(Vector3Int direction)
     {
@@ -119,9 +119,9 @@ private Vector3Int ClampToCardinal(Vector3Int direction)
 
     private void CreateRoomsAtDeadEnd(List<Vector3Int> deadEnds, HashSet<Vector3Int> roomFloors)
     {
-        foreach(var position in deadEnds)
+        foreach (var position in deadEnds)
         {
-            if(roomFloors.Contains(position) == false)
+            if (roomFloors.Contains(position) == false)
             {
                 var room = RunRandomWalk(randomWalkParameters, position);
                 roomFloors.UnionWith(room);
@@ -140,7 +140,7 @@ private Vector3Int ClampToCardinal(Vector3Int direction)
                 if (floorPositions.Contains(position + direction))
                     neighboursCount++;
             }
-            if(neighboursCount == 1)
+            if (neighboursCount == 1)
                 deadEnds.Add(position);
         }
         return deadEnds;
@@ -160,7 +160,7 @@ private Vector3Int ClampToCardinal(Vector3Int direction)
         return roomPositions;
     }
 
-    private List<List<Vector3Int>>  CreateCorridors(HashSet<Vector3Int> floorPositions, HashSet<Vector3Int> potentialRoomPositions)
+    private List<List<Vector3Int>> CreateCorridors(HashSet<Vector3Int> floorPositions, HashSet<Vector3Int> potentialRoomPositions)
     {
         var currentPosition = startPosition;
         potentialRoomPositions.Add(currentPosition);

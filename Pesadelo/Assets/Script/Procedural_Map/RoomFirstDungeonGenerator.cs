@@ -9,7 +9,7 @@ public class RoomFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator
 
     [SerializeField] private int dungeonWidth = 20, dungeonHeigth = 20;
 
-    [SerializeField] [Range(0, 10)] private int offset = 1;
+    [SerializeField][Range(0, 10)] private int offset = 1;
 
     [SerializeField] private bool randomWalkRooms = false;
 
