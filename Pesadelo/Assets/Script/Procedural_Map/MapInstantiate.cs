@@ -46,63 +46,63 @@ public class MapInstantiate : MonoBehaviour
 
     // M�todo para limpar todos os objetos instanciados
     public void Clear()
-{
-    Debug.Log($"Número de elementos no dicionário antes da limpeza: {instantiatedTiles.Count}");
-
-    foreach (var tile in instantiatedTiles.Values)
     {
-        Destroy(tile);
+        Debug.Log($"Número de elementos no dicionário antes da limpeza: {instantiatedTiles.Count}");
+
+        foreach (var tile in instantiatedTiles.Values)
+        {
+            Destroy(tile);
+        }
+
+        instantiatedTiles.Clear();
+        GC.Collect();
+
+        var leftovers = GameObject.FindObjectsByType<GameObject>(FindObjectsSortMode.None)
+            .Where(go => go.name.Contains("Parede(Clone)")).ToList();
+
+        foreach (var go in leftovers)
+        {
+            Destroy(go);
+        }
     }
-
-    instantiatedTiles.Clear();
-    GC.Collect();
-
-    var leftovers = GameObject.FindObjectsByType<GameObject>(FindObjectsSortMode.None)
-        .Where(go => go.name.Contains("Parede(Clone)")).ToList();
-
-    foreach (var go in leftovers)
-    {
-        Destroy(go);
-    }
-}
 
 
     // M�todo para pintar uma parede simples em uma dire��o espec�fica (esquerda, direita, frente ou tr�s)
     public void PaintSingleBasicWall(Vector3Int position, Vector3Int direction)
-{
-    if (!instantiatedTiles.ContainsKey(position))
     {
-        Vector3 wallOffset = Vector3.zero;
+        if (!instantiatedTiles.ContainsKey(position))
+        {
+            Vector3 wallOffset = Vector3.zero;
 
-        Quaternion rotation = Quaternion.identity;
-        if (direction == Vector3Int.left)
-        {
-            rotation = Quaternion.Euler(0, 90, 0);
-            wallOffset = new Vector3(0.5f, 0f, 0f); // Ajuste para alinhar visualmente
-        }
-        else if (direction == Vector3Int.right)
-        {
-            rotation = Quaternion.Euler(0, -90, 0);
-            wallOffset = new Vector3(-0.5f, 0f, 0f);
-        }
-        else if (direction == Vector3Int.forward)
-        {
-            rotation = Quaternion.Euler(0, 0, 0);
-            wallOffset = new Vector3(0f, 0f, -0.5f);
-        }
-        else if (direction == Vector3Int.back)
-        {
-            rotation = Quaternion.Euler(0, 180, 0);
-            wallOffset = new Vector3(0f, 0f, 0.5f);
-        }
+            Quaternion rotation = Quaternion.identity;
+            if (direction == Vector3Int.left)
+            {
+                rotation = Quaternion.Euler(0, 90, 0);
+                wallOffset = new Vector3(0.5f, 0f, 0f); // Ajuste para alinhar visualmente
+            }
+            else if (direction == Vector3Int.right)
+            {
+                rotation = Quaternion.Euler(0, -90, 0);
+                wallOffset = new Vector3(-0.5f, 0f, 0f);
+            }
+            else if (direction == Vector3Int.forward)
+            {
+                rotation = Quaternion.Euler(0, 0, 0);
+                wallOffset = new Vector3(0f, 0f, -0.5f);
+            }
+            else if (direction == Vector3Int.back)
+            {
+                rotation = Quaternion.Euler(0, 180, 0);
+                wallOffset = new Vector3(0f, 0f, 0.5f);
+            }
 
-        float wallYOffset = 0.6f; // ajuste vertical como antes
-        Vector3 wallPosition = new Vector3(position.x, wallYOffset, position.z) + wallOffset;
+            float wallYOffset = 0.6f; // ajuste vertical como antes
+            Vector3 wallPosition = new Vector3(position.x, wallYOffset, position.z) + wallOffset;
 
-        GameObject wall = Instantiate(WallPrefab, wallPosition, rotation);
-        instantiatedTiles[position] = wall;
+            GameObject wall = Instantiate(WallPrefab, wallPosition, rotation);
+            instantiatedTiles[position] = wall;
+        }
     }
-}
     public void PaintInternalCornerL(Vector3Int position, Quaternion rotation)
     {
         var cornerPosition = new Vector3(position.x, 0.6f, position.z);

@@ -6,14 +6,42 @@ using Random = UnityEngine.Random;
 public class RoomFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator
 {
     [SerializeField] private int minRoomWidth = 4, minRoomHeigth = 4;
+
     [SerializeField] private int dungeonWidth = 20, dungeonHeigth = 20;
-    [SerializeField] [Range(0, 10)] private int offset = 1;
+
+    [SerializeField][Range(0, 10)] private int offset = 1;
+
     [SerializeField] private bool randomWalkRooms = false;
+
     [SerializeField, Range(0f, 1f)] private float removalChance = 0.4f;
+
     [SerializeField] private int spacingMargin = 2;
-    [SerializeField] private int corridorWidth = 3; // ✅ largura dos corredores
+
+    [SerializeField] private int corridorWidth = 3; // largura dos corredores
+
+    [SerializeField] private bool useCustomSeed = false;
+
+    [SerializeField] private int customSeed = 0;
 
     public PlayerMovement playerMovementScript;
+
+    // Salva a seed
+    private void SaveSeed(int seed)
+    {
+        PlayerPrefs.SetInt("CustomSeed", seed); // Salva a seed nas preferencias do player
+        PlayerPrefs.Save(); // Garante que a seed seja salva
+    }
+
+    // Carrega a seed salva, ou gera uma nova seed aleatória
+    private int LoadSeed()
+    {
+        if (PlayerPrefs.HasKey("CustomSeed"))
+        {
+            return PlayerPrefs.GetInt("CustomSeed"); // Carrega a seed salva
+        }
+        return Random.Range(1, 1000000); // Se não houver seed salva, gera uma nova
+    }
+
 
     protected override void RunProceduralGeneration()
     {
@@ -22,6 +50,21 @@ public class RoomFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator
 
     private void CreateRooms()
     {
+        // Usar a seed salva ou gerar uma nova
+        if (useCustomSeed)
+        {
+            customSeed = LoadSeed(); // Carrega a seed salva
+            SaveSeed(customSeed); // Salva a seed dnv
+            Random.InitState(customSeed);
+        }
+        else
+        {
+            customSeed = Random.Range(1, 1000000); // Gera uma nova seed
+            SaveSeed(customSeed); // Salva essa seed nas preferencias do player
+            Random.InitState(customSeed);
+            Debug.Log("Seed Do Mapa: " + customSeed);
+        }
+
         MapInstantiater.Clear();
 
         var roomsList = ProceduralGenerationAlgorithms.BinarySpacePartitioning(
