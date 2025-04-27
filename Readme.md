@@ -66,19 +66,27 @@ git commit -m "Merge mantendo arquivos da branch atual"
 ### 🔹 Sobre conflitos de merge e UserSettings
 Arquivos como Pesadelo/UserSettings/Layouts/default-6000.dwlt costumam causar conflitos de merge.
 
-🧹 Como remover do versionamento
- - Se já estiverem no Git, use:
+🧹 Remover arquivos já versionados e ignorá-los corretamente
+Se você adicionou pastas como Logs ou UserSettings no .gitignore depois que elas já estavam sendo versionadas, siga o passo-a-passo abaixo para limpar o repositório:
+
+🔹 1. Remover os arquivos do versionamento, mas manter no seu computador
  ```
-git rm -r --cached Pesadelo/UserSettings/
+git rm --cached -r Pesadelo/Logs/
+git rm --cached -r Pesadelo/UserSettings/
  ```
- - Depois disso, faça um commit e envie ao repositório remoto:
+🔹 2. Fazer commit da remoção
  ```
-git commit -m "Removendo UserSettings do versionamento"
+git commit -m "Removendo arquivos de Logs e UserSettings do versionamento"
  ```
+🔹 3. Enviar as mudanças para o repositório remoto
  ```
 git push
  ```
-
+🔹 4. Limpar arquivos não monitorados do seu diretório local
+Use este comando para remover arquivos não rastreados que ainda estão no seu computador, evitando conflitos futuros ao mudar de branch.
+ ```
+git clean -fd
+ ```
 
 # Tema e Mecânica
 
