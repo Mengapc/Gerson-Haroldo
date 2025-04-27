@@ -44,5 +44,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2d8d3d5a3241fd47b419a3f4978162b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FloorPrefab: {fileID: 2204439220821100332, guid: 76bf179b39be21645a3e8c5c7967a1be, type: 3}
+  FloorPrefab: {fileID: 0}
   WallPrefab: {fileID: 0}
+  CornerL: {fileID: 0}
+  CornerU: {fileID: 0}
+  Cantos4: {fileID: 0}
+  ParedeDupla: {fileID: 0}
+  SpawnRoomPrefab: {fileID: 0}
+  ShopRoomPrefab: {fileID: 0}
