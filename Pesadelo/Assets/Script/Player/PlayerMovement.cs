@@ -9,7 +9,7 @@ public class PlayerMovement : MonoBehaviour
     // Variáveis para movimentação
     private Vector3 movementDirection;
     private bool isPlayerMoving = true; // Controla se o player pode se mover
-	private GameObject lastSpawnRoom = null;  // Referência ao último spawn usado
+    private GameObject lastSpawnRoom = null;  // Referência ao último spawn usado
 
     void Update()
     {
@@ -41,29 +41,29 @@ public class PlayerMovement : MonoBehaviour
     }
 
     // Função para realizar o spawn do jogador
-public void Spawn()
-{
-    GameObject currentSpawnRoom = GameObject.Find(spawnRoomName);
+    public void Spawn()
+    {
+        GameObject currentSpawnRoom = GameObject.Find(spawnRoomName);
 
-    if (currentSpawnRoom == null)
-    {
-        Debug.LogError("Spawn room não encontrado!");
-        return;
-    }
+        if (currentSpawnRoom == null)
+        {
+            Debug.LogError("Spawn room não encontrado!");
+            return;
+        }
 
-    // Só faz o teleport se a sala de spawn mudou
-    if (currentSpawnRoom != lastSpawnRoom)
-    {
-        Vector3 spawnPosition = currentSpawnRoom.GetComponent<Renderer>().bounds.center;
-        player.transform.position = spawnPosition;
-        lastSpawnRoom = currentSpawnRoom; // Atualiza a referência
-        Debug.Log("Teleportado para nova sala de spawn: " + spawnPosition);
+        // Só faz o teleport se a sala de spawn mudou
+        if (currentSpawnRoom != lastSpawnRoom)
+        {
+            Vector3 spawnPosition = currentSpawnRoom.transform.position;
+            player.transform.position = spawnPosition + Vector3.up;
+            lastSpawnRoom = currentSpawnRoom; // Atualiza a referência
+            Debug.Log("Teleportado para nova sala de spawn: " + spawnPosition);
+        }
+        else
+        {
+            Debug.Log("Spawn room ainda é o mesmo, teleport cancelado.");
+        }
     }
-    else
-    {
-        Debug.Log("Spawn room ainda é o mesmo, teleport cancelado.");
-    }
-}
 
     // Função para bloquear a movimentação após o spawn, se necessário
     public void BlockMovement()
