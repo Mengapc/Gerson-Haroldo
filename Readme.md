@@ -1,4 +1,4 @@
-# ExC3 - Arthur Polak Furman, Gabriel Dias, Gabriel Furlan Mengarelli e Guilherme Alves
+# EXP3 - Arthur Polak Furman, Gabriel Dias, Gabriel Furlan Mengarelli e Guilherme Alves
 
 Repositório relacionada ao projeto, contendo resumos sobre Git e GitHub e ideias sobre as features do jogo.
 
@@ -6,36 +6,78 @@ Repositório relacionada ao projeto, contendo resumos sobre Git e GitHub e ideia
 
  ## 💻️ Comandos do git
 
+### 🔹 Inicializar repositório
  ```
  git init
  ```
+### 🔹 Adicionar arquivos para commit
  ```
  git add .
  ```
+### 🔹 Fazer commit com mensagem
  ```
  git commit -m "Nome_commit"
  ```
+### 🔹 Enviar mudanças para o repositório remoto (main)
  ```
  git push -u origin main
  ```
+### Após a primeira vez, você pode usar apenas:
+ ```
+ git push
+ ```
+### 🔹 Atualizar sua branch com as mudanças da main (do remoto)
  ```
  git pull origin main
  ```
+### Após a primeira vez, você pode usar apenas:
+ ```
+ git pull
+ ```
+### 🔹 Trocar de branch
  ```
  git checkout <nome_da_branch>
  ```
+ ### 🔹 Junta as mudanças da sua branch na main
+ ```
+ git merge <nome_da_branch>
+ ```
+Exemplo: Se estiver na main e rodar git merge minha-branch, as mudanças da minha-branch serão aplicadas na main.
 
-## 📚️📚️ Links de Auxílio
+## ⚠ Lidando com conflitos de merge
+### 🔹 Abortar um merge com conflitos
 
- | Aulas | Resumos |
- |------|---------|
- | Git LFS em Unity | - [Link](https://www.youtube.com/watch?v=_ewoEQFEURg) |
- | Arquivos base git | - [Link](https://www.patreon.com/posts/63076977) |
+Se durante um merge houver conflitos e você quiser cancelar o processo:
+ ```
+ git merge --abort
+ ```
 
- - [Documentação Git](https://git-scm.com/doc)
- - [Documentação GitHub](https://docs.github.com/)
- - [Github Material de Apoio](https://github.com/elidianaandrade/dio-curso-git-github)
- - [Apresentação Versionamento de Código](https://academiapme-my.sharepoint.com/:p:/g/personal/renato_dio_me/EYjkgVZuUv5HsVgJUEPv1_oB_QWs8MFBY_PBQ2UAtLqucg?rtime=FOF68ttW3Ug)
+### 🔹 Manter somente os arquivos da branch atual
+Caso você queira forçar o Git a manter os arquivos da branch atual durante um merge, ignorando os da outra branch:
+ ```
+ git merge <nome-da-branch> --strategy-option=ours
+ ```
+- Isso resolve todos os conflitos automaticamente, mantendo a versão da branch em que você está.
+Em seguida, finalize com:
+ ```
+git commit -m "Merge mantendo arquivos da branch atual"
+ ```
+
+### 🔹 Sobre conflitos de merge e UserSettings
+Arquivos como Pesadelo/UserSettings/Layouts/default-6000.dwlt costumam causar conflitos de merge.
+
+🧹 Como remover do versionamento
+ - Se já estiverem no Git, use:
+ ```
+git rm -r --cached Pesadelo/UserSettings/
+ ```
+ - Depois disso, faça um commit e envie ao repositório remoto:
+ ```
+git commit -m "Removendo UserSettings do versionamento"
+ ```
+ ```
+git push
+ ```
 
 
 # Tema e Mecânica
@@ -57,12 +99,12 @@ Câmera: Isométrica / Top Down
  |  2  | - Um menino foi para uma casa de susto no halloween, tomou um susto enorme, sofreu uma parada cardíaca foi parar no hospital e agora você está jogando dentro do sonho de coma, onde ele tem pesadelos com o que viu dentro da casa, distorcidos e assustadores. | 
  |  3  | - Mesmo menino está tendo um pesadelo numa noite de halloween, ou seja, ele sonha em ser um herói e está lutando contra seus medos. | 
 
- - Ideia 3 foi escolhida 
-
+ ### ⭐️⭐️ Ideia 3 foi escolhida
  
 
  ## 💻️ Mecânicas 
 
+Mecânica do altar (Sacrifício de armas)
 
 Movimentação do personagem (Dash)
 
@@ -83,20 +125,33 @@ Cada inimigo spawna aleatoriamente com um desses tipos de arma
 Geração procedural do mapa 
 
 Geração procedural de armas 
+ 
+ ### 👀 Supostamentes 
 
-Raridades (baseado no nível de poder da arma) 
+Evolução de habilidades: Velocidade de ataque, Velocidade e Vida 
 
-Separado em:  
+Bossfight 
 
-Espada: cabo, lâmina e guarda 
+## ⚒️ Itens
 
-Martelo: Cabo, cabeça e gema 
+ | Armas | 1ª Parte | 2ª Parte | 3ª Parte |
+ |------|-------|--------|--------|
+ | Espada | Cabo | Lâmina | Gema |
+ | Martelo | Cabo | Cabeça | Gema |
+ | Cajado | Corpo | Ponta | Gema |
 
-Cajado: Corpo, ponta e gema 
+## ✨ Raridades
 
-Habilidades das gemas 
+| | Tipos |
+|--|--------|
+|1| Comum |
+|2| Incomum |
+|3| Raro |
+|4| Épico |
+|5| Lendário |
 
-Ataque de cada um dos tipos de arm 
+
+### 💎 Habilidades das gemas
 
 | Gemas |
 |--------|
@@ -117,46 +172,45 @@ Ataque de cada um dos tipos de arm
 
  ## 🎮 Balanceamento 
 
+### 1. Player
+##### 1.1 Vida
+ - Quantidade de dano que o jogador pode receber antes de ser derrotado.
+##### 1.2 Velocidade de ataque
+ - Frequência com que o jogador pode desferir ataques.
+##### 1.3 Velocidade de movimento
+ - Rapidez com que o jogador se move pelo cenário.
+##### 1.4 Habilidades 
+ - Poderes ou ações especiais que o jogador pode utilizar em combate ou exploração.
+### 2. Inimigos
+##### 2.1 Vida
+ - Resistência dos inimigos ao dano causado pelo jogador.
+##### 2.2 Velocidade de ataque
+ - Tempo entre um ataque e outro dos inimigos.
+##### 2.3 Velocidade de movimento
+ - Rapidez com que os inimigos se deslocam e perseguem o jogador.
+### 3. Sistemas
+##### 3.1 Cooldown de tomar e dar dano
+ - Intervalo mínimo entre um golpe recebido ou causado, evitando spam de dano.
+##### 3.2 Progressão de dificuldade
+ - Sistema que torna o jogo gradualmente mais desafiador conforme o avanço do jogador.
+##### 3.3 Sistema de Sacrifício e Progressão – Mecânica de Jogo
+ - Sistema central que liga narrativa e gameplay por meio de escolhas estratégicas.
+
+ - Conceito central:
+A dificuldade da próxima fase é determinada pela raridade da arma sacrificada ao final da fase anterior.
+
+ - Mecânica:
+Ao final de cada fase, o jogador deve sacrificar uma arma em um altar sagrado.
+Esse sacrifício é obrigatório para acessar a próxima fase.
+A raridade da arma sacrificada influencia diretamente na dificuldade da fase seguinte:
+
+Armas comuns → próxima fase muito mais difícil.                                       
+Armas raras ou lendárias → próxima fase mais equilibrada.
+
+- O jogador deve decidir entre:
+Manter uma boa arma para lutar mais fácil agora, e sofrer depois.
+Ou abrir mão de uma arma poderosa agora, para garantir um caminho mais seguro depois.
  
-
-Vida do player e inimigo 
-
-Velocidade de ataque para o player e inimigo 
-
-Cooldown de tomar e dar dano 
-
-Velocidade de movimento do player e inimigo 
-
-Habilidades 
-
-Progressão de dificuldade de tudo acima 
-
-Dificuldade das fases futuras é definido pela qualidade do sacrifício do nível anterior Diagrama
-
-O conteúdo gerado por IA pode estar incorreto., Picture 
-
- 
-
- 
-
- ## 👀 Supostamentes 
-
-Evolução de habilidades: Velocidade de ataque, Velocidade e Vida
-
-JOGO SERÁ FINITO, com fim 
-
-Loja 
-
-Bossfight 
-
-Para o MVP: Menu inicial com botão de play, créditos e sair  
-
-Inteligência artificial de inimigos (pesquisar sobre navmesh) 
-
-Mecânica do altar (Sacrifício de armas) 
-
- 
-
  ## 👿 Inimigos 
 
 ### Medos (inimigos) 
@@ -185,9 +239,40 @@ Mdeo do escuro: Boss final do nível do medo do escuro
 
 Eventos: 
 
- ## 🔎 Inspirações e Referências
+## 📚️📚️ Links de Auxílio
 
-  - [Digital Innovation One](https://web.dio.me/home).
+ | Aulas | Resumos |
+ |------|---------|
+ | Git LFS em Unity | - [Link](https://www.youtube.com/watch?v=_ewoEQFEURg) |
+ | Arquivos base git | - [Link](https://www.patreon.com/posts/63076977) |
+ | Unity - Collaborating with version control| [Link](https://learn.unity.com/tutorial/collaborate-with-plastic-scm#631f4f5dedbc2a27152629c3) |
+ | Substituir arquivos locais | [Link](https://stackoverflow.com/questions/1125968/how-do-i-force-git-pull-to-overwrite-local-files) |
+ 
+
+
+ - [Digital Innovation One](https://web.dio.me/home).https://learn.unity.com/tutorial/collaborate-with-plastic-scm#631f4f5dedbc2a27152629c3
+ - [Documentação Git](https://git-scm.com/doc)
+ - [Documentação GitHub](https://docs.github.com/)
+ - [Github Material de Apoio](https://github.com/elidianaandrade/dio-curso-git-github)
+ - [Apresentação Versionamento de Código](https://academiapme-my.sharepoint.com/:p:/g/personal/renato_dio_me/EYjkgVZuUv5HsVgJUEPv1_oB_QWs8MFBY_PBQ2UAtLqucg?rtime=FOF68ttW3Ug)
+
+### 🐛🐛 Resolução de bugs
+
+ - [Git branches bug](https://graphite.dev/guides/git-branch-not-showing-all-branches).
+
+ ## 🎬️🎬️ Vídeos de Auxílio
+ 
+ ### 1 - [Mapa Procedural 2D](https://www.youtube.com/watch?v=-QOCX6SVFsk&list=PLcRSafycjWFenI87z7uZHFv6cUG2Tzu9v&pp=0gcJCV8EOCosWNin)
+ 
+[![Watch the video](https://i.sstatic.net/Vp2cE.png)](https://www.youtube.com/watch?v=-QOCX6SVFsk&list=PLcRSafycjWFenI87z7uZHFv6cUG2Tzu9v&pp=0gcJCV8EOCosWNin)
+ 
+ ### 2 - [CineMachine](https://www.youtube.com/watch?v=wB-EQH7jvFY)
+ 
+[![Watch the video](https://i.sstatic.net/Vp2cE.png)](https://www.youtube.com/watch?v=wB-EQH7jvFY)
+
+
+ 
+ ## 🔎 Inspirações e Referências
 
  | Jogos | Inspirou | Link |
  |------|---------| -------|
