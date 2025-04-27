@@ -16,3 +16,6 @@ Caso eu queira atualizar minha branch com os arquivos da main:
 (dentro da branch)
 git merge main
 git push -u origin <my_branch>
+
+
+https://git-scm.com/docs/merge-strategies
