@@ -24,6 +24,7 @@ public class RoomFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator
     [SerializeField] private int customSeed = 0;
 
     [SerializeField] private GameObject enemyPrefab; //spawn inimigo
+
     public PlayerMovement playerMovementScript;
 
     private void Start()

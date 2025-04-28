@@ -25,11 +25,11 @@ Transform:
   m_GameObject: {fileID: 1521013921532012030}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.112, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0.99198365, z: 0}
+  m_LocalScale: {x: 8.856997, y: 8.856997, z: 8.856997}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 6398923346998196928}
+  m_Father: {fileID: 4283883517927038111}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1627619976716375953
 GameObject:
@@ -61,8 +61,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 6722357065549035449}
-  - {fileID: 6654013689494103294}
   - {fileID: 4283883517927038111}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -78,7 +76,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5206577536389e64c8df7f013f1c1334, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Arm: {fileID: 0}
   gema: {fileID: 6722357065549035449}
   cabo: {fileID: 6654013689494103294}
   lamina: {fileID: 0}
@@ -107,11 +104,11 @@ Transform:
   m_GameObject: {fileID: 4134472568683225890}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.122, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: -1.0805535, z: 0}
+  m_LocalScale: {x: 8.856997, y: 8.856997, z: 8.856997}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 6398923346998196928}
+  m_Father: {fileID: 4283883517927038111}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &4393771754574347124
 PrefabInstance:
@@ -179,7 +176,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 4d585b475eaa98144b3b6f4c9dc96bb1, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6722357065549035449}
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 4d585b475eaa98144b3b6f4c9dc96bb1, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6654013689494103294}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4d585b475eaa98144b3b6f4c9dc96bb1, type: 3}
 --- !u!4 &4283883517927038111 stripped

@@ -27,11 +27,19 @@ public class ProceduralItens : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.G))
         {
-            GenerateItem(new Vector3(player.transform.position.x, player.transform.position.y, player.transform.position.z));
+            GameObject newItem = GenerateItem(Vector3.zero); // Instancia o item (posição inicial não importa muito aqui)
+
+            Transform armasTransform = player.transform.Find("Armas");
+            if (armasTransform != null && newItem != null)
+            {
+                newItem.transform.SetParent(armasTransform);
+                newItem.transform.localPosition = Vector3.zero;
+                newItem.transform.localRotation = Quaternion.identity;
+            }
         }
     }
 
-    public void GenerateItem(Vector3 position)
+    public GameObject GenerateItem(Vector3 position)
     {
         string newName = "Item_" + Random.Range(1, 1000);
         Armas.ItemType newType = GenerateType();
@@ -39,13 +47,13 @@ public class ProceduralItens : MonoBehaviour
         int newPower = GeneratePowerLevel(newRarity);
         bool newSpecialStatus = ThisSpecialStatus(newRarity);
 
-
         GameObject principalPart = rp.GeneratePrincipalPartArm(newType); // Obtém o prefab da parte principal
-        newItem = Instantiate(principalPart, position, Quaternion.identity); // instancia a parte principal
+        GameObject newItem = Instantiate(principalPart, position, Quaternion.identity); // instancia a parte principal
         rp.GenerationOutherParts(newType, newItem);
 
-        newItem = null;
+        return newItem; // <--- Retorna o item criado
     }
+
 
     public Armas.Rarity GenerateRarity() //alterar para a taxa modificada
     {

@@ -25,11 +25,11 @@ Transform:
   m_GameObject: {fileID: 3683486145529364389}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.0006, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: -0.029828265, z: 0}
+  m_LocalScale: {x: 49.71377, y: 49.71377, z: 49.71377}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 7451262418521549342}
+  m_Father: {fileID: 7856454687614264475}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4949969928376364481
 GameObject:
@@ -56,11 +56,11 @@ Transform:
   m_GameObject: {fileID: 4949969928376364481}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.0066, y: 0.0564, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0.3281109, y: 2.8038568, z: 0}
+  m_LocalScale: {x: 49.71377, y: 49.71377, z: 49.71377}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 7451262418521549342}
+  m_Father: {fileID: 7856454687614264475}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8573028818930291858
 GameObject:
@@ -92,8 +92,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1364484238375569858}
-  - {fileID: 5269574981710129849}
   - {fileID: 7856454687614264475}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -178,7 +176,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 8ad28fe5de1240a40b03128e5c62e4f2, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1364484238375569858}
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 8ad28fe5de1240a40b03128e5c62e4f2, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5269574981710129849}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8ad28fe5de1240a40b03128e5c62e4f2, type: 3}
 --- !u!4 &7856454687614264475 stripped
