@@ -66,19 +66,27 @@ git commit -m "Merge mantendo arquivos da branch atual"
 ### 🔹 Sobre conflitos de merge e UserSettings
 Arquivos como Pesadelo/UserSettings/Layouts/default-6000.dwlt costumam causar conflitos de merge.
 
-🧹 Como remover do versionamento
- - Se já estiverem no Git, use:
+🧹 Remover arquivos já versionados e ignorá-los corretamente
+Se você adicionou pastas como Logs ou UserSettings no .gitignore depois que elas já estavam sendo versionadas, siga o passo-a-passo abaixo para limpar o repositório:
+
+🔹 1. Remover os arquivos do versionamento, mas manter no seu computador
  ```
-git rm -r --cached Pesadelo/UserSettings/
+git rm --cached -r Pesadelo/Logs/
+git rm --cached -r Pesadelo/UserSettings/
  ```
- - Depois disso, faça um commit e envie ao repositório remoto:
+🔹 2. Fazer commit da remoção
  ```
-git commit -m "Removendo UserSettings do versionamento"
+git commit -m "Removendo arquivos de Logs e UserSettings do versionamento"
  ```
+🔹 3. Enviar as mudanças para o repositório remoto
  ```
 git push
  ```
-
+🔹 4. Limpar arquivos não monitorados do seu diretório local
+Use este comando para remover arquivos não rastreados que ainda estão no seu computador, evitando conflitos futuros ao mudar de branch.
+ ```
+git clean -fd
+ ```
 
 # Tema e Mecânica
 
@@ -139,6 +147,41 @@ Bossfight
  | Espada | Cabo | Lâmina | Gema |
  | Martelo | Cabo | Cabeça | Gema |
  | Cajado | Corpo | Ponta | Gema |
+
+⚔️ Espada
+Lâminas: 15
+
+Guardas: 2
+
+Cabos: 23
+
+Gemas: 14
+
+Combinações possíveis:
+15 (lâminas) × 2 (guardas) × 23 (cabos) × 14 (gemas) = 9.660 espadas
+
+🔨 Martelo
+Cabeças: 15
+
+Corpos: 15
+
+Gemas: 14
+
+Combinações possíveis:
+15 (cabeças) × 15 (corpos) × 14 (gemas) = 3.150 martelos
+
+💫 Cajado
+Pontas: 15
+
+Cabos: 15
+
+Gemas: 14
+
+Combinações possíveis:
+15 (pontas) × 15 (cabos) × 14 (gemas) = 3.150 cajados
+
+🧮 Total geral de armas
+3.150 (cajados) + 3.150 (martelos) + 9.660 (espadas) = 15.960 armas únicas
 
 ## ✨ Raridades
 

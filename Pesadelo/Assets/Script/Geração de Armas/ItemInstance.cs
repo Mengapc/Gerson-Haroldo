@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class ItemInstance : MonoBehaviour
 {
+    public Armas Arm;
     public string itemName;
     public Armas.ItemType type;
     public Armas.Rarity rarity;

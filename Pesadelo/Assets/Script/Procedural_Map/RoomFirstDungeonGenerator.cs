@@ -19,11 +19,18 @@ public class RoomFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator
 
     [SerializeField] private int corridorWidth = 3; // largura dos corredores
 
-    [SerializeField] private bool useCustomSeed = false;
+    [SerializeField] private bool useCustomSeed = true;
 
     [SerializeField] private int customSeed = 0;
 
+    [SerializeField] private GameObject enemyPrefab; //spawn inimigo
+
     public PlayerMovement playerMovementScript;
+
+    private void Start()
+    {
+        CreateRooms();
+    }
 
     // Salva a seed
     private void SaveSeed(int seed)
@@ -48,6 +55,26 @@ public class RoomFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator
         CreateRooms();
     }
 
+    //código polak spawnar inimigos
+
+    private void SpawnEnemies(HashSet<Vector3Int> floorTiles, HashSet<Vector3Int> corridorTiles)
+    {
+        foreach (var tilePos in floorTiles)
+        {
+        // Pular se for corredor
+        if (corridorTiles.Contains(tilePos))
+            continue;
+
+        // 1 em 20 chance
+        if (Random.Range(0, 20) == 0)
+            {
+            Vector3 spawnPosition = new Vector3(tilePos.x, 0.5f, tilePos.z); // altura ajustável
+            Instantiate(enemyPrefab, spawnPosition, Quaternion.identity);
+            }
+        }
+    }
+
+    //fim do código polak spawnar inimigos
     private void CreateRooms()
     {
         // Usar a seed salva ou gerar uma nova
@@ -115,6 +142,8 @@ public class RoomFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator
 
         MapInstantiater.PaintFloorTiles(floor);
         WallGenerator.CreateWalls(floor, MapInstantiater);
+
+        SpawnEnemies(floor, corridors); //chama o spawn de inimigos
 
         StartCoroutine(DelayedSpawn());
     }

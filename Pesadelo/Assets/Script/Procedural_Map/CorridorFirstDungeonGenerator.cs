@@ -8,12 +8,27 @@ public class CorridorFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator
 {
     [SerializeField]
     private int corridorLength = 14, corridorCount = 5;
+
     [SerializeField]
     [Range(0.1f, 1)]
     private float roomPercent = 0.8f;
 
+    [SerializeField]
+    private Transform PortaS1, PortaS2, PortaL1, PortaL2; // Referências para as portas
+
+    private HashSet<Vector3Int> specialRoomDoors; // Para armazenar as posições das portas especiais
+
     protected override void RunProceduralGeneration()
     {
+        // Inicializa as posições das portas das salas especiais
+        specialRoomDoors = new HashSet<Vector3Int>
+        {
+            new Vector3Int(Mathf.RoundToInt(PortaS1.position.x), 0, Mathf.RoundToInt(PortaS1.position.z)),
+            new Vector3Int(Mathf.RoundToInt(PortaS2.position.x), 0, Mathf.RoundToInt(PortaS2.position.z)),
+            new Vector3Int(Mathf.RoundToInt(PortaL1.position.x), 0, Mathf.RoundToInt(PortaL1.position.z)),
+            new Vector3Int(Mathf.RoundToInt(PortaL2.position.x), 0, Mathf.RoundToInt(PortaL2.position.z))
+        };
+
         CorridorFirstGeneration();
     }
 
@@ -145,6 +160,7 @@ public class CorridorFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator
         }
         return deadEnds;
     }
+
     private HashSet<Vector3Int> CreateRooms(HashSet<Vector3Int> potentialRoomPositions)
     {
         HashSet<Vector3Int> roomPositions = new HashSet<Vector3Int>();
@@ -166,14 +182,26 @@ public class CorridorFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator
         potentialRoomPositions.Add(currentPosition);
         List<List<Vector3Int>> corridors = new List<List<Vector3Int>>();
 
-        for (int i = 0; i < corridorCount; i++)
+        // Gerar corredores direcionados para as portas das salas especiais
+        foreach (var door in specialRoomDoors)
         {
             var corridor = ProceduralGenerationAlgorithms.RandomWalkCorridor(currentPosition, corridorLength);
+
+            // Se o corredor chegar perto de uma porta especial, interrompa o corredor nesse ponto
+            if (corridor.Any(pos => specialRoomDoors.Contains(pos)))
+            {
+                corridor = corridor.TakeWhile(pos => !specialRoomDoors.Contains(pos)).ToList();
+            }
+
             corridors.Add(corridor);
+
+            // Atualiza a posição para o final do corredor gerado
             currentPosition = corridor[corridor.Count - 1];
+
             potentialRoomPositions.Add(currentPosition);
             floorPositions.UnionWith(corridor);
         }
+
         return corridors;
     }
 }
