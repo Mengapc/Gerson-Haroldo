@@ -148,6 +148,41 @@ Bossfight
  | Martelo | Cabo | Cabeça | Gema |
  | Cajado | Corpo | Ponta | Gema |
 
+⚔️ Espada
+Lâminas: 15
+
+Guardas: 2
+
+Cabos: 23
+
+Gemas: 14
+
+Combinações possíveis:
+15 (lâminas) × 2 (guardas) × 23 (cabos) × 14 (gemas) = 9.660 espadas
+
+🔨 Martelo
+Cabeças: 15
+
+Corpos: 15
+
+Gemas: 14
+
+Combinações possíveis:
+15 (cabeças) × 15 (corpos) × 14 (gemas) = 3.150 martelos
+
+💫 Cajado
+Pontas: 15
+
+Cabos: 15
+
+Gemas: 14
+
+Combinações possíveis:
+15 (pontas) × 15 (cabos) × 14 (gemas) = 3.150 cajados
+
+🧮 Total geral de armas
+3.150 (cajados) + 3.150 (martelos) + 9.660 (espadas) = 15.960 armas únicas
+
 ## ✨ Raridades
 
 | | Tipos |

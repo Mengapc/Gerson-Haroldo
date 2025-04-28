@@ -12,9 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 824e4c1d1dd97394b9cf525ee7740615, type: 3}
   m_Name: Armas
   m_EditorClassIdentifier: 
-  visialItem: {fileID: 0}
+  visialItem: {fileID: 8807498392011147377, guid: 15933cb14921053448af4e61f493902b, type: 3}
   nameItem: 
   type: 0
   rarity: 0
-  powerLevel: 0
   specialStatus: 0
