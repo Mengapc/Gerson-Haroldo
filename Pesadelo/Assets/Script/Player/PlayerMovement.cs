@@ -2,52 +2,77 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public float speed = 2f;
-    public GameObject player; // O seu player
-    public string spawnRoomName = "Spawn(Clone)"; // Nome da sala de spawn
+    public float speed = 2f;                // Velocidade normal
+    public float dashSpeed = 6f;             // Velocidade do dash
+    public float dashDuration = 0.2f;        // Duração do dash em segundos
+    public float dashCooldown = 1f;          // Tempo de recarga do dash
 
-    // Variáveis para movimentação
+    public GameObject player;
+    public string spawnRoomName = "Spawn(Clone)";
+
     private Vector3 movementDirection;
-    private bool isPlayerMoving = true; // Controla se o player pode se mover
-    private GameObject lastSpawnRoom = null;  // Referência ao último spawn usado
+    private bool isPlayerMoving = true;
+    private GameObject lastSpawnRoom = null;
+
+    private bool isDashing = false;
+    private float dashTime = 0f;
+    private float dashCooldownTimer = 0f; // Timer para o cooldown
 
     void Update()
     {
-        // Se o player não estiver se movendo (spawn ocorreu), ele não pode andar
         if (isPlayerMoving)
         {
             movementDirection = Vector3.zero;
 
             if (Input.GetKey(KeyCode.D))
             {
-                movementDirection += Vector3.right * speed;
+                movementDirection += Vector3.right;
             }
             if (Input.GetKey(KeyCode.A))
             {
-                movementDirection += Vector3.left * speed;
+                movementDirection += Vector3.left;
             }
             if (Input.GetKey(KeyCode.W))
             {
-                movementDirection += Vector3.forward * speed;
+                movementDirection += Vector3.forward;
             }
             if (Input.GetKey(KeyCode.S))
             {
-                movementDirection += Vector3.back * speed;
+                movementDirection += Vector3.back;
             }
-            if (Input.GetKey(KeyCode.LeftShift))
+
+            movementDirection = movementDirection.normalized;
+
+            // Atualiza o cooldown do dash
+            if (dashCooldownTimer > 0)
             {
-                speed = 2.75f;
+                dashCooldownTimer -= Time.deltaTime;
+            }
+
+            // Se apertar Shift, estiver se movendo, não estiver dando dash e o cooldown já tiver acabado
+            if (Input.GetKeyDown(KeyCode.LeftShift) && movementDirection != Vector3.zero && !isDashing && dashCooldownTimer <= 0)
+            {
+                isDashing = true;
+                dashTime = dashDuration;
+                dashCooldownTimer = dashCooldown; // Reseta o cooldown
+            }
+
+            if (isDashing)
+            {
+                transform.position += movementDirection * dashSpeed * Time.deltaTime;
+                dashTime -= Time.deltaTime;
+
+                if (dashTime <= 0)
+                {
+                    isDashing = false;
+                }
             }
             else
             {
-                speed = 2.0f;
+                transform.position += movementDirection * speed * Time.deltaTime;
             }
-
-            // Aplica o movimento ao jogador
-            transform.position += movementDirection * speed * Time.deltaTime;
         }
     }
-
     // Função para realizar o spawn do jogador
     public void Spawn()
     {
