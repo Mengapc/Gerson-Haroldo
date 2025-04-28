@@ -69,24 +69,43 @@ Arquivos como Pesadelo/UserSettings/Layouts/default-6000.dwlt costumam causar co
 🧹 Remover arquivos já versionados e ignorá-los corretamente
 Se você adicionou pastas como Logs ou UserSettings no .gitignore depois que elas já estavam sendo versionadas, siga o passo-a-passo abaixo para limpar o repositório:
 
-🔹 1. Remover os arquivos do versionamento, mas manter no seu computador
+### 🔹 1. Remover os arquivos do versionamento, mas manter no seu computador
  ```
 git rm --cached -r Pesadelo/Logs/
 git rm --cached -r Pesadelo/UserSettings/
  ```
-🔹 2. Fazer commit da remoção
+### 🔹 2. Fazer commit da remoção
  ```
 git commit -m "Removendo arquivos de Logs e UserSettings do versionamento"
  ```
-🔹 3. Enviar as mudanças para o repositório remoto
+### 🔹 3. Enviar as mudanças para o repositório remoto
  ```
 git push
  ```
-🔹 4. Limpar arquivos não monitorados do seu diretório local
+### 🔹 4. Limpar arquivos não monitorados do seu diretório local
 Use este comando para remover arquivos não rastreados que ainda estão no seu computador, evitando conflitos futuros ao mudar de branch.
  ```
 git clean -fd
  ```
+### 🔹 Como resolver conflito aceitando o arquivo da outra branch
+Se durante um conflito você quiser pegar o arquivo da outra branch e descartar a sua versão, use:
+ ```
+git checkout --theirs "caminho/do/arquivo"
+git add "caminho/do/arquivo"
+git commit
+ ```
+Exemplo para o seu projeto:
+ ```
+git checkout --theirs "Pesadelo/Assets/testeprocedura.unity"
+git add "Pesadelo/Assets/testeprocedura.unity"
+git commit -m "Resolvendo conflito aceitando versão da outra branch"
+ ```
+
+Explicação rápida:
+ - --theirs = pega a versão da branch que você está puxando/mesclando.
+  
+ - --ours = pega a sua versão atual.
+
 
 # Tema e Mecânica
 
