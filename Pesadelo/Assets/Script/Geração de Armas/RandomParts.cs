@@ -14,7 +14,7 @@ public class RandomParts : MonoBehaviour
     public List<GameObject> espadaGuardaP;
     public List<GameObject> espadaCabo;
     [Header("Martelo")]
-    public List<GameObject> marteloCabeçaP;
+    public List<GameObject> martelocabecaP;
     public List<GameObject> marteloCabo;
 
     public GameObject GeneratePrincipalPartArm(Armas.ItemType itemType)
@@ -47,10 +47,10 @@ public class RandomParts : MonoBehaviour
                 }
                 break;
             case Armas.ItemType.Hammer:
-                if (cajadoPontaP != null && marteloCabeçaP.Count > 0)
+                if (cajadoPontaP != null && martelocabecaP.Count > 0)
                 {
-                    int randowPart = Random.Range(0, marteloCabeçaP.Count);
-                    item = marteloCabeçaP[randowPart];
+                    int randowPart = Random.Range(0, martelocabecaP.Count);
+                    item = martelocabecaP[randowPart];
                 }
                 else
                 {
