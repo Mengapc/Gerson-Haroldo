@@ -9,17 +9,26 @@ public class EnemyMovement : MonoBehaviour
 
     private void Update()
     {
-        // Verifica a distância entre o inimigo e o jogador
-        float distanceToPlayer = Vector3.Distance(transform.position, player.position);
-
-        // Se o jogador estiver a 5 ou menos unidades de distância
-        if (distanceToPlayer <= detectionRange)
+        // Verifica se o jogador ainda existe (não foi destruído ou desativado)
+        if (player != null)
         {
-            // O inimigo olha para o jogador
-            RotateTowardsPlayer();
+            // Verifica a distância entre o inimigo e o jogador
+            float distanceToPlayer = Vector3.Distance(transform.position, player.position);
 
-            // O inimigo se move em direção ao jogador
-            MoveTowardsPlayer();
+            // Se o jogador estiver a 5 ou menos unidades de distância
+            if (distanceToPlayer <= detectionRange)
+            {
+                // O inimigo olha para o jogador
+                RotateTowardsPlayer();
+
+                // O inimigo se move em direção ao jogador
+                MoveTowardsPlayer();
+            }
+        }
+        else
+        {
+            // Caso o player seja destruído ou desativado, o inimigo não faz mais nada
+            // Você pode adicionar qualquer lógica aqui caso queira que o inimigo faça outra ação
         }
     }
 

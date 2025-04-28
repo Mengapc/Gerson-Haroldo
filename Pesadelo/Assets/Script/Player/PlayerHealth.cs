@@ -1,11 +1,14 @@
 using UnityEngine;
 using TMPro;  // Import TextMeshPro namespace
+using System.Collections;
+using System.Collections.Generic;
 
 public class PlayerHealth : MonoBehaviour
 {
     public int maxHealth = 100;  // Maximum health value
     public int currentHealth = 100;  // Current health value
     public TextMeshProUGUI healthText;  // TextMeshProUGUI reference to display health (make sure this is public)
+    public PlayerMovement playerMovement;
 
     // Initialize the player's health
     private void Start()
@@ -39,6 +42,13 @@ public class PlayerHealth : MonoBehaviour
     private void Die()
     {
         Debug.Log("Player Died!");
+        playerMovement.BlockMovement();
+        StartCoroutine(DelayedDeath());
         // Add your game-over logic or respawn logic here
+    }
+    private IEnumerator DelayedDeath()
+    {
+        yield return new WaitForSeconds(3f); // Espera 3 segundos
+        Destroy(gameObject); // Destroi o objeto onde esse script está
     }
 }

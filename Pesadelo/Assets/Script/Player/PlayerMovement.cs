@@ -76,6 +76,6 @@ public class PlayerMovement : MonoBehaviour
     // Função para bloquear a movimentação após o spawn, se necessário
     public void BlockMovement()
     {
-        isPlayerMoving = false;
+        isPlayerMoving = !isPlayerMoving;
     }
 }
