@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public float speed = 2.0f;
+    public float speed = 2f;
     public GameObject player; // O seu player
     public string spawnRoomName = "Spawn(Clone)"; // Nome da sala de spawn
 
@@ -20,19 +20,27 @@ public class PlayerMovement : MonoBehaviour
 
             if (Input.GetKey(KeyCode.D))
             {
-                movementDirection += Vector3.right;
+                movementDirection += Vector3.right * speed;
             }
             if (Input.GetKey(KeyCode.A))
             {
-                movementDirection += Vector3.left;
+                movementDirection += Vector3.left * speed;
             }
             if (Input.GetKey(KeyCode.W))
             {
-                movementDirection += Vector3.forward;
+                movementDirection += Vector3.forward * speed;
             }
             if (Input.GetKey(KeyCode.S))
             {
-                movementDirection += Vector3.back;
+                movementDirection += Vector3.back * speed;
+            }
+            if (Input.GetKey(KeyCode.LeftShift))
+            {
+                speed = 2.75f;
+            }
+            else
+            {
+                speed = 2.0f;
             }
 
             // Aplica o movimento ao jogador
