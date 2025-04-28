@@ -508,6 +508,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Inimigo
       objectReference: {fileID: 0}
+    - target: {fileID: 4021775703805608845, guid: 3b0895647f95d5d4dab8bfac6371940d, type: 3}
+      propertyPath: m_TagString
+      value: basic_enemy
+      objectReference: {fileID: 0}
     - target: {fileID: 4367338376027773239, guid: 3b0895647f95d5d4dab8bfac6371940d, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0
@@ -537,6 +541,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 4021775703805608845, guid: 3b0895647f95d5d4dab8bfac6371940d, type: 3}
       insertIndex: -1
       addedObject: {fileID: 790293098}
+    - targetCorrespondingSourceObject: {fileID: 4021775703805608845, guid: 3b0895647f95d5d4dab8bfac6371940d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 790293103}
     - targetCorrespondingSourceObject: {fileID: 4021775703805608845, guid: 3b0895647f95d5d4dab8bfac6371940d, type: 3}
       insertIndex: -1
       addedObject: {fileID: 790293094}
@@ -629,6 +636,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damageAmount: 10
   attackCooldown: 1.5
+--- !u!114 &790293103
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 790293091}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5a3bcd9f5d50d623b6656648a686e81, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 3
 --- !u!1 &990454895
 GameObject:
   m_ObjectHideFlags: 0
@@ -891,6 +911,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2
+  dashSpeed: 6
+  dashDuration: 0.2
+  dashCooldown: 1
   player: {fileID: 1283709083}
   spawnRoomName: Spawn(Clone)
 --- !u!54 &1283709089
