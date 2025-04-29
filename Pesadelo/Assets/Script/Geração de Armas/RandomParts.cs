@@ -73,29 +73,57 @@ public class RandomParts : MonoBehaviour
             case Armas.ItemType.Sword:
 
                 randowPart = Random.Range(0, Gema.Count);
-                Instantiate(Gema[randowPart], infoItem.gema.position, infoItem.gema.rotation);
+                GameObject novaGema = Instantiate(Gema[randowPart], infoItem.gema.position, infoItem.gema.rotation);
+                novaGema.transform.SetParent(infoItem.gema);
+                novaGema.transform.localPosition = Vector3.zero;
+                novaGema.transform.localRotation = Quaternion.identity;
 
                 randowPart = Random.Range(0, espadaCabo.Count);
-                Instantiate(espadaCabo[randowPart], infoItem.cabo.position, infoItem.cabo.rotation);
+                GameObject novoCaboEspada = Instantiate(espadaCabo[randowPart], infoItem.cabo.position, infoItem.cabo.rotation);
+                novoCaboEspada.transform.SetParent(infoItem.cabo);
+                novoCaboEspada.transform.localPosition = Vector3.zero;
+                novoCaboEspada.transform.localRotation = Quaternion.identity;
 
                 randowPart = Random.Range(0, espadaLamina.Count);
-                Instantiate(espadaLamina[randowPart], infoItem.lamina.position, infoItem.lamina.rotation);
+                GameObject novaLaminaEspada = Instantiate(espadaLamina[randowPart], infoItem.lamina.position, infoItem.lamina.rotation);
+                novaLaminaEspada.transform.SetParent(infoItem.lamina);
+                novaLaminaEspada.transform.localPosition = Vector3.zero;
+                novaLaminaEspada.transform.localRotation = Quaternion.identity;
 
                 break;
+
             case Armas.ItemType.Staff:
+
                 randowPart = Random.Range(0, Gema.Count);
-                Instantiate(Gema[randowPart], infoItem.gema.position, infoItem.gema.rotation);
+                GameObject novaGemaStaff = Instantiate(Gema[randowPart], infoItem.gema.position, infoItem.gema.rotation);
+                novaGemaStaff.transform.SetParent(infoItem.gema);
+                novaGemaStaff.transform.localPosition = Vector3.zero;
+                novaGemaStaff.transform.localRotation = Quaternion.identity;
 
                 randowPart = Random.Range(0, cajadoCabo.Count);
-                Instantiate(cajadoCabo[randowPart], infoItem.cabo.position, infoItem.cabo.rotation);
+                GameObject novoCaboCajado = Instantiate(cajadoCabo[randowPart], infoItem.cabo.position, infoItem.cabo.rotation);
+                novoCaboCajado.transform.SetParent(infoItem.cabo);
+                novoCaboCajado.transform.localPosition = Vector3.zero;
+                novoCaboCajado.transform.localRotation = Quaternion.identity;
+
                 break;
+
             case Armas.ItemType.Hammer:
+
                 randowPart = Random.Range(0, Gema.Count);
-                Instantiate(Gema[randowPart], infoItem.gema.position, infoItem.gema.rotation);
+                GameObject novaGemaMartelo = Instantiate(Gema[randowPart], infoItem.gema.position, infoItem.gema.rotation);
+                novaGemaMartelo.transform.SetParent(infoItem.gema);
+                novaGemaMartelo.transform.localPosition = Vector3.zero;
+                novaGemaMartelo.transform.localRotation = Quaternion.identity;
 
                 randowPart = Random.Range(0, marteloCabo.Count);
-                Instantiate(marteloCabo[randowPart], infoItem.cabo.position, infoItem.cabo.rotation);
+                GameObject novoCaboMartelo = Instantiate(marteloCabo[randowPart], infoItem.cabo.position, infoItem.cabo.rotation);
+                novoCaboMartelo.transform.SetParent(infoItem.cabo);
+                novoCaboMartelo.transform.localPosition = Vector3.zero;
+                novoCaboMartelo.transform.localRotation = Quaternion.identity;
+
                 break;
         }
     }
+
 }

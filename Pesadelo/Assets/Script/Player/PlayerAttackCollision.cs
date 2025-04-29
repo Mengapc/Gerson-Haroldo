@@ -23,4 +23,5 @@ public class PlayerAttackCollision : MonoBehaviour
 
         Destroy(gameObject); // Sempre destrói a bala ao colidir
     }
+
 }
