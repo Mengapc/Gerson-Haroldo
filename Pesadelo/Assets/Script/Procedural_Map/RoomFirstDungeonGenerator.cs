@@ -61,15 +61,15 @@ public class RoomFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator
     {
         foreach (var tilePos in floorTiles)
         {
-        // Pular se for corredor
-        if (corridorTiles.Contains(tilePos))
-            continue;
+            // Pular se for corredor
+            if (corridorTiles.Contains(tilePos))
+                continue;
 
-        // 1 em 20 chance
-        if (Random.Range(0, 20) == 0)
+            // 1 em 20 chance
+            if (Random.Range(0, 20) == 0)
             {
-            Vector3 spawnPosition = new Vector3(tilePos.x, 0.5f, tilePos.z); // altura ajustável
-            Instantiate(enemyPrefab, spawnPosition, Quaternion.identity);
+                Vector3 spawnPosition = new Vector3(tilePos.x, 10f, tilePos.z); // altura ajustável
+                Instantiate(enemyPrefab, spawnPosition, Quaternion.identity);
             }
         }
     }

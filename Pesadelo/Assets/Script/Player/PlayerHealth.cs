@@ -42,13 +42,42 @@ public class PlayerHealth : MonoBehaviour
     private void Die()
     {
         Debug.Log("Player Died!");
-        playerMovement.BlockMovement();
+        playerMovement.BlockMovement();  // Bloqueia o movimento do player
         StartCoroutine(DelayedDeath());
-        // Add your game-over logic or respawn logic here
+        StartCoroutine(BlinkPlayer());  // Adicionando o efeito de piscar
     }
+
     private IEnumerator DelayedDeath()
     {
         yield return new WaitForSeconds(3f); // Espera 3 segundos
-        Destroy(gameObject); // Destroi o objeto onde esse script está
+        playerMovement.Spawn(); // Chama a função de spawn
+        currentHealth = maxHealth; // Restaura a saúde do player (opcional, se quiser restaurar a vida ao renascer)
+        UpdateHealthUI();
+        playerMovement.BlockMovement(); // Libera o movimento do player após renascer
     }
+
+    private IEnumerator BlinkPlayer()
+    {
+        Renderer playerRenderer = playerMovement.player.GetComponent<Renderer>(); // Obtém o componente Renderer do player
+        Color originalColor = playerRenderer.material.color;  // Guarda a cor original do player
+
+        // Faz o player "piscar" por 1 segundo
+        for (float t = 0; t < 1f; t += Time.deltaTime * 5f) // Duração do piscar
+        {
+            playerRenderer.material.color = Color.Lerp(originalColor, new Color(1f, 1f, 1f, 0f), t); // Torna o player transparente
+            yield return null;
+        }
+
+        playerRenderer.material.color = new Color(1f, 1f, 1f, 0f); // Deixa o player completamente invisível
+        yield return new WaitForSeconds(0.2f); // Espera um pouco antes de reverter a cor
+
+        // Restaura a cor original
+        for (float t = 0; t < 1f; t += Time.deltaTime * 5f)
+        {
+            playerRenderer.material.color = Color.Lerp(new Color(1f, 1f, 1f, 0f), originalColor, t);
+            yield return null;
+        }
+        playerRenderer.material.color = originalColor; // Restaura a cor original
+    }
+
 }
