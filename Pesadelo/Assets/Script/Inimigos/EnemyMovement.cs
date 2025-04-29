@@ -3,6 +3,7 @@ using UnityEngine;
 public class EnemyMovement : MonoBehaviour
 {
     public Transform player;  // Referência ao jogador
+    public bool canMove = true;
     public float moveSpeed = 1.5f;  // Velocidade do inimigo
     public float detectionRange = 5f;  // Distância para detectar o jogador
     public float rotationSpeed = 5f;  // Velocidade de rotação do inimigo
@@ -10,7 +11,7 @@ public class EnemyMovement : MonoBehaviour
     private void Update()
     {
         // Verifica se o jogador ainda existe (não foi destruído ou desativado)
-        if (player != null)
+        if (player != null && canMove)
         {
             // Verifica a distância entre o inimigo e o jogador
             float distanceToPlayer = Vector3.Distance(transform.position, player.position);
@@ -51,5 +52,9 @@ public class EnemyMovement : MonoBehaviour
 
         // Move o inimigo em direção ao jogador
         transform.Translate(direction * moveSpeed * Time.deltaTime, Space.World);
+    }
+    public void SetCanMove(bool state)
+    {
+        canMove = state;
     }
 }

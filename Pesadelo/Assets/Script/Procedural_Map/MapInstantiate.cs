@@ -11,11 +11,12 @@ public class MapInstantiate : MonoBehaviour
 
     // Prefabs para salas especiais (spawn e loja)
     [SerializeField]
-    private GameObject SpawnRoomPrefab, ShopRoomPrefab;
+    private GameObject SpawnRoomPrefab, ShopRoomPrefab, AltarRoomPrefab;
 
     // M�todos para acessar os prefabs das salas especiais
     public GameObject GetSpawnRoomPrefab() => SpawnRoomPrefab;
     public GameObject GetShopRoomPrefab() => ShopRoomPrefab;
+    public GameObject GetAltarRoomPrefab() => AltarRoomPrefab;
 
     // Dicion�rio que armazena os tiles (objetos) instanciados, com a posi��o como chave
     public Dictionary<Vector3Int, GameObject> instantiatedTiles = new Dictionary<Vector3Int, GameObject>();
