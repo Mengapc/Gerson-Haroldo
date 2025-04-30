@@ -16,6 +16,7 @@ public class ProceduralItens : MonoBehaviour
     public float powerDrop;
     void Awake() // Use Awake para inicializações
     {
+
         rp = GetComponent<RandomParts>();
         if (rp == null)
         {
@@ -29,13 +30,6 @@ public class ProceduralItens : MonoBehaviour
         {
             GameObject newItem = GenerateItem(Vector3.zero); // Instancia o item (posição inicial não importa muito aqui)
 
-            Transform armasTransform = player.transform.Find("Armas");
-            if (armasTransform != null && newItem != null)
-            {
-                newItem.transform.SetParent(armasTransform);
-                newItem.transform.localPosition = Vector3.zero;
-                newItem.transform.localRotation = Quaternion.identity;
-            }
         }
     }
 
@@ -48,9 +42,18 @@ public class ProceduralItens : MonoBehaviour
         bool newSpecialStatus = ThisSpecialStatus(newRarity);
 
         GameObject principalPart = rp.GeneratePrincipalPartArm(newType); // Obtém o prefab da parte principal
-        GameObject newItem = Instantiate(principalPart, position, Quaternion.identity); // instancia a parte principal
-        rp.GenerationOutherParts(newType, newItem);
+        newItem = Instantiate(principalPart, position, Quaternion.identity); // instancia a parte principal
 
+        ii = baseArm.GetComponent<ItemInstance>();
+        if (ii == null)
+        {
+            Debug.LogError("ItemInstance não encontrado no novo item!");
+            return null;
+        }
+
+        rp.GenerationOutherParts(newType, newItem);
+        setItem();
+        ii.SetItemData(newName, newType, newRarity, newPower, newSpecialStatus);
         return newItem; // <--- Retorna o item criado
     }
 
@@ -77,5 +80,17 @@ public class ProceduralItens : MonoBehaviour
     public Armas.ItemType GenerateType()
     {
         return (Armas.ItemType)Random.Range(0, System.Enum.GetValues(typeof(Armas.ItemType)).Length);
+    }
+    private void setItem()
+    {
+        Transform armasTransform = player.transform.Find("Armas");
+        GameObject baseArmInstance = Instantiate(baseArm);
+        if (armasTransform != null && newItem != null)
+        {
+            newItem.transform.SetParent(baseArmInstance.transform);
+            baseArmInstance.transform.SetParent(armasTransform.transform);
+            baseArmInstance.transform.localPosition = Vector3.zero;
+            baseArmInstance.transform.localRotation = Quaternion.identity;
+        }
     }
 }

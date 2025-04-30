@@ -64,7 +64,7 @@ public class RandomParts : MonoBehaviour
         }
         return item;
     }
-    public void GenerationOutherParts(Armas.ItemType itemType, GameObject newItem)
+    public  void GenerationOutherParts(Armas.ItemType itemType, GameObject newItem)
     {
         int randowPart;
         LockParts infoItem = newItem.GetComponent<LockParts>();
