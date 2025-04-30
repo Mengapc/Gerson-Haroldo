@@ -578,8 +578,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ddf8b3c933a1cd73b6f7fa4de8e4364, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
-  dashSpeed: 10
+  speed: 2
+  dashSpeed: 6
   dashDuration: 0.5
   dashCooldown: 1
   player: {fileID: 567276644}
@@ -1987,7 +1987,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4042337607789921999, guid: c663d678fd069f4418734d966f4badaa, type: 3}
       propertyPath: offset
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4042337607789921999, guid: c663d678fd069f4418734d966f4badaa, type: 3}
       propertyPath: customSeed
@@ -2016,6 +2016,10 @@ PrefabInstance:
     - target: {fileID: 4042337607789921999, guid: c663d678fd069f4418734d966f4badaa, type: 3}
       propertyPath: minRoomHeigth
       value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 4042337607789921999, guid: c663d678fd069f4418734d966f4badaa, type: 3}
+      propertyPath: removalChance
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 4042337607789921999, guid: c663d678fd069f4418734d966f4badaa, type: 3}
       propertyPath: useCustomSeed
@@ -3478,7 +3482,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4633608946274449629, guid: 09289a0dc8f6c92488bdacf846c6e8b6, type: 3}
       propertyPath: corridorLength
-      value: 15
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4633608946274449629, guid: 09289a0dc8f6c92488bdacf846c6e8b6, type: 3}
       propertyPath: mapInstantiate
