@@ -3,7 +3,22 @@ guid: 439b30f4b6ac1a54ba123171f76183cd
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ArgolaCabeca1
+    second: {fileID: 2100000, guid: cb2deb7fe75536c4b9290b4a1e9e83a9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BaseCabeca1
+    second: {fileID: 2100000, guid: 8a4e19895477f0742b2ed9c076748af2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: DetalheCabeca1
+    second: {fileID: 2100000, guid: b045ba7ef89152a42adcd593c7f84210, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

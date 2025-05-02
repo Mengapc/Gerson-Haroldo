@@ -3,7 +3,17 @@ guid: d4cf820e41c50454e9dd695ccc9ee4fc
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BaseCabo16
+    second: {fileID: 2100000, guid: 86571d493e7b0464eb1ad415b10f4b12, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: LigamentoCabo16
+    second: {fileID: 2100000, guid: 855adc56857592f4f9abc9cf3c8d946b, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

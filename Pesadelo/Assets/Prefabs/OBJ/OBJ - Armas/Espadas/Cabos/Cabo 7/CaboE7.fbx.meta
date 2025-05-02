@@ -3,7 +3,17 @@ guid: 94b4cdf1cc52a0741b4d6e4ad75e9bb0
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BaseCabo7
+    second: {fileID: 2100000, guid: f6065a121ff045c4a991071feea7fc45, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: DenteCabo7
+    second: {fileID: 2100000, guid: 348f7acefb5b0124da66e646a81ad3b6, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

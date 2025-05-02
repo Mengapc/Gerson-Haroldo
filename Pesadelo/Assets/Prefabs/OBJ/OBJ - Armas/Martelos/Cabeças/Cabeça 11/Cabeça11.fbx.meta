@@ -3,7 +3,22 @@ guid: 1b5c36acd3b8e1e4285835cecf3eaa93
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: PratosCabeca11
+    second: {fileID: 2100000, guid: f0a7d2cc6b0e53d4ea4d4f9b26dc9ad3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Tambor1Cabeca11
+    second: {fileID: 2100000, guid: 099ce111471e75a498cba7c2a8626dc8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Tambor2Cabeca11
+    second: {fileID: 2100000, guid: f00689fed03108942b7f6f9a5e55b8fc, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

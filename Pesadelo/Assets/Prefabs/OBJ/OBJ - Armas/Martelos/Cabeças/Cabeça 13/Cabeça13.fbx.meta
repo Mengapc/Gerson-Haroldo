@@ -3,7 +3,22 @@ guid: 6982a9bd3719d844d99afbc0fd3d367b
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BalaBCabeca13
+    second: {fileID: 2100000, guid: c903bd54e4cf8fa409d436026e6ccc98, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BalaVCabeca13
+    second: {fileID: 2100000, guid: 51465c74bbb3d1a4693480fb562433aa, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: PirulitoCabeca13
+    second: {fileID: 2100000, guid: d5a92f9899f32944aa6bee565f0e59f7, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

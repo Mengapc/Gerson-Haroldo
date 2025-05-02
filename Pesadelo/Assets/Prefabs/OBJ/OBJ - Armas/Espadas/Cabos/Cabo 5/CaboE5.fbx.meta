@@ -3,7 +3,17 @@ guid: 6d9ada57f52b5364da5c278f54735b6e
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BaseCabo5
+    second: {fileID: 2100000, guid: 03b2dcd3cc1bf8c439afe8424a9c3b45, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: PedrasCabo5
+    second: {fileID: 2100000, guid: f889f3e8d4d212349a121fdafd041998, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

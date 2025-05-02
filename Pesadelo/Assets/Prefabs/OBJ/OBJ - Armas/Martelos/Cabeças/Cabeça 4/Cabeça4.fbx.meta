@@ -3,7 +3,27 @@ guid: 346ebb61bdc7a8f4283d57c3c86ee90a
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BaseCabeca4
+    second: {fileID: 2100000, guid: e351467f074768649b9ee94577fa1868, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ContatoCabeca4
+    second: {fileID: 2100000, guid: d261263e1799a7045b6e6aabfb2b6f48, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: DetalhesCabeca4
+    second: {fileID: 2100000, guid: e81e274af5085fa4c947d8db6109fa31, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: TopoCabeca4
+    second: {fileID: 2100000, guid: f84e28f4950decb45aecbdf79144c7e8, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

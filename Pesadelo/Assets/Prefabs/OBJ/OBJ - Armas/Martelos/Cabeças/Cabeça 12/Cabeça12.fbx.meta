@@ -3,7 +3,32 @@ guid: 4d585b475eaa98144b3b6f4c9dc96bb1
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BordasCabeca12
+    second: {fileID: 2100000, guid: db5fc20e6bb644a47843afe246c035e9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BrancoCabeca12
+    second: {fileID: 2100000, guid: dfde436541e80ce44883720e06c89c99, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: PretoCabeca12
+    second: {fileID: 2100000, guid: edea2bb3779175446b6b469846ee4442, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: TorreBCabeca12
+    second: {fileID: 2100000, guid: e45d4681d5d5d874c926f08eb08c9555, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: TorrePCabeca12
+    second: {fileID: 2100000, guid: 25a9dc3392c8e7e4b8819456a9f04b47, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

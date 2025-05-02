@@ -3,7 +3,12 @@ guid: 82d397d0aafdd0f49b41f019c664119c
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: DonutPonta3
+    second: {fileID: 2100000, guid: 968249e4c783e7e4ea084cc941e70728, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

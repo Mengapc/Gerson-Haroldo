@@ -3,7 +3,27 @@ guid: f80525b4ce955844eaa3ef3c7ea8cbdd
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BaseCabo15
+    second: {fileID: 2100000, guid: 54f5341b6f5d8074ba2da718e4ff9ec2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: DetalheCabo15
+    second: {fileID: 2100000, guid: 1facf86566edfcb45a903fc48b3cbb60, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: FitaCabo15
+    second: {fileID: 2100000, guid: 9df6ffff0fc8ccb42b64bed512dd5995, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: PontaCabo15
+    second: {fileID: 2100000, guid: 78eed71defeeff34b905ef5e8760e6f2, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

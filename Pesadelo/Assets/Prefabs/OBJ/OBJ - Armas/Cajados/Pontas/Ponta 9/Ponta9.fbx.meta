@@ -3,7 +3,42 @@ guid: cdecabd708d094b40bc66f43e0e4048d
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Amarelo-Cubo
+    second: {fileID: 2100000, guid: 431f83df2348c4543aeb244e47287172, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Azul-Cubo
+    second: {fileID: 2100000, guid: bc7a301550578174cb131607ec4d1f89, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Laranja-Cubo
+    second: {fileID: 2100000, guid: 27a7d69618a70d2419dd34037307be4f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Preto-Cubo
+    second: {fileID: 2100000, guid: 070b71c3ea0237048b1145c5c83c4fd9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Rosa-Cubo
+    second: {fileID: 2100000, guid: 2c3cfcdd283533144b92018130630313, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Verde-Cubo
+    second: {fileID: 2100000, guid: ac6ab7244419b7b43b3cbf0c72a5fb5c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Vermelho-Cubo
+    second: {fileID: 2100000, guid: 014f3f8d462f7b74b9704513cb3235af, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

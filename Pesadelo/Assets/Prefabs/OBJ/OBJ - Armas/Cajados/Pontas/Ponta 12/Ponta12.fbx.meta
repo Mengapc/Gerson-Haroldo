@@ -3,7 +3,12 @@ guid: 8ccf59abdae79e049b713f80a8a4abe4
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: "Bal\xE3oPonta12"
+    second: {fileID: 2100000, guid: 374404005788fc8479bfa41445a5bc86, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

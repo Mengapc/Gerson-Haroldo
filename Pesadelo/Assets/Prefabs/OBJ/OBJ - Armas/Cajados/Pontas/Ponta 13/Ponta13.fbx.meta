@@ -3,7 +3,12 @@ guid: 2973edb73bb258c4da93bcc82a17e0a5
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: PanoPonta13
+    second: {fileID: 2100000, guid: 78e209e8c6c80614c8121fee2d5f741c, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

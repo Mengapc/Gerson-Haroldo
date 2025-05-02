@@ -3,7 +3,22 @@ guid: 61db92ab21bd4804a88114c0034c9970
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BrancoCaboMC14
+    second: {fileID: 2100000, guid: 9e2c0616eed7a634ebd84053872565e9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: EstrelaCaboMC14
+    second: {fileID: 2100000, guid: 1b1ea289e3692bd45baddbc5c5bbbb9a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: PretoCaboMC14_
+    second: {fileID: 2100000, guid: 9c5d206aa93d93641ad27b720bbf629d, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

@@ -3,7 +3,22 @@ guid: 162661a8db06e7245983d342a4b75871
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BaseBCabo3
+    second: {fileID: 2100000, guid: 6a17525edc7f98045aabf270a1c1a883, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BasePCabo3
+    second: {fileID: 2100000, guid: ac0f8a5fedf15914cbe9fb53ccae2d5a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: "Bot\xE3oCabo3"
+    second: {fileID: 2100000, guid: f0a6b785481bdb241b05c37970e23876, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

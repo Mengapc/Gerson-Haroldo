@@ -3,7 +3,27 @@ guid: f7b8a50c40daea447bc495088d94fdae
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BaseCabeca5
+    second: {fileID: 2100000, guid: 92edb19b709d304409a24a8b436d7e55, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ConectorCabeca5
+    second: {fileID: 2100000, guid: 256a3c222cb21a046ab266b13cdf0c76, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Lapide2Cabeca5
+    second: {fileID: 2100000, guid: 52f9fb88c96d0f145a4d72732e7c70ba, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: LapideCabeca5
+    second: {fileID: 2100000, guid: 3f6e26268c45d604ba0911d6bb6ef0ae, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

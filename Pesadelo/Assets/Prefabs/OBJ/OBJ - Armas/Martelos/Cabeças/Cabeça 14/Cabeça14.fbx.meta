@@ -3,7 +3,12 @@ guid: 084713b16ee7e2843bf558888062ed83
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: PedraCabeca14
+    second: {fileID: 2100000, guid: bd1187f28f1f0744ba17d5bdd5902614, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
