@@ -11,6 +11,7 @@ public class ProceduralItens : MonoBehaviour
     private ItemInstance ii;
     private RandomParts rp;
     private GameObject newItem;
+    [SerializeField] private List<Sprite> armSprits;
     [Header("Taxa dos itens")]
     public float powerRate;
     public float powerDrop;
@@ -67,6 +68,7 @@ public class ProceduralItens : MonoBehaviour
         if (chance < 98) return Armas.Rarity.Epic;
         return Armas.Rarity.Legendary;
     }
+    //private void 
 
     public bool ThisSpecialStatus(Armas.Rarity rarity)
     {
