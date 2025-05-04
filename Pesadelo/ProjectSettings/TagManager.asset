@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 3
   tags:
   - basic_enemy
+  - Arm
   layers:
   - Default
   - TransparentFX
