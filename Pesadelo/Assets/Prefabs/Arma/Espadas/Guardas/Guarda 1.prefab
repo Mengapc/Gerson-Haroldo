@@ -72,7 +72,6 @@ GameObject:
   m_Component:
   - component: {fileID: 7157760484510805765}
   - component: {fileID: 2190551357494592579}
-  - component: {fileID: -479621922538288114}
   m_Layer: 0
   m_Name: Guarda 1
   m_TagString: Untagged
@@ -111,28 +110,6 @@ MonoBehaviour:
   gema: {fileID: 5535536405365290870}
   cabo: {fileID: 5567025496754709288}
   lamina: {fileID: 4671656875457619516}
---- !u!64 &-479621922538288114
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5187185463418955645}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 0}
 --- !u!1 &5217914781308410192
 GameObject:
   m_ObjectHideFlags: 0
