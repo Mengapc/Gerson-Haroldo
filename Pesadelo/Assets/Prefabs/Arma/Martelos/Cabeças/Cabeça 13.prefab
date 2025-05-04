@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7201209552408167232}
   - component: {fileID: -7529384218761860999}
+  - component: {fileID: -2756695683795552898}
   m_Layer: 0
   m_Name: "Cabe\xE7a 13"
   m_TagString: Untagged
@@ -48,6 +49,28 @@ MonoBehaviour:
   gema: {fileID: 1466906633358856469}
   cabo: {fileID: 6310629302314022004}
   lamina: {fileID: 0}
+--- !u!64 &-2756695683795552898
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2302489707654674172}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 0}
 --- !u!1 &4200438963908471341
 GameObject:
   m_ObjectHideFlags: 0

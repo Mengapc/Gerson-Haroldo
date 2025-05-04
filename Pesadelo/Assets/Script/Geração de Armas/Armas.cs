@@ -9,4 +9,5 @@ public class Armas : ScriptableObject
     public ItemType type;
     public Rarity rarity;
     public bool specialStatus;
+    public Sprite spriteArm;
 }
