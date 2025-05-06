@@ -3,7 +3,82 @@ guid: 61bbb6b925562f94a948959fca727306
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BaseCubosPonta1
+    second: {fileID: 2100000, guid: 26df0dd7f712b56499ea2bc7ebac059b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BordaCuboPonta1
+    second: {fileID: 2100000, guid: ae6f49f1f73f5ba40a569d3f150f915f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BordaCuboPonta1.001
+    second: {fileID: 2100000, guid: 1e6a6d87f73936241aca491d4784a3fb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BordaCuboPonta1.002
+    second: {fileID: 2100000, guid: 1e72a2821c2a1f54999adacc00d37909, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BordaCuboPonta1.003
+    second: {fileID: 2100000, guid: 10c232cdbba1b54449827246a4669578, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BordaCuboPonta1.004
+    second: {fileID: 2100000, guid: 2144bc75371faff4b94006376619919d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BordaCuboPonta1.005
+    second: {fileID: 2100000, guid: 55b25eef7101e904e92ad2d6e2ca8e51, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BordaCuboPonta1.006
+    second: {fileID: 2100000, guid: 1b6e8d670eb78404f8383425e5300748, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: LetraDPonta1
+    second: {fileID: 2100000, guid: 232838f53a22ac6408a4d5bfc817fd04, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: LetraEPonta1
+    second: {fileID: 2100000, guid: 600f1e5221d4f8543bcde0f32cd42ead, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: LetraIPonta1
+    second: {fileID: 2100000, guid: 4bca681d536f0d749906a3d782b1b7f4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: LetraKPonta1
+    second: {fileID: 2100000, guid: bbb6a1361d4b7a34c9d54c937bfb3916, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: LetraMPonta1
+    second: {fileID: 2100000, guid: c03407a62062de64585baff6f697625e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: LetraRPonta1
+    second: {fileID: 2100000, guid: bdb7fff79a8354740855fa10ca7da3da, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: LetraWPonta1
+    second: {fileID: 2100000, guid: 4dc304a6b5557df4487830b86d2ad8e6, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

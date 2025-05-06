@@ -3,7 +3,17 @@ guid: 37cfe6d3c07d32741a158a88cc7d1ea7
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CorrenteAmarelaLamina6
+    second: {fileID: 2100000, guid: 47d447d53fe07ea48bae318ac4b224d2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CorrentePretaLamina6
+    second: {fileID: 2100000, guid: 38f762d257553fe4d8935e3916738d32, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

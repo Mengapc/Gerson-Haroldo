@@ -3,7 +3,12 @@ guid: 5ca6a6f6800391a4885de463e0c0f2d5
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CanaAcucarCaboMC6
+    second: {fileID: 2100000, guid: d5eee0326f5298e4aa43edc78494b4e2, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

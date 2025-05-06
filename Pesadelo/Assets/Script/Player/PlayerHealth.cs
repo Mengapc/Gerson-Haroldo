@@ -2,18 +2,24 @@ using UnityEngine;
 using TMPro;  // Import TextMeshPro namespace
 using System.Collections;
 using System.Collections.Generic;
+using BarthaSzabolcs.IsometricAiming;
 
 public class PlayerHealth : MonoBehaviour
 {
     public int maxHealth = 100;  // Maximum health value
     public int currentHealth = 100;  // Current health value
+    public float respawnTime = 3f; // Current Respawn Time value
     public TextMeshProUGUI healthText;  // TextMeshProUGUI reference to display health (make sure this is public)
+    public TextMeshProUGUI deathText;  // TextMeshProUGUI reference to display player's death (make sure this is public)
     public PlayerMovement playerMovement;
+    public IsometricAiming isometricAiming;
+    public Rigidbody rb;
 
     // Initialize the player's health
     private void Start()
     {
         currentHealth = maxHealth;
+        rb = GetComponent<Rigidbody>();
         UpdateHealthUI();
     }
 
@@ -41,20 +47,45 @@ public class PlayerHealth : MonoBehaviour
     // Function to handle death (for example, restarting the level or ending the game)
     private void Die()
     {
-        Debug.Log("Player Died!");
         playerMovement.BlockMovement();  // Bloqueia o movimento do player
+
+        // BLOQUEIA TODOS OS INIMIGOS
+        EnemyMovement[] allEnemies = FindObjectsByType<EnemyMovement>(FindObjectsSortMode.None);
+        foreach (EnemyMovement enemy in allEnemies)
+        {
+            enemy.SetCanMove(false);
+        }
+
+        isometricAiming.SetAiming();
+        rb.constraints = RigidbodyConstraints.FreezeRotationY;
         StartCoroutine(DelayedDeath());
-        StartCoroutine(BlinkPlayer());  // Adicionando o efeito de piscar
+        StartCoroutine(BlinkPlayer());
     }
 
     private IEnumerator DelayedDeath()
     {
-        yield return new WaitForSeconds(3f); // Espera 3 segundos
-        playerMovement.Spawn(); // Chama a função de spawn
-        currentHealth = maxHealth; // Restaura a saúde do player (opcional, se quiser restaurar a vida ao renascer)
-        UpdateHealthUI();
-        playerMovement.BlockMovement(); // Libera o movimento do player após renascer
+    float remainingTime = respawnTime;
+
+    while (remainingTime > 0f)
+    {
+        deathText.text = "SE FUDEU\nRevivendo em: " + Mathf.CeilToInt(remainingTime);
+        yield return new WaitForSeconds(0.1f);
+        remainingTime -= 0.1f;
     }
+    deathText.text = ""; // Limpa o texto
+    currentHealth = maxHealth; // Restaura a saúde
+    UpdateHealthUI();
+    playerMovement.BlockMovement(); // Libera o movimento (toggle)
+    isometricAiming.SetAiming();
+    rb.constraints &= ~RigidbodyConstraints.FreezeRotationY;
+    EnemyMovement[] allEnemies = FindObjectsByType<EnemyMovement>(FindObjectsSortMode.None);
+    foreach (EnemyMovement enemy in allEnemies)
+    {
+        enemy.SetCanMove(true);
+    }
+
+    }
+
 
     private IEnumerator BlinkPlayer()
     {
@@ -80,4 +111,4 @@ public class PlayerHealth : MonoBehaviour
         playerRenderer.material.color = originalColor; // Restaura a cor original
     }
 
-}
+} 

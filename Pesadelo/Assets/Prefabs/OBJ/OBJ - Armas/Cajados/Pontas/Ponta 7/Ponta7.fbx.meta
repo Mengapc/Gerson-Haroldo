@@ -3,7 +3,17 @@ guid: 762f10fa2e3cdec47ac3e11c6bdecdae
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CataventoPonta7
+    second: {fileID: 2100000, guid: 95c2c7911a96901469daa93e752458cd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: FerroPonta7
+    second: {fileID: 2100000, guid: f1166fe045bb1464fa52aedd94fc26e4, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

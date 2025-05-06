@@ -107,23 +107,32 @@ public class RoomFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator
         var shopRoom = roomsList[Random.Range(0, roomsList.Count)];
         roomsList.Remove(shopRoom);
 
+        var altarRoom = roomsList[Random.Range(0, roomsList.Count)];
+        roomsList.Remove(altarRoom);
+
         specialRooms.Add(spawnRoom);
         specialRooms.Add(shopRoom);
+        specialRooms.Add(altarRoom);
 
         Vector3Int spawnCenter = Vector3Int.RoundToInt(spawnRoom.center);
         Vector3Int shopCenter = Vector3Int.RoundToInt(shopRoom.center);
+        Vector3Int altarCenter = Vector3Int.RoundToInt(altarRoom.center);
 
         GameObject spawnPrefab = MapInstantiater.GetSpawnRoomPrefab();
         GameObject shopPrefab = MapInstantiater.GetShopRoomPrefab();
+        GameObject altarPrefab = MapInstantiater.GetAltarRoomPrefab();
 
         var spawnInstance = Instantiate(spawnPrefab, new Vector3(spawnCenter.x, 0, spawnCenter.z), Quaternion.identity);
         var shopInstance = Instantiate(shopPrefab, new Vector3(shopCenter.x, 0, shopCenter.z), Quaternion.identity);
+        var altarInstance = Instantiate(altarPrefab, new Vector3(altarCenter.x, 0, altarCenter.z), Quaternion.identity);
 
         mapInstantiate.instantiatedTiles[spawnCenter] = spawnInstance;
         mapInstantiate.instantiatedTiles[shopCenter] = shopInstance;
+        mapInstantiate.instantiatedTiles[altarCenter] = altarInstance;
 
         roomCenters.Add(spawnCenter);
         roomCenters.Add(shopCenter);
+        roomCenters.Add(altarCenter);
 
         roomsList = FilterRooms(roomsList, removalChance);
         roomsList = ApplySpacing(roomsList, spacingMargin);
@@ -206,7 +215,7 @@ public class RoomFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator
             corridor.Add(position);
         }
 
-        return CorridorUtils.IncreaseCorridorSize(corridor, corridorWidth); // ✅ largura definida pela variável
+        return CorridorUtils.IncreaseCorridorSize(corridor, corridorWidth);
     }
 
     private Vector3Int FindClosestPointTo(Vector3Int currentRoomCenter, List<Vector3Int> roomCenters)

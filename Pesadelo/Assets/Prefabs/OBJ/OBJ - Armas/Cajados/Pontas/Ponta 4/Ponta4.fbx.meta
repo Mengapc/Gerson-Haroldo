@@ -3,7 +3,32 @@ guid: ddf16ad5b059b6948af62376c0974505
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BorrachaPonta4
+    second: {fileID: 2100000, guid: 1266b5c6d10c35641adea17dc9762ded, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CaixaMusicaPonta4
+    second: {fileID: 2100000, guid: 0996bbb0896aa244cb5c1c5f06c520dd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: EncaixePonta4
+    second: {fileID: 2100000, guid: 11888bc8809a1b8439d8816b0b92f6d4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: FerroManivelaPonta4
+    second: {fileID: 2100000, guid: 9371d4e00a72e1843a72d2067008a5ae, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: TampaPonta4
+    second: {fileID: 2100000, guid: a2939a27b3f4321428d43f7f9df117d5, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

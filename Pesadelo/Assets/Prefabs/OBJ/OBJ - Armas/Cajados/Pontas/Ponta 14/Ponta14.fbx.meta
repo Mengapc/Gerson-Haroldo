@@ -3,7 +3,22 @@ guid: dcbed4db1fd0ed040a17f684351426bf
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BasePonta14
+    second: {fileID: 2100000, guid: 442075c7bb68ea04bab6bc0d4c501f15, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CanoPonta14
+    second: {fileID: 2100000, guid: fb5511e142e12054ea5ef5aa61418cd1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ColaPonta14
+    second: {fileID: 2100000, guid: bbfaa112de567c14cb37031d45960ba7, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

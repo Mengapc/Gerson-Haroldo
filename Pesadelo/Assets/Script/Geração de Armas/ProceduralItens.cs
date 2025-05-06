@@ -1,8 +1,8 @@
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UIElements;
 using static Armas;
-using static UnityEditor.Progress;
 
 public class ProceduralItens : MonoBehaviour
 {
@@ -10,10 +10,12 @@ public class ProceduralItens : MonoBehaviour
     public GameObject player;
     private ItemInstance ii;
     private RandomParts rp;
-    private GameObject newItem;
+    private GameObject newItem; // Removi a atribuição inicial aqui
+    [SerializeField] private List<Sprite> armSprits;
     [Header("Taxa dos itens")]
     public float powerRate;
     public float powerDrop;
+
     void Awake() // Use Awake para inicializações
     {
         rp = GetComponent<RandomParts>();
@@ -27,15 +29,8 @@ public class ProceduralItens : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.G))
         {
-            GameObject newItem = GenerateItem(Vector3.zero); // Instancia o item (posição inicial não importa muito aqui)
-
-            Transform armasTransform = player.transform.Find("Armas");
-            if (armasTransform != null && newItem != null)
-            {
-                newItem.transform.SetParent(armasTransform);
-                newItem.transform.localPosition = Vector3.zero;
-                newItem.transform.localRotation = Quaternion.identity;
-            }
+            // Gerar item a partir da posição do jogador
+            GenerateItem(new Vector3(player.transform.position.x, player.transform.position.y + 3, player.transform.position.z));
         }
     }
 
@@ -47,15 +42,42 @@ public class ProceduralItens : MonoBehaviour
         int newPower = GeneratePowerLevel(newRarity);
         bool newSpecialStatus = ThisSpecialStatus(newRarity);
 
-        GameObject principalPart = rp.GeneratePrincipalPartArm(newType); // Obtém o prefab da parte principal
-        GameObject newItem = Instantiate(principalPart, position, Quaternion.identity); // instancia a parte principal
-        rp.GenerationOutherParts(newType, newItem);
+        // Gera a parte principal da arma (apenas o visual da peça)
+        GameObject baseArmInstance = Instantiate(baseArm, position, Quaternion.identity); // Agora está na cena
 
-        return newItem; // <--- Retorna o item criado
+        // Chama a função para gerar a parte principal (pode ser pai do baseArmInstance)
+        GameObject principalPart = rp.GeneratePrincipalPartArm(newType, baseArmInstance.transform); // Passando baseArmInstance como pai
+
+        if (principalPart != null)
+        {
+            // Cria a parte principal como filho da base
+            principalPart.transform.SetParent(baseArmInstance.transform); // principalPart agora é filho
+            principalPart.transform.localPosition = Vector3.zero; // Ajusta a posição local
+            principalPart.transform.localRotation = Quaternion.identity; // Ajusta a rotação local
+
+            // Gera as outras partes (lâmina, cabo, gema, etc.)
+            rp.GenerationOutherParts(newType, principalPart, newRarity); // Passando principalPart
+        }
+        else
+        {
+            Debug.LogError("A parte principal não foi gerada corretamente!");
+        }
+
+        // Obtém o ItemInstance da base instanciada
+        ii = baseArmInstance.GetComponent<ItemInstance>();
+        if (ii == null)
+        {
+            Debug.LogError("ItemInstance não encontrado na instância de baseArm!");
+        }
+        else
+        {
+            ii.SetItemData(newName, newType, newRarity, newPower, newSpecialStatus);
+        }
+
+        return baseArmInstance; // Retorna o item completo com as partes como filhos
     }
 
-
-    public Armas.Rarity GenerateRarity() //alterar para a taxa modificada
+    public Armas.Rarity GenerateRarity()
     {
         int chance = Random.Range(0, 100);
         if (chance < 50) return Armas.Rarity.Common;
@@ -69,6 +91,7 @@ public class ProceduralItens : MonoBehaviour
     {
         return rarity >= Armas.Rarity.Rare;
     }
+
     public int GeneratePowerLevel(Armas.Rarity rarity)
     {
         return Mathf.RoundToInt(Random.Range(10, 12) * ((int)rarity + 1) * powerRate);

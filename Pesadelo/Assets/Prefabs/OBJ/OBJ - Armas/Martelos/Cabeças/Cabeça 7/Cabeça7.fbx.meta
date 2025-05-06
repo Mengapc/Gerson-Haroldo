@@ -3,7 +3,37 @@ guid: 2dffc503c4b50c14d8dee291c6ab1350
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Aneis1Cabeca7
+    second: {fileID: 2100000, guid: fef0fc0a6d9738247b064249adfda300, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Aneis2Cabeca7
+    second: {fileID: 2100000, guid: a81ada20c867f4f4c87cb5140e624056, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: "BaseCabe\xE7a7"
+    second: {fileID: 2100000, guid: 40ebb882cf7e0eb4d9db0b18e33edf72, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: InferiorCabeca7
+    second: {fileID: 2100000, guid: 156e9436fa940614fb1ec1e3f5672d23, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: LogoCabeca7
+    second: {fileID: 2100000, guid: aafa2321cfb81d746b92fe0c44993eb7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: VidroCabeca7
+    second: {fileID: 2100000, guid: 9947dc6d504c5bf409639b0ef7ecf342, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

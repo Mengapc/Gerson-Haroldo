@@ -3,7 +3,22 @@ guid: 796659e9c9b253d4a85d683c2178f841
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BaseCabeca2
+    second: {fileID: 2100000, guid: f63ae80b51096844c9728171092ef3f3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: DetalhesCabeca2
+    second: {fileID: 2100000, guid: ca942c69cfac62945bd9b863c21f9a00, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: EstrelasCabeca2
+    second: {fileID: 2100000, guid: 5b0a03a2bf627c24d84dff70a973d9ab, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

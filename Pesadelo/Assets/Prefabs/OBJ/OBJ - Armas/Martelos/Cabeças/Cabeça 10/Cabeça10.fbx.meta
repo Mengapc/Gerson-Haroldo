@@ -3,7 +3,22 @@ guid: 0e04e37880e42754785bf7f473d8fdde
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: LegoAmareloCabeca10
+    second: {fileID: 2100000, guid: 57fb2ef88e80b2d4db47a37613bc5b41, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: LegoAzulCabeca10
+    second: {fileID: 2100000, guid: 4cbe1bb3f6b840949843cea4ea697090, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: LegoVermelhoCabeca10
+    second: {fileID: 2100000, guid: 861c82c8b6c723748ab1f676ffdd0aed, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

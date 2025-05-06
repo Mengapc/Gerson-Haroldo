@@ -3,7 +3,37 @@ guid: ae8ace894dcfef84abf57b6b061819d0
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Anel1Cabo10
+    second: {fileID: 2100000, guid: 4163f87af4ba3e84bb1aeef9986be783, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Anel2Cabo10
+    second: {fileID: 2100000, guid: f07721b9302693c4fa0b404fb51892b3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BaseCabo10
+    second: {fileID: 2100000, guid: b297e1306479fc048820d4a830e09f8d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BolaCabo10
+    second: {fileID: 2100000, guid: 8b8391b78a1416745841d61e5b555852, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: PlanetaCabo10
+    second: {fileID: 2100000, guid: 49b9b5c685d7dfb4cb83904c3fb526dd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: RodaCabo10
+    second: {fileID: 2100000, guid: bfbba1b6b9cda994b921a7aafe9b3d12, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

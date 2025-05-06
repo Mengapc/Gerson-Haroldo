@@ -3,7 +3,67 @@ guid: 54b74f0ab7391174c87513ec0c66d906
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BaseCuboCabeca9
+    second: {fileID: 2100000, guid: 036d8914561c1cd4ca6eaa27c42d96cf, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BordaCubo2Cabeca9
+    second: {fileID: 2100000, guid: 0c0ee27294a1ec442b971f75e30dc1b0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BordaCubo3Cabeca9
+    second: {fileID: 2100000, guid: 046c23cfd5fba2b4f824431c3bbf605f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BordaCuboCabeca9
+    second: {fileID: 2100000, guid: 9a0595872ca89bb43901f1e93869eb92, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CoroaCabeca9
+    second: {fileID: 2100000, guid: 1df630c4f6ca1b444b2f9ebad906ff8d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: JoiasCoroaCabeca9
+    second: {fileID: 2100000, guid: d63b73797300b164ea663435600ed021, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: LetraACabeca9
+    second: {fileID: 2100000, guid: 4feee2066b4bd334fb00a88c8578ab6c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: LetraB2Cabeca9
+    second: {fileID: 2100000, guid: efc2b1ece357d994faf08c7b460bc5cc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: LetraB3Cabeca9
+    second: {fileID: 2100000, guid: 116e3f61ed6dad1408e671e8ec3b539f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: LetraBCabeca9
+    second: {fileID: 2100000, guid: 48b74b94f36377a4bb8d1dfdf44ad786, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: LetraDCabeca9
+    second: {fileID: 2100000, guid: 02f12127f1bfcd34b86c4031ae9fd3fb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: LetraYCabeca9
+    second: {fileID: 2100000, guid: 5455e88ff83f39346989ff4c22f3cae0, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

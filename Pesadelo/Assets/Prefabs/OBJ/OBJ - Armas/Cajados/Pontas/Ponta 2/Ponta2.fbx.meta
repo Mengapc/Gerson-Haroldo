@@ -3,7 +3,22 @@ guid: 8ad28fe5de1240a40b03128e5c62e4f2
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: LegoAzulPonta2
+    second: {fileID: 2100000, guid: d050905d0c03ce741b67fd656df2cb1d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: LegoVerdePonta2
+    second: {fileID: 2100000, guid: 911fbbb8923708848b0e05cd4b76bf6f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: LegoVermelhoPonta2
+    second: {fileID: 2100000, guid: c6e9145c44497554eb75a1f7fc958d41, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

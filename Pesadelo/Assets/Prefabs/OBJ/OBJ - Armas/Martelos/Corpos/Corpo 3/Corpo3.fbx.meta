@@ -3,7 +3,17 @@ guid: 5a544ea751267cd49a45d33a67effae0
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CorLapisCaboMC3
+    second: {fileID: 2100000, guid: 6aa37324b5352a5488fa5f6188ec2b26, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MadeiraLapisCaboMC3
+    second: {fileID: 2100000, guid: 6b3aad6aed69dcd449ecd2677e8bef5e, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

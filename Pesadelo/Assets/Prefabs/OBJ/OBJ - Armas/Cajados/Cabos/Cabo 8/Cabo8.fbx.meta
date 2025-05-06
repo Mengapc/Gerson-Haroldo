@@ -3,7 +3,67 @@ guid: 9c1197a305f717a4b80acf3814a529d2
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BaseCaboMC8
+    second: {fileID: 2100000, guid: 4e412eafce1d8c84d90530e86e92d840, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BaseCuboCaboMC8
+    second: {fileID: 2100000, guid: 36fe6373b25feeb46886f80cef42eb79, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: LetraDCaboMC8
+    second: {fileID: 2100000, guid: f6502ee888b95fc4c88c2a81634c84bd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: LetraFCaboMC8
+    second: {fileID: 2100000, guid: b8dfc80b97fd4d546939dd2b9c7662c2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: LetraGCaboMC8
+    second: {fileID: 2100000, guid: 1bfcd0353b75f134f91e9003593f179b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: LetraMCaboMC8
+    second: {fileID: 2100000, guid: 8fe06c6a18d91a844a84e30967b5a45d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: LetraPCaboMC8
+    second: {fileID: 2100000, guid: 04ea24aa5cfc1f74397d57ed3f191323, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: LetraWCaboMC8
+    second: {fileID: 2100000, guid: eabcca51e1935da4189baa1a0e4f67bf, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: QuinaCuboMC8
+    second: {fileID: 2100000, guid: 149e656a7213961459ce7a11328a0903, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: QuinaCuboMC8.001
+    second: {fileID: 2100000, guid: 38cd6f22b32557546b09c83705c7548f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: QuinaCuboMC8.002
+    second: {fileID: 2100000, guid: 23df0370a3a796042af5bfb8e16bd3cb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: QuinaCuboMC8.003
+    second: {fileID: 2100000, guid: e9bb6700eb22b2c4ab6c6197f3843dbd, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
