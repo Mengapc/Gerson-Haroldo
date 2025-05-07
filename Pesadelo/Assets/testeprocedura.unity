@@ -752,6 +752,36 @@ MonoBehaviour:
   - {fileID: 499206626}
   player: {fileID: 567276644}
   distanceInteractor: 5
+--- !u!114 &567276659
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 567276644}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a3306c11968ca14ea10b3445ba905b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scroll: 0
+  handPlayer: {fileID: 646903731}
+  slotBarSelect: 0
+--- !u!114 &567276660
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 567276644}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a3306c11968ca14ea10b3445ba905b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scroll: 0
+  handPlayer: {fileID: 646903731}
+  slotBarSelect: 0
 --- !u!1 &609953013
 GameObject:
   m_ObjectHideFlags: 0
@@ -899,6 +929,11 @@ MonoBehaviour:
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1205676309228744926, guid: 099e14c256a3af04aa758a0faa4eab41, type: 3}
   m_PrefabInstance: {fileID: 1883289366}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &646903731 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5829688692487656599, guid: 123e39b340c818240839f939ab26b236, type: 3}
+  m_PrefabInstance: {fileID: 1263057558441063920}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &683166814 stripped
 GameObject:
@@ -1947,6 +1982,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Personagem
       objectReference: {fileID: 0}
+    - target: {fileID: 5829688692487656599, guid: 123e39b340c818240839f939ab26b236, type: 3}
+      propertyPath: m_Name
+      value: EquipArm
+      objectReference: {fileID: 0}
     - target: {fileID: 8900647505791088330, guid: 123e39b340c818240839f939ab26b236, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -2023,7 +2062,13 @@ PrefabInstance:
       addedObject: {fileID: 567276648}
     - targetCorrespondingSourceObject: {fileID: 8916376500798638097, guid: 123e39b340c818240839f939ab26b236, type: 3}
       insertIndex: -1
+      addedObject: {fileID: 567276659}
+    - targetCorrespondingSourceObject: {fileID: 8916376500798638097, guid: 123e39b340c818240839f939ab26b236, type: 3}
+      insertIndex: -1
       addedObject: {fileID: 567276656}
+    - targetCorrespondingSourceObject: {fileID: 8916376500798638097, guid: 123e39b340c818240839f939ab26b236, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 567276660}
   m_SourcePrefab: {fileID: 100100000, guid: 123e39b340c818240839f939ab26b236, type: 3}
 --- !u!4 &1263057558441063922 stripped
 Transform:

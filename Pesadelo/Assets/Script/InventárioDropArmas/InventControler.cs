@@ -6,13 +6,14 @@ using UnityEngine.UI;
 public class InventControler : MonoBehaviour
 {
     [Header("Configurações gerais")]
-    public GameObject[] armasGuardadas;
     private GameObject tempArm = null;
     public GameObject[] slots;
     public Image[] slotsSprit;
+    public GameObject player;
+
 
     [Header("Configurações do inpectArm")]
-    public GameObject player; 
+
     [SerializeField] float distanceInteractor;
 
     private void Update()
@@ -98,7 +99,7 @@ public class InventControler : MonoBehaviour
         {
             if (slots[i] == null)
             {
-                slots[i] = arm;
+                slots[i] = arm; // insere arma dentro do inventário
 
                 if (i < slotsSprit.Length && slotsSprit[i] != null)
                 {
@@ -127,8 +128,8 @@ public class InventControler : MonoBehaviour
                 {
                     Debug.LogError("Slot de sprite de inventário inválido no índice: " + i);
                 }
-                
-                Destroy( arm );
+
+                arm.SetActive(false);
                 break;
             }
         }
