@@ -782,6 +782,18 @@ MonoBehaviour:
   scroll: 0
   handPlayer: {fileID: 646903731}
   slotBarSelect: 0
+--- !u!114 &567276663
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 567276644}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f49e5207f63de4888b27d9dd109eb65e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &609953013
 GameObject:
   m_ObjectHideFlags: 0
@@ -1806,6 +1818,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4042337607789921999, guid: c663d678fd069f4418734d966f4badaa, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 567276644}
+    - target: {fileID: 4042337607789921999, guid: c663d678fd069f4418734d966f4badaa, type: 3}
       propertyPath: customSeed
       value: 628328
       objectReference: {fileID: 0}
@@ -2069,6 +2085,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8916376500798638097, guid: 123e39b340c818240839f939ab26b236, type: 3}
       insertIndex: -1
       addedObject: {fileID: 567276660}
+    - targetCorrespondingSourceObject: {fileID: 8916376500798638097, guid: 123e39b340c818240839f939ab26b236, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 567276663}
   m_SourcePrefab: {fileID: 100100000, guid: 123e39b340c818240839f939ab26b236, type: 3}
 --- !u!4 &1263057558441063922 stripped
 Transform:
