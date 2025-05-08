@@ -10,13 +10,13 @@ public class ProceduralItens : MonoBehaviour
     public GameObject player;
     private ItemInstance ii;
     private RandomParts rp;
-    private GameObject newItem; // Removi a atribuição inicial aqui
+    private GameObject newItem; 
     [SerializeField] private List<Sprite> armSprits;
     [Header("Taxa dos itens")]
     public float powerRate;
     public float powerDrop;
 
-    void Awake() // Use Awake para inicializações
+    void Awake() 
     {
         rp = GetComponent<RandomParts>();
         if (rp == null)
@@ -29,7 +29,7 @@ public class ProceduralItens : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.G))
         {
-            // Gerar item a partir da posição do jogador
+           
             GenerateItem(new Vector3(player.transform.position.x, player.transform.position.y + 3, player.transform.position.z));
         }
     }
@@ -38,32 +38,31 @@ public class ProceduralItens : MonoBehaviour
     {
         string newName = "Item_" + Random.Range(1, 1000);
         Armas.ItemType newType = GenerateType();
+        Debug.Log(newType);
         Armas.Rarity newRarity = GenerateRarity();
+        Sprite newSprite = SetSprite(newType);
         int newPower = GeneratePowerLevel(newRarity);
         bool newSpecialStatus = ThisSpecialStatus(newRarity);
 
-        // Gera a parte principal da arma (apenas o visual da peça)
-        GameObject baseArmInstance = Instantiate(baseArm, position, Quaternion.identity); // Agora está na cena
+        GameObject baseArmInstance = Instantiate(baseArm, position, Quaternion.identity); 
 
-        // Chama a função para gerar a parte principal (pode ser pai do baseArmInstance)
-        GameObject principalPart = rp.GeneratePrincipalPartArm(newType, baseArmInstance.transform); // Passando baseArmInstance como pai
+        GameObject principalPart = rp.GeneratePrincipalPartArm(newType, baseArmInstance.transform); 
+
 
         if (principalPart != null)
         {
-            // Cria a parte principal como filho da base
-            principalPart.transform.SetParent(baseArmInstance.transform); // principalPart agora é filho
-            principalPart.transform.localPosition = Vector3.zero; // Ajusta a posição local
-            principalPart.transform.localRotation = Quaternion.identity; // Ajusta a rotação local
+            principalPart.transform.SetParent(baseArmInstance.transform); 
+            principalPart.transform.localPosition = Vector3.zero; 
+            principalPart.transform.localRotation = Quaternion.identity; 
 
-            // Gera as outras partes (lâmina, cabo, gema, etc.)
-            rp.GenerationOutherParts(newType, principalPart, newRarity); // Passando principalPart
+
+            rp.GenerationOutherParts(newType, principalPart, newRarity); 
         }
         else
         {
             Debug.LogError("A parte principal não foi gerada corretamente!");
         }
 
-        // Obtém o ItemInstance da base instanciada
         ii = baseArmInstance.GetComponent<ItemInstance>();
         if (ii == null)
         {
@@ -71,10 +70,10 @@ public class ProceduralItens : MonoBehaviour
         }
         else
         {
-            ii.SetItemData(newName, newType, newRarity, newPower, newSpecialStatus);
+            ii.SetItemData(newName, newType, newRarity, newPower, newSpecialStatus, newSprite);
         }
 
-        return baseArmInstance; // Retorna o item completo com as partes como filhos
+        return baseArmInstance; 
     }
 
     public Armas.Rarity GenerateRarity()
@@ -100,5 +99,25 @@ public class ProceduralItens : MonoBehaviour
     public Armas.ItemType GenerateType()
     {
         return (Armas.ItemType)Random.Range(0, System.Enum.GetValues(typeof(Armas.ItemType)).Length);
+    }
+    public Sprite SetSprite(Armas.ItemType type)
+    {
+        Sprite sprite = null; 
+        switch (type)
+        {
+            case Armas.ItemType.Sword:
+                sprite = armSprits[(int)Armas.ItemType.Sword];
+                break;
+            case Armas.ItemType.Staff:
+                sprite = armSprits[(int)Armas.ItemType.Staff];
+                break;
+            case Armas.ItemType.Hammer:
+                sprite = armSprits[(int)Armas.ItemType.Hammer];
+                break;
+            default:
+                Debug.LogError("Tipo de arma não reconhecido: " + type);
+                break;
+        }
+        return sprite;
     }
 }

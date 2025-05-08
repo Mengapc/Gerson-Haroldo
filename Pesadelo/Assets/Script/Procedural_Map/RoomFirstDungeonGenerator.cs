@@ -26,6 +26,13 @@ public class RoomFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator
     [SerializeField] private GameObject enemyPrefab; //spawn inimigo
 
     public PlayerMovement playerMovementScript;
+    [SerializeField] private GameObject player;
+
+    private void Awake()
+    {
+        player = GameObject.FindGameObjectWithTag("Player");
+    }
+
 
     private void Start()
     {
@@ -290,15 +297,26 @@ public class RoomFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator
 
     private IEnumerator DelayedSpawn()
     {
-        yield return null;
+        yield return new WaitForSeconds(0.2f);
 
+        var playerMovementScript = player.GetComponent<PlayerMovement>();
         if (playerMovementScript != null)
         {
             playerMovementScript.Spawn();
         }
         else
         {
-            Debug.LogError("playerMovementScript não está atribuído.");
+            Debug.LogError("PlayerMovement script não encontrado no jogador!");
+        }
+
+        var boundaryManager = player.GetComponent<PlayerBoundaryManager>();
+        if (boundaryManager != null)
+        {
+            boundaryManager.InitializeBoundary();
+        }
+        else
+        {
+            Debug.LogWarning("PlayerBoundaryManager não encontrado.");
         }
     }
 }

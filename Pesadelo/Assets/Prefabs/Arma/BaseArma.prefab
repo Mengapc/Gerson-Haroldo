@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6214275381736663935}
   m_Layer: 0
   m_Name: BaseArma
-  m_TagString: Untagged
+  m_TagString: Arm
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61ff22698430d7046910efa692392a21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Arm: {fileID: 11400000, guid: 0a1f5d17194fbfe459c583fc41d4c7b4, type: 2}
+  arm: {fileID: 11400000, guid: 0a1f5d17194fbfe459c583fc41d4c7b4, type: 2}
   itemName: Item_467
   type: 1
   rarity: 0

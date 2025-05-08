@@ -25,10 +25,17 @@ namespace BarthaSzabolcs.IsometricAiming
         private void Aim()
         {
             var (success, position) = GetMousePosition();
-            if (success)
+            if (!success)
             {
-                var direction = position - transform.position;
-                direction.y = 0;
+                return; // Interrompe a execução se não acertar o chão
+            }
+
+            var direction = position - transform.position;
+            direction.y = 0;
+
+            // Garante que não vai tentar normalizar ou aplicar direção nula
+            if (direction.sqrMagnitude > 0.01f)
+            {
                 transform.forward = direction;
             }
         }
