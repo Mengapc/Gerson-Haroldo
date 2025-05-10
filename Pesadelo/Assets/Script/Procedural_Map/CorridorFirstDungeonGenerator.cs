@@ -25,29 +25,33 @@ public class CorridorFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator
         HashSet<Vector3Int> floorPositions = new HashSet<Vector3Int>();
         HashSet<Vector3Int> potentialRoomPositions = new HashSet<Vector3Int>();
 
+        // Criação dos corredores antes de adicionar qualquer sala
         List<List<Vector3Int>> corridors = CreateCorridors(floorPositions, potentialRoomPositions);
 
+        // Criação das salas após a geração dos corredores
         HashSet<Vector3Int> roomPositions = CreateRooms(potentialRoomPositions);
 
-        List<Vector3Int> deadEnds = FindAllDeadEnds(floorPositions);
-
-        CreateRoomsAtDeadEnd(deadEnds, roomPositions);
-
+        // Adiciona as salas ao conjunto de posições de chão
         floorPositions.UnionWith(roomPositions);
 
+        // Encontrar e criar salas nos dead ends dos corredores
+        List<Vector3Int> deadEnds = FindAllDeadEnds(floorPositions);
+        CreateRoomsAtDeadEnd(deadEnds, roomPositions);
+
+        // Agora que as salas e dead ends foram criados, adiciona os corredores à dungeon
         for (int i = 0; i < corridors.Count; i++)
         {
             corridors[i] = IncreaseCorridorSizeByOne(corridors[i]);
             floorPositions.UnionWith(corridors[i]);
-
         }
 
-        // Instancia o ch�o usando o MapInstantiater
+        // Instancia o chão usando o MapInstantiater
         MapInstantiater.PaintFloorTiles(floorPositions);
 
-        // Gera paredes em torno dos corredores
+        // Gera paredes em torno dos corredores e salas
         WallGenerator.CreateWalls(floorPositions, MapInstantiater);
     }
+
 
     private List<Vector3Int> IncreaseCorridorSizeByOne(List<Vector3Int> corridor)
     {

@@ -108,6 +108,7 @@ public class RoomFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator
         List<BoundsInt> specialRooms = new List<BoundsInt>();
         List<Vector3Int> roomCenters = new List<Vector3Int>();
 
+        // Escolhe salas especiais
         var spawnRoom = roomsList[Random.Range(0, roomsList.Count)];
         roomsList.Remove(spawnRoom);
 
@@ -121,25 +122,40 @@ public class RoomFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator
         specialRooms.Add(shopRoom);
         specialRooms.Add(altarRoom);
 
-        Vector3Int spawnCenter = Vector3Int.RoundToInt(spawnRoom.center);
-        Vector3Int shopCenter = Vector3Int.RoundToInt(shopRoom.center);
-        Vector3Int altarCenter = Vector3Int.RoundToInt(altarRoom.center);
-
+        // Instancia os prefabs nas posições das salas
         GameObject spawnPrefab = MapInstantiater.GetSpawnRoomPrefab();
         GameObject shopPrefab = MapInstantiater.GetShopRoomPrefab();
         GameObject altarPrefab = MapInstantiater.GetAltarRoomPrefab();
 
-        var spawnInstance = Instantiate(spawnPrefab, new Vector3(spawnCenter.x, 0, spawnCenter.z), Quaternion.identity);
-        var shopInstance = Instantiate(shopPrefab, new Vector3(shopCenter.x, 0, shopCenter.z), Quaternion.identity);
-        var altarInstance = Instantiate(altarPrefab, new Vector3(altarCenter.x, 0, altarCenter.z), Quaternion.identity);
+        var spawnInstance = Instantiate(spawnPrefab, new Vector3(spawnRoom.center.x, 0, spawnRoom.center.z), Quaternion.identity);
+        var shopInstance = Instantiate(shopPrefab, new Vector3(shopRoom.center.x, 0, shopRoom.center.z), Quaternion.identity);
+        var altarInstance = Instantiate(altarPrefab, new Vector3(altarRoom.center.x, 0, altarRoom.center.z), Quaternion.identity);
 
-        mapInstantiate.instantiatedTiles[spawnCenter] = spawnInstance;
-        mapInstantiate.instantiatedTiles[shopCenter] = shopInstance;
-        mapInstantiate.instantiatedTiles[altarCenter] = altarInstance;
+        // Armazena as instâncias no dicionário
+        mapInstantiate.instantiatedTiles[Vector3Int.RoundToInt(spawnRoom.center)] = spawnInstance;
+        mapInstantiate.instantiatedTiles[Vector3Int.RoundToInt(shopRoom.center)] = shopInstance;
+        mapInstantiate.instantiatedTiles[Vector3Int.RoundToInt(altarRoom.center)] = altarInstance;
 
-        roomCenters.Add(spawnCenter);
-        roomCenters.Add(shopCenter);
-        roomCenters.Add(altarCenter);
+        // Busca os pontos de entrada nos prefabs instanciados
+        Transform spawnEntranceA = spawnInstance.transform.Find("PortaS1");
+        Transform spawnEntranceB = spawnInstance.transform.Find("PortaS2");
+
+        Transform shopEntranceA = shopInstance.transform.Find("PortaL1");
+        Transform shopEntranceB = shopInstance.transform.Find("PortaL2");
+
+        Transform altarEntranceA = altarInstance.transform.Find("PortaA1");
+        Transform altarEntranceB = altarInstance.transform.Find("PortaA2");
+
+        // Armazena as posições dos pontos de entrada
+        roomCenters.Add(Vector3Int.RoundToInt(spawnEntranceA.position));
+        roomCenters.Add(Vector3Int.RoundToInt(spawnEntranceB.position));
+
+        roomCenters.Add(Vector3Int.RoundToInt(shopEntranceA.position));
+        roomCenters.Add(Vector3Int.RoundToInt(shopEntranceB.position));
+
+        roomCenters.Add(Vector3Int.RoundToInt(altarEntranceA.position));
+        roomCenters.Add(Vector3Int.RoundToInt(altarEntranceB.position));
+
 
         roomsList = FilterRooms(roomsList, removalChance);
         roomsList = ApplySpacing(roomsList, spacingMargin);
