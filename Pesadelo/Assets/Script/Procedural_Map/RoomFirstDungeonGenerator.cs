@@ -19,7 +19,7 @@ public class RoomFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator
 
     [SerializeField] private int corridorWidth = 3; // largura dos corredores
 
-    [SerializeField] private bool useCustomSeed = true;
+    [SerializeField] private bool useCustomSeed = false;
 
     [SerializeField] private int customSeed = 0;
 
