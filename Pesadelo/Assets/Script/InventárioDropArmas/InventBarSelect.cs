@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class InventBarSelect : MonoBehaviour
 {
+    GameObject equipArm = null;
     public float scroll;
     private InventControler ic;
     public GameObject handPlayer;
@@ -22,6 +23,11 @@ public class InventBarSelect : MonoBehaviour
         {
             SelectSlotBar();
             EquipArm();
+        }
+        if ( Input.GetKey(KeyCode.E) && equipArm != null)
+        {
+            Drop(slotBarSelect, equipArm);
+            equipArm = null;
         }
     }
 
@@ -52,90 +58,57 @@ public class InventBarSelect : MonoBehaviour
 
     public void EquipArm()
     {
-        GameObject equipArm = null;
-        Rigidbody rigidbody = null;
-        for (int i = 0; i < 6; i++)
+        if (equipArm != null)
         {
-            if (ic.slots[i] != null)
-            {
-                equipArm = ic.slots[i];
-                equipArm.SetActive(false);  
-                equipArm.transform.SetParent(null);
-            }
+            equipArm.SetActive(false);
+            equipArm.transform.SetParent(null);
         }
 
-        switch (slotBarSelect)
+        if (ic.slots[slotBarSelect] != null)
         {
-            case 0:
-                if (ic.slots[0] != null)
-                {
-                    equipArm = ic.slots[0];
-                    equipArm.SetActive(true);
-                    equipArm.transform.SetPositionAndRotation(handPlayer.transform.position, handPlayer.transform.rotation);
-                    equipArm.transform.SetParent(handPlayer.transform);
-                    rigidbody = equipArm.GetComponent<Rigidbody>(); ;
-                    rigidbody.useGravity = false;
-                }
-                break;
+            Equip(slotBarSelect);
+        }
+    }
 
-            case 1:
-                if (ic.slots[1] != null)
-                {
-                    equipArm = ic.slots[1];
-                    equipArm.SetActive(true);
-                    equipArm.transform.SetPositionAndRotation(handPlayer.transform.position, handPlayer.transform.rotation);
-                    equipArm.transform.SetParent(handPlayer.transform);
-                    rigidbody = equipArm.GetComponent<Rigidbody>(); ;
-                    rigidbody.useGravity = false;
-                }
-                break;
+    void Equip(int slot)
+    {
+        GameObject arma = ic.slots[slot];
 
-            case 2:
-                if (ic.slots[2] != null)
-                {
-                    equipArm = ic.slots[2];
-                    equipArm.SetActive(true);
-                    equipArm.transform.SetPositionAndRotation(handPlayer.transform.position, handPlayer.transform.rotation);
-                    equipArm.transform.SetParent(handPlayer.transform);
-                    rigidbody = equipArm.GetComponent<Rigidbody>(); ;
-                    rigidbody.useGravity = false;
-                }
-                break;
+        if (arma != null)
+        {
+            arma.SetActive(true);
+            arma.transform.SetPositionAndRotation(handPlayer.transform.position, handPlayer.transform.rotation);
+            arma.transform.SetParent(handPlayer.transform);
 
-            case 3:
-                if (ic.slots[3] != null)
-                {
-                    equipArm = ic.slots[3];
-                    equipArm.SetActive(true);
-                    equipArm.transform.SetPositionAndRotation(handPlayer.transform.position, handPlayer.transform.rotation);
-                    equipArm.transform.SetParent(handPlayer.transform);
-                    rigidbody = equipArm.GetComponent<Rigidbody>(); ;
-                    rigidbody.useGravity = false;
-                }
-                break;
+            Rigidbody rb = arma.GetComponent<Rigidbody>();
+            if (rb != null)
+            {
+                rb.useGravity = false;
+                rb.isKinematic = true;
+            }
 
-            case 4:
-                if (ic.slots[4] != null)
-                {
-                    equipArm = ic.slots[4];
-                    equipArm.SetActive(true);
-                    equipArm.transform.SetPositionAndRotation(handPlayer.transform.position, handPlayer.transform.rotation);
-                    equipArm.transform.SetParent(handPlayer.transform);
-                    rigidbody = equipArm.GetComponent<Rigidbody>(); ;
-                    rigidbody.useGravity = false;
-                }
+            equipArm = arma;
+        }
+    }
 
-            case 5:
-                if (ic.slots[5] != null)
-                {
-                    equipArm = ic.slots[5];
-                    equipArm.SetActive(true);
-                    equipArm.transform.SetPositionAndRotation(handPlayer.transform.position, handPlayer.transform.rotation);
-                    equipArm.transform.SetParent(handPlayer.transform);
-                    rigidbody = equipArm.GetComponent<Rigidbody>(); ;
-                    rigidbody.useGravity = false;
-                }
-                break;
+    void Drop(int slot, GameObject testEquip)
+    {
+        if (testEquip != null)
+        {
+            testEquip.SetActive(true);
+            testEquip.transform.SetParent(null);
+            Vector3 dropPosition = handPlayer.transform.position + handPlayer.transform.forward * 1f;
+            testEquip.transform.position = dropPosition;
+            Rigidbody rb = testEquip.GetComponent<Rigidbody>();
+            if (rb != null)
+            {
+                rb.useGravity = true;
+                rb.isKinematic = false;
+                rb.AddForce(handPlayer.transform.forward * 2f, ForceMode.Impulse);
+            }
+            ic.slots[slot] = null;
+            testEquip = null;
+            Debug.Log("Item dropado do slot: " + slot);
         }
     }
 }

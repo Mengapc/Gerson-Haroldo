@@ -18,10 +18,11 @@ public class InventControler : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(1))
         {
             tempArm = inspectArm();
         }
+
 
         switch (tempArm)
         {
