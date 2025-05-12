@@ -124,7 +124,6 @@ public class InventBarSelect : MonoBehaviour
                     rigidbody = equipArm.GetComponent<Rigidbody>(); ;
                     rigidbody.useGravity = false;
                 }
-                break;
 
             case 5:
                 if (ic.slots[5] != null)
@@ -139,5 +138,4 @@ public class InventBarSelect : MonoBehaviour
                 break;
         }
     }
-
 }
