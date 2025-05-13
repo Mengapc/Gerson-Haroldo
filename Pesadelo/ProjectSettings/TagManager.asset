@@ -6,6 +6,7 @@ TagManager:
   tags:
   - basic_enemy
   - Arm
+  - VFX
   layers:
   - Default
   - TransparentFX
