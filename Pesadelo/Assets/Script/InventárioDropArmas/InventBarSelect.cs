@@ -5,8 +5,6 @@ public class InventBarSelect : MonoBehaviour
     private GameObject equipArm = null;
     private InventControler ic;
     public GameObject handPlayer;
-
-    [SerializeField] private int slotBarSelect = 0;
     public float scroll;
 
     void Start()
@@ -30,20 +28,20 @@ public class InventBarSelect : MonoBehaviour
 
         if (Input.GetKey(KeyCode.Q) && equipArm != null)
         {
-            Drop(slotBarSelect, equipArm);
+            Drop(ic.slotBarSelect, equipArm);
             equipArm = null;
         }
     }
 
     void SelectSlotBar()
     {
-        if (scroll > 0f) slotBarSelect--;
-        else if (scroll < 0f) slotBarSelect++;
+        if (scroll > 0f) ic.slotBarSelect--;
+        else if (scroll < 0f) ic.slotBarSelect++;
 
-        if (slotBarSelect > 5) slotBarSelect = 0;
-        else if (slotBarSelect < 0) slotBarSelect = 5;
+        if (ic.slotBarSelect > 5) ic.slotBarSelect = 0;
+        else if (ic.slotBarSelect < 0) ic.slotBarSelect = 5;
 
-        Debug.Log("Slot Selecionado: " + slotBarSelect);
+        Debug.Log("Slot Selecionado: " + ic.slotBarSelect);
     }
 
     void EquipArm()
@@ -54,9 +52,9 @@ public class InventBarSelect : MonoBehaviour
             equipArm.transform.SetParent(null);
         }
 
-        if (ic.slots[slotBarSelect] != null)
+        if (ic.slots[ic.slotBarSelect] != null)
         {
-            equipArm = ic.slots[slotBarSelect];
+            equipArm = ic.slots[ic.slotBarSelect];
             Equip(equipArm);
         }
     }
