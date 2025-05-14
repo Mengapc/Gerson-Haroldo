@@ -764,9 +764,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a3306c11968ca14ea10b3445ba905b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scroll: 0
   handPlayer: {fileID: 646903731}
   slotBarSelect: 0
+  scroll: 0
 --- !u!114 &567276660
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -779,9 +779,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a3306c11968ca14ea10b3445ba905b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scroll: 0
   handPlayer: {fileID: 646903731}
   slotBarSelect: 0
+  scroll: 0
 --- !u!114 &567276663
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1894,11 +1894,11 @@ PrefabInstance:
       objectReference: {fileID: 249891662}
     - target: {fileID: 4042337607789921999, guid: c663d678fd069f4418734d966f4badaa, type: 3}
       propertyPath: dungeonWidth
-      value: 200
+      value: 150
       objectReference: {fileID: 0}
     - target: {fileID: 4042337607789921999, guid: c663d678fd069f4418734d966f4badaa, type: 3}
       propertyPath: minRoomWidth
-      value: 25
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4042337607789921999, guid: c663d678fd069f4418734d966f4badaa, type: 3}
       propertyPath: corridorWidth
@@ -1906,15 +1906,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4042337607789921999, guid: c663d678fd069f4418734d966f4badaa, type: 3}
       propertyPath: dungeonHeigth
-      value: 200
+      value: 150
       objectReference: {fileID: 0}
     - target: {fileID: 4042337607789921999, guid: c663d678fd069f4418734d966f4badaa, type: 3}
       propertyPath: minRoomHeigth
-      value: 25
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4042337607789921999, guid: c663d678fd069f4418734d966f4badaa, type: 3}
       propertyPath: removalChance
-      value: 0.2
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4042337607789921999, guid: c663d678fd069f4418734d966f4badaa, type: 3}
+      propertyPath: spacingMargin
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4042337607789921999, guid: c663d678fd069f4418734d966f4badaa, type: 3}
       propertyPath: useCustomSeed
