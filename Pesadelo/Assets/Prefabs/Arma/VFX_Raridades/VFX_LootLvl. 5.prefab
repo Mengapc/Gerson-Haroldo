@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 6244599473557651099}
   m_Layer: 0
   m_Name: VFX_LootLvl. 5
-  m_TagString: Untagged
+  m_TagString: VFX
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
