@@ -659,6 +659,7 @@ MonoBehaviour:
   shootForce: 500
   shootOrigin: {fileID: 567276645}
   spawnOffset: {x: 0, y: 0.5, z: 1}
+  equipArm: {fileID: 646903732}
 --- !u!114 &567276651
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -945,6 +946,11 @@ GameObject:
 --- !u!1 &646903731 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5829688692487656599, guid: 123e39b340c818240839f939ab26b236, type: 3}
+  m_PrefabInstance: {fileID: 1263057558441063920}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &646903732 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2023992879133956250, guid: 123e39b340c818240839f939ab26b236, type: 3}
   m_PrefabInstance: {fileID: 1263057558441063920}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &683166814 stripped
