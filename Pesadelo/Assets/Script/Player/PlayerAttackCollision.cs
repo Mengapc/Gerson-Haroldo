@@ -6,7 +6,7 @@ public class PlayerAttackCollision : MonoBehaviour
 
     private void Start()
     {
-        Destroy(gameObject, 5f); // Destroi a bala após 5 segundos
+        Destroy(gameObject, 3f); // Destroi a bala após 5 segundos
     }
 
     private void OnCollisionEnter(Collision collision)
