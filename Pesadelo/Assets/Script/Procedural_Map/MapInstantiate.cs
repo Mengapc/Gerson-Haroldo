@@ -7,15 +7,16 @@ public class MapInstantiate : MonoBehaviour
 {
     // Prefabs para o ch�o, paredes e cantos
     [SerializeField]
-    private GameObject FloorPrefab, WallPrefab, CornerL, CornerU, Cantos4, ParedeDupla;
+    private GameObject FloorPrefab, WallPrefab, CornerL, CornerU, Cantos4, ParedeDupla, LightPrefab;
 
     // Prefabs para salas especiais (spawn e loja)
     [SerializeField]
-    private GameObject SpawnRoomPrefab, ShopRoomPrefab;
+    private GameObject SpawnRoomPrefab, ShopRoomPrefab, AltarRoomPrefab;
 
     // M�todos para acessar os prefabs das salas especiais
     public GameObject GetSpawnRoomPrefab() => SpawnRoomPrefab;
     public GameObject GetShopRoomPrefab() => ShopRoomPrefab;
+    public GameObject GetAltarRoomPrefab() => AltarRoomPrefab;
 
     // Dicion�rio que armazena os tiles (objetos) instanciados, com a posi��o como chave
     public Dictionary<Vector3Int, GameObject> instantiatedTiles = new Dictionary<Vector3Int, GameObject>();
@@ -73,12 +74,12 @@ public class MapInstantiate : MonoBehaviour
         if (!instantiatedTiles.ContainsKey(position))
         {
             Vector3 wallOffset = Vector3.zero;
-
             Quaternion rotation = Quaternion.identity;
+
             if (direction == Vector3Int.left)
             {
                 rotation = Quaternion.Euler(0, 90, 0);
-                wallOffset = new Vector3(0.5f, 0f, 0f); // Ajuste para alinhar visualmente
+                wallOffset = new Vector3(0.5f, 0f, 0f);
             }
             else if (direction == Vector3Int.right)
             {
@@ -96,13 +97,30 @@ public class MapInstantiate : MonoBehaviour
                 wallOffset = new Vector3(0f, 0f, 0.5f);
             }
 
-            float wallYOffset = 0.6f; // ajuste vertical como antes
+            float wallYOffset = 0.6f;
             Vector3 wallPosition = new Vector3(position.x, wallYOffset, position.z) + wallOffset;
 
             GameObject wall = Instantiate(WallPrefab, wallPosition, rotation);
             instantiatedTiles[position] = wall;
+
+            // CHANCE DE ADICIONAR LUZ
+            float chance = UnityEngine.Random.value;
+            if (chance <= 0.2f)
+            {
+                // Tenta encontrar o filho "Luz" dentro da parede
+                Transform lightAnchor = wall.transform.Find("Luz");
+                if (lightAnchor != null)
+                {
+                    Instantiate(LightPrefab, lightAnchor.position, lightAnchor.rotation, lightAnchor);
+                }
+                else
+                {
+                    Debug.LogWarning($"Objeto 'Luz' não encontrado na parede instanciada em {wallPosition}");
+                }
+            }
         }
     }
+
     public void PaintInternalCornerL(Vector3Int position, Quaternion rotation)
     {
         var cornerPosition = new Vector3(position.x, 0.6f, position.z);
@@ -131,6 +149,4 @@ public class MapInstantiate : MonoBehaviour
             instantiatedTiles[position] = doubleWall;
         }
     }
-
-
 }

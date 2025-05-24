@@ -3,7 +3,12 @@ guid: bb077b0481194f64ca053bdad41cbe91
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: EstrelasCaboMC7
+    second: {fileID: 2100000, guid: cdec625a93ee44e429466891a91703da, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

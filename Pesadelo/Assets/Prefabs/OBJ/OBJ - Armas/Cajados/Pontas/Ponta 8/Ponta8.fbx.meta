@@ -3,7 +3,12 @@ guid: d5dc7a9e2d905ff40b81ad7ce2a8df19
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: "Pi\xE3oPonta8"
+    second: {fileID: 2100000, guid: 7453486ba3e79a74e8d792b728cf577b, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

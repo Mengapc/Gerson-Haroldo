@@ -19,12 +19,20 @@ public class RoomFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator
 
     [SerializeField] private int corridorWidth = 3; // largura dos corredores
 
-    [SerializeField] private bool useCustomSeed = true;
+    [SerializeField] private bool useCustomSeed = false;
 
     [SerializeField] private int customSeed = 0;
 
     [SerializeField] private GameObject enemyPrefab; //spawn inimigo
+
     public PlayerMovement playerMovementScript;
+    [SerializeField] private GameObject player;
+
+    private void Awake()
+    {
+        player = GameObject.FindGameObjectWithTag("Player");
+    }
+
 
     private void Start()
     {
@@ -60,15 +68,15 @@ public class RoomFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator
     {
         foreach (var tilePos in floorTiles)
         {
-        // Pular se for corredor
-        if (corridorTiles.Contains(tilePos))
-            continue;
+            // Pular se for corredor
+            if (corridorTiles.Contains(tilePos))
+                continue;
 
-        // 1 em 20 chance
-        if (Random.Range(0, 20) == 0)
+            // 1 em 20 chance
+            if (Random.Range(0, 20) == 0)
             {
-            Vector3 spawnPosition = new Vector3(tilePos.x, 0.5f, tilePos.z); // altura ajustável
-            Instantiate(enemyPrefab, spawnPosition, Quaternion.identity);
+                Vector3 spawnPosition = new Vector3(tilePos.x, 10f, tilePos.z); // altura ajustável
+                Instantiate(enemyPrefab, spawnPosition, Quaternion.identity);
             }
         }
     }
@@ -100,29 +108,54 @@ public class RoomFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator
         List<BoundsInt> specialRooms = new List<BoundsInt>();
         List<Vector3Int> roomCenters = new List<Vector3Int>();
 
+        // Escolhe salas especiais
         var spawnRoom = roomsList[Random.Range(0, roomsList.Count)];
         roomsList.Remove(spawnRoom);
 
         var shopRoom = roomsList[Random.Range(0, roomsList.Count)];
         roomsList.Remove(shopRoom);
 
+        var altarRoom = roomsList[Random.Range(0, roomsList.Count)];
+        roomsList.Remove(altarRoom);
+
         specialRooms.Add(spawnRoom);
         specialRooms.Add(shopRoom);
+        specialRooms.Add(altarRoom);
 
-        Vector3Int spawnCenter = Vector3Int.RoundToInt(spawnRoom.center);
-        Vector3Int shopCenter = Vector3Int.RoundToInt(shopRoom.center);
-
+        // Instancia os prefabs nas posições das salas
         GameObject spawnPrefab = MapInstantiater.GetSpawnRoomPrefab();
         GameObject shopPrefab = MapInstantiater.GetShopRoomPrefab();
+        GameObject altarPrefab = MapInstantiater.GetAltarRoomPrefab();
 
-        var spawnInstance = Instantiate(spawnPrefab, new Vector3(spawnCenter.x, 0, spawnCenter.z), Quaternion.identity);
-        var shopInstance = Instantiate(shopPrefab, new Vector3(shopCenter.x, 0, shopCenter.z), Quaternion.identity);
+        var spawnInstance = Instantiate(spawnPrefab, new Vector3(spawnRoom.center.x, 0, spawnRoom.center.z), Quaternion.identity);
+        var shopInstance = Instantiate(shopPrefab, new Vector3(shopRoom.center.x, 0, shopRoom.center.z), Quaternion.identity);
+        var altarInstance = Instantiate(altarPrefab, new Vector3(altarRoom.center.x, 0, altarRoom.center.z), Quaternion.identity);
 
-        mapInstantiate.instantiatedTiles[spawnCenter] = spawnInstance;
-        mapInstantiate.instantiatedTiles[shopCenter] = shopInstance;
+        // Armazena as instâncias no dicionário
+        mapInstantiate.instantiatedTiles[Vector3Int.RoundToInt(spawnRoom.center)] = spawnInstance;
+        mapInstantiate.instantiatedTiles[Vector3Int.RoundToInt(shopRoom.center)] = shopInstance;
+        mapInstantiate.instantiatedTiles[Vector3Int.RoundToInt(altarRoom.center)] = altarInstance;
 
-        roomCenters.Add(spawnCenter);
-        roomCenters.Add(shopCenter);
+        // Busca os pontos de entrada nos prefabs instanciados
+        Transform spawnEntranceA = spawnInstance.transform.Find("PortaS1");
+        Transform spawnEntranceB = spawnInstance.transform.Find("PortaS2");
+
+        Transform shopEntranceA = shopInstance.transform.Find("PortaL1");
+        Transform shopEntranceB = shopInstance.transform.Find("PortaL2");
+
+        Transform altarEntranceA = altarInstance.transform.Find("PortaA1");
+        Transform altarEntranceB = altarInstance.transform.Find("PortaA2");
+
+        // Armazena as posições dos pontos de entrada
+        roomCenters.Add(Vector3Int.RoundToInt(spawnEntranceA.position));
+        roomCenters.Add(Vector3Int.RoundToInt(spawnEntranceB.position));
+
+        roomCenters.Add(Vector3Int.RoundToInt(shopEntranceA.position));
+        roomCenters.Add(Vector3Int.RoundToInt(shopEntranceB.position));
+
+        roomCenters.Add(Vector3Int.RoundToInt(altarEntranceA.position));
+        roomCenters.Add(Vector3Int.RoundToInt(altarEntranceB.position));
+
 
         roomsList = FilterRooms(roomsList, removalChance);
         roomsList = ApplySpacing(roomsList, spacingMargin);
@@ -205,7 +238,7 @@ public class RoomFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator
             corridor.Add(position);
         }
 
-        return CorridorUtils.IncreaseCorridorSize(corridor, corridorWidth); // ✅ largura definida pela variável
+        return CorridorUtils.IncreaseCorridorSize(corridor, corridorWidth);
     }
 
     private Vector3Int FindClosestPointTo(Vector3Int currentRoomCenter, List<Vector3Int> roomCenters)
@@ -280,15 +313,26 @@ public class RoomFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator
 
     private IEnumerator DelayedSpawn()
     {
-        yield return null;
+        yield return new WaitForSeconds(0.2f);
 
+        var playerMovementScript = player.GetComponent<PlayerMovement>();
         if (playerMovementScript != null)
         {
             playerMovementScript.Spawn();
         }
         else
         {
-            Debug.LogError("playerMovementScript não está atribuído.");
+            Debug.LogError("PlayerMovement script não encontrado no jogador!");
+        }
+
+        var boundaryManager = player.GetComponent<PlayerBoundaryManager>();
+        if (boundaryManager != null)
+        {
+            boundaryManager.InitializeBoundary();
+        }
+        else
+        {
+            Debug.LogWarning("PlayerBoundaryManager não encontrado.");
         }
     }
 }

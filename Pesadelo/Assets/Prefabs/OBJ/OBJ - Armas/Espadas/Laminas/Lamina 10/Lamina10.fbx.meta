@@ -3,7 +3,17 @@ guid: cc339bd2870c6df4b8f14a5740d5f864
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BaseLapisLamina10
+    second: {fileID: 2100000, guid: 1c8e43f92bcf6ff4bb940e6361aff11a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CorLapisLamina10
+    second: {fileID: 2100000, guid: cb3ea593dd61f134c86daf0317778134, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

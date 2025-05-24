@@ -3,7 +3,22 @@ guid: 1734c3ca19461944f8aee5bab67e3a02
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BaseCabeca3
+    second: {fileID: 2100000, guid: 6dc19024dadac3d4480257d2a8771f50, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: EspinhosCabeca3
+    second: {fileID: 2100000, guid: 3eba5fe95da018a41b124e9816e3f511, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: TopoCabeca3
+    second: {fileID: 2100000, guid: c56c7c8120019744796aff1100bf517f, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

@@ -3,7 +3,22 @@ guid: 1c5cfee60b4030647b9435d86ef14213
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BaseCaboMC10
+    second: {fileID: 2100000, guid: 0ceef233d1e239841a6d34a5fb9b1572, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: EsferaCaboMC10
+    second: {fileID: 2100000, guid: 72056af097c9145409adab37dc9e12b8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: FitaCaboMC10
+    second: {fileID: 2100000, guid: c2dc31fcb9b9b324d9ceccbd3e540eb0, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

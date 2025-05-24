@@ -3,23 +3,33 @@ using UnityEngine;
 public class EnemyMovement : MonoBehaviour
 {
     public Transform player;  // Referência ao jogador
+    public bool canMove = true;
     public float moveSpeed = 1.5f;  // Velocidade do inimigo
     public float detectionRange = 5f;  // Distância para detectar o jogador
     public float rotationSpeed = 5f;  // Velocidade de rotação do inimigo
 
     private void Update()
     {
-        // Verifica a distância entre o inimigo e o jogador
-        float distanceToPlayer = Vector3.Distance(transform.position, player.position);
-
-        // Se o jogador estiver a 5 ou menos unidades de distância
-        if (distanceToPlayer <= detectionRange)
+        // Verifica se o jogador ainda existe (não foi destruído ou desativado)
+        if (player != null && canMove)
         {
-            // O inimigo olha para o jogador
-            RotateTowardsPlayer();
+            // Verifica a distância entre o inimigo e o jogador
+            float distanceToPlayer = Vector3.Distance(transform.position, player.position);
 
-            // O inimigo se move em direção ao jogador
-            MoveTowardsPlayer();
+            // Se o jogador estiver a 5 ou menos unidades de distância
+            if (distanceToPlayer <= detectionRange)
+            {
+                // O inimigo olha para o jogador
+                RotateTowardsPlayer();
+
+                // O inimigo se move em direção ao jogador
+                MoveTowardsPlayer();
+            }
+        }
+        else
+        {
+            // Caso o player seja destruído ou desativado, o inimigo não faz mais nada
+            // Você pode adicionar qualquer lógica aqui caso queira que o inimigo faça outra ação
         }
     }
 
@@ -42,5 +52,9 @@ public class EnemyMovement : MonoBehaviour
 
         // Move o inimigo em direção ao jogador
         transform.Translate(direction * moveSpeed * Time.deltaTime, Space.World);
+    }
+    public void SetCanMove(bool state)
+    {
+        canMove = state;
     }
 }

@@ -3,7 +3,22 @@ guid: 977c1adbf452d4348b224011ab570fa8
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: QuebraCabeca2Ponta15
+    second: {fileID: 2100000, guid: d7bcdc6820627e94a87f95f81ee7e8ad, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: QuebraCabeca3Ponta15
+    second: {fileID: 2100000, guid: 7f92d93d49ba1d14bada8cba6fd4f85d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: QuebraCabecaPonta15
+    second: {fileID: 2100000, guid: 080fddb2fcc574945bd3673667f3e806, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

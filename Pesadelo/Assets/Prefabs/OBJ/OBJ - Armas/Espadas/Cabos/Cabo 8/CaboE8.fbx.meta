@@ -3,7 +3,32 @@ guid: a51a539b767c8ba44b59dc34c581db79
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: AnelCabo8
+    second: {fileID: 2100000, guid: 2463ec53b5d359e4f88ff3c9383e7278, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BaseCabo8
+    second: {fileID: 2100000, guid: 2e9c2e08a281f6a4aab955fad64e4974, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: EsferaCabo8
+    second: {fileID: 2100000, guid: e28dea7511f56894fbda261fc793ef3d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Fita1Cabo8
+    second: {fileID: 2100000, guid: 88689c672717d7f4a8d6a0bab24b6d0d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Fita2Cabo8
+    second: {fileID: 2100000, guid: 6a2ac9aef08c4fd4487833a946357dc3, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

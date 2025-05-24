@@ -3,7 +3,22 @@ guid: 4cf1e224002bc6947b27063d8a344ac3
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: DetalhesCabeca15
+    second: {fileID: 2100000, guid: fba25fb5fa5d701499303e5edca3b032, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: PretoCabeca15
+    second: {fileID: 2100000, guid: 1c90da458c5fd414f8135f1577e1aef6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: VermelhoCabeca15
+    second: {fileID: 2100000, guid: b3627ddeff521954cb21621ff46e00c1, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

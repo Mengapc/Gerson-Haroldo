@@ -3,7 +3,92 @@ guid: 53298cac368cad94fa2e6e01924a7090
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Baqueta1Lamina11
+    second: {fileID: 2100000, guid: ad9b47f7e3110dd46812e8e11ee1c06e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Baqueta2Lamina11
+    second: {fileID: 2100000, guid: 9987b2b4cf750c347a86cbbbbedf50f7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: FerroLamina11
+    second: {fileID: 2100000, guid: 499f9c2df6cb2a746a5d44a2b3546fc6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MadeiraLamina1
+    second: {fileID: 2100000, guid: 050de37b575efa44a89a8119032528b0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: XiloCor10Lamina11
+    second: {fileID: 2100000, guid: da81eff8273a5674285de53391c194cb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: XiloCor11Lamina11
+    second: {fileID: 2100000, guid: d6c3dcf41ac07a84688ac2bba818120d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: XiloCor12Lamina11
+    second: {fileID: 2100000, guid: f701a9286683c7d4ea2ca1745a9d6f2d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: XiloCor13Lamina11
+    second: {fileID: 2100000, guid: 098915b87a95a9541912bfacf61389e0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: XiloCor1Lamina11
+    second: {fileID: 2100000, guid: d504a503d9efb404e8475a1a60472ab1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: XiloCor2Lamina11
+    second: {fileID: 2100000, guid: 747a2808b9d243c46906255899316846, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: XiloCor3Lamina11
+    second: {fileID: 2100000, guid: 9b674b73fd3e3464c9f8c3cd0db2fcf1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: XiloCor4Lamina11
+    second: {fileID: 2100000, guid: 56bc02f7cf8de1c45aaca498e28bae45, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: XiloCor5Lamina11
+    second: {fileID: 2100000, guid: 47d50498c61e0994cb1ee059f82c52f5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: XiloCor6Lamina11
+    second: {fileID: 2100000, guid: f40e378eeff240849941142cad5ccb17, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: XiloCor7Lamina11
+    second: {fileID: 2100000, guid: b41d17273d6a2054faa15e641ad4494b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: XiloCor8Lamina11
+    second: {fileID: 2100000, guid: e1f58eab82ec3ea4dbb22083659e4793, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: XiloCor9Lamina11
+    second: {fileID: 2100000, guid: e4c6975e84ca2734f97ac6ae202f9c73, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

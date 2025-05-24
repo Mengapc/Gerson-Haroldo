@@ -3,7 +3,22 @@ guid: 8d53ce18df695ab4b92774f892384408
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BaseLamina8
+    second: {fileID: 2100000, guid: f135d33e4f399484991c947786770a38, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: FerroLamina8
+    second: {fileID: 2100000, guid: b457ff0a5269dc24eb1ed17a57fd9bc9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: SinoLamina8
+    second: {fileID: 2100000, guid: 45ec02724a11ed648b991ebbd3a039d2, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

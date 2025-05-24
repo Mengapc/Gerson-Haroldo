@@ -3,7 +3,17 @@ guid: 590998c40181986449abceebae13c761
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BaseChapeuPonta11
+    second: {fileID: 2100000, guid: f7dec0bd20c0b844ba10f305e7e96a20, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: DetalheChapeuPonta11
+    second: {fileID: 2100000, guid: 710d2b85c2fee4a4c895c9d69d4abac5, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

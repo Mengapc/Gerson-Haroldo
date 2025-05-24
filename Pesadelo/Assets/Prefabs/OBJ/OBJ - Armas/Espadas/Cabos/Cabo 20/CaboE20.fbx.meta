@@ -3,7 +3,17 @@ guid: e26c2a0c470241e4988660bd5145e54e
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BaseCabo21
+    second: {fileID: 2100000, guid: e516d0ac6c449994cac731b1b9526e65, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Cristal
+    second: {fileID: 2100000, guid: 3f332f31bc645084e8bf6ac4b0d715aa, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

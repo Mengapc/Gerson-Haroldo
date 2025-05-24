@@ -3,7 +3,12 @@ guid: a87ebfff74bfa03468588c94399cbf7e
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MaterialCaboMC5
+    second: {fileID: 2100000, guid: c58c39ddc62775049b11237bdfe185b2, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

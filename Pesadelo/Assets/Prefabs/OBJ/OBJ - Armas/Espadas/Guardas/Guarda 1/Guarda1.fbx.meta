@@ -3,7 +3,17 @@ guid: b011c59cb51adef42bdd570f101db711
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BaseGuarda1
+    second: {fileID: 2100000, guid: 0c4e680de4dde2743902630458bdccd2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: PontaGuarda1
+    second: {fileID: 2100000, guid: 2e7d96f45e0e9234da5842c51461a451, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

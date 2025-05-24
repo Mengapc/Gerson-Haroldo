@@ -1,9 +1,11 @@
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
 public static class ProceduralGenerationAlgorithms
 {
+    // ========== MÉTODOS ORIGINAIS (MANTIDOS) ========== //
     public static HashSet<Vector3Int> SimpleRandomWalk(Vector3Int startPosition, int walkLength)
     {
         HashSet<Vector3Int> path = new HashSet<Vector3Int>();
@@ -70,13 +72,54 @@ public static class ProceduralGenerationAlgorithms
         return roomsList;
     }
 
+    // ========== MÉTODOS NOVOS ADICIONADOS ========== //
+    /// <summary>
+    /// Cria um corredor em L direcionado para um alvo (ideal para salas especiais)
+    /// </summary>
+    public static List<Vector3Int> DirectedCorridor(Vector3Int startPosition, Vector3Int targetPosition, int maxLength)
+    {
+        List<Vector3Int> corridor = new List<Vector3Int>();
+        var currentPosition = startPosition;
+        corridor.Add(currentPosition);
+
+        for (int i = 0; i < maxLength && currentPosition != targetPosition; i++)
+        {
+            Vector3Int direction = Vector3Int.zero;
+
+            // Decide se move primeiro em X ou Z baseado na maior diferença
+            int xDiff = targetPosition.x - currentPosition.x;
+            int zDiff = targetPosition.z - currentPosition.z;
+
+            if (Mathf.Abs(xDiff) > Mathf.Abs(zDiff))
+            {
+                direction = new Vector3Int(xDiff > 0 ? 1 : -1, 0, 0);
+            }
+            else
+            {
+                direction = new Vector3Int(0, 0, zDiff > 0 ? 1 : -1);
+            }
+
+            currentPosition += direction;
+            corridor.Add(currentPosition);
+        }
+
+        // Garante que chegou exatamente na posição da porta
+        if (corridor.Last() != targetPosition)
+        {
+            corridor.Add(targetPosition);
+        }
+
+        return corridor;
+    }
+
+    // ========== MÉTODOS AUXILIARES (MANTIDOS) ========== //
     private static void SplitVertically(int minWidth, Queue<BoundsInt> roomsQueue, BoundsInt room)
     {
         var xSplit = Random.Range(minWidth, room.size.x - minWidth);
 
         BoundsInt room1 = new BoundsInt(room.min, new Vector3Int(xSplit, 1, room.size.z));
         BoundsInt room2 = new BoundsInt(new Vector3Int(room.min.x + xSplit, 0, room.min.z),
-                                        new Vector3Int(room.size.x - xSplit, 1, room.size.z));
+                                    new Vector3Int(room.size.x - xSplit, 1, room.size.z));
 
         roomsQueue.Enqueue(room1);
         roomsQueue.Enqueue(room2);
@@ -88,7 +131,7 @@ public static class ProceduralGenerationAlgorithms
 
         BoundsInt room1 = new BoundsInt(room.min, new Vector3Int(room.size.x, 1, zSplit));
         BoundsInt room2 = new BoundsInt(new Vector3Int(room.min.x, 0, room.min.z + zSplit),
-                                        new Vector3Int(room.size.x, 1, room.size.z - zSplit));
+                                    new Vector3Int(room.size.x, 1, room.size.z - zSplit));
 
         roomsQueue.Enqueue(room1);
         roomsQueue.Enqueue(room2);
@@ -118,4 +161,3 @@ public static class Direction3D
         return cardinalDirectionsList[Random.Range(0, cardinalDirectionsList.Count)];
     }
 }
-
