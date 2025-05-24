@@ -12,7 +12,7 @@ public class InventBarSelect : MonoBehaviour
         ic = FindObjectOfType<InventControler>();
         if (ic == null)
         {
-            Debug.LogError("InventControler não encontrado na cena!");
+            Debug.LogError("InventControler nao encontrado na cena!");
         }
     }
 

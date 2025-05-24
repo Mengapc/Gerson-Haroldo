@@ -19,9 +19,10 @@ public class PlayerAttackCollision : MonoBehaviour
             {
                 enemyHealth.TakeDamage(bulletDamage);
             }
+            Destroy(gameObject); // Sempre destrói a bala ao colidir
         }
 
-        Destroy(gameObject); // Sempre destrói a bala ao colidir
+        //Destroy(gameObject); // Sempre destrói a bala ao colidir
     }
 
 }

@@ -56,3 +56,9 @@ MonoBehaviour:
   randomWalkRooms: 1
   removalChance: 0.4
   spacingMargin: 2
+  corridorWidth: 3
+  useCustomSeed: 0
+  customSeed: 0
+  enemyPrefab: {fileID: 0}
+  playerMovementScript: {fileID: 0}
+  player: {fileID: 0}

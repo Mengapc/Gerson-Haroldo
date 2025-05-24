@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class InventControler : MonoBehaviour
 {
-    [Header("Configurações gerais")]
+    [Header("Configuracoes gerais")]
     private GameObject tempArm = null;
     public GameObject[] slots;
     public Image[] slotsSprit;
@@ -13,7 +13,7 @@ public class InventControler : MonoBehaviour
     public int slotBarSelect = 0;
 
 
-    [Header("Configurações do inpectArm")]
+    [Header("Configuracoes do inpectArm")]
 
     [SerializeField] float distanceInteractor;
 
@@ -64,7 +64,7 @@ public class InventControler : MonoBehaviour
                 }
                 else
                 {
-                    Debug.Log("Objeto não é uma arma.");
+                    Debug.Log("Objeto nao e uma arma.");
                     return null; 
                 }
             }
@@ -94,14 +94,14 @@ public class InventControler : MonoBehaviour
         }
         if (inventoryFull)
         {
-            Debug.Log("Inventário cheio, não foi possível adicionar " + arm.name);
+            Debug.Log("Inventario cheio, nao foi possivel adicionar " + arm.name);
         }
 
         for (int i = 0; i < slots.Length; i++)
         {
             if (slots[i] == null)
             {
-                slots[i] = arm; // insere arma dentro do inventário
+                slots[i] = arm; // insere arma dentro do inventario
 
                 if (i < slotsSprit.Length && slotsSprit[i] != null)
                 {
@@ -118,17 +118,17 @@ public class InventControler : MonoBehaviour
                         }
                         else
                         {
-                            Debug.LogError("Componente ItemInstance ou arm.spriteArm não encontrado no objeto da arma.");
+                            Debug.LogError("Componente ItemInstance ou arm.spriteArm nao encontrado no objeto da arma.");
                         }
                     }
                     else
                     {
-                        Debug.LogError("Nenhum componente Image encontrado no slot de inventário no índice: " + i);
+                        Debug.LogError("Nenhum componente Image encontrado no slot de inventario no indice: " + i);
                     }
                 }
                 else
                 {
-                    Debug.LogError("Slot de sprite de inventário inválido no índice: " + i);
+                    Debug.LogError("Slot de sprite de inventario invlido no indice: " + i);
                 }
 
                 arm.SetActive(false);

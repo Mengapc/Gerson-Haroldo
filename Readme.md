@@ -1,4 +1,4 @@
-# EXP3 - Arthur Polak Furman, Gabriel Dias, Gabriel Furlan Mengarelli e Guilherme Alves
+# 🧸🪄👻EXP3 - Arthur Polak Furman, Gabriel Dias, Gabriel Furlan Mengarelli e Guilherme Alves
 
 Repositório relacionada ao projeto, contendo resumos sobre Git e GitHub e ideias sobre as features do jogo.
 
@@ -128,36 +128,27 @@ Câmera: Isométrica / Top Down
 
  ### ⭐️⭐️ Ideia 3 foi escolhida
  
+## 💻️ Mecânicas
+Geração procedural do mapa
 
- ## 💻️ Mecânicas 
+Geração procedural de armas
 
-Mecânica do altar (Sacrifício de armas)
+Efeitos para cada arma
 
-Movimentação do personagem (Dash)
+Ataque/comportamento de cada tipo de arma, baseado em cada gema
 
-Nível base protótipo
+Mecânica do altar (sacrifício de armas)
 
-Inimigos dropam as armas
+Movimentação do personagem (dash)
 
-Gemas (efeitos) de cada arma
+### 👀 Supostamentes
+Evolução de habilidades: velocidade de ataque, velocidade e vida
 
-IA (Inteligência artificial) dos inimigos 
+Loja: entregue dois itens de raridade baixa para obter um de raridade maior (2x1)
 
-Loja: você entrega dois itens de raridade baixa, para conseguir um item de raridade maior: 2 x 1
+IA (inteligência artificial) dos inimigos
 
-Ataque/comportamento de cada tipo das armas (martelo, espada e cajado) 
-
-Cada inimigo spawna aleatoriamente com um desses tipos de arma 
-
-Geração procedural do mapa 
-
-Geração procedural de armas 
- 
- ### 👀 Supostamentes 
-
-Evolução de habilidades: Velocidade de ataque, Velocidade e Vida 
-
-Bossfight 
+Bossfight
 
 ## ⚒️ Itens
 
@@ -167,6 +158,8 @@ Bossfight
  | Martelo | Cabo | Cabeça | Gema |
  | Cajado | Corpo | Ponta | Gema |
 
+### MVP
+
 ⚔️ Espada
 Lâminas: 15
 
@@ -174,33 +167,35 @@ Guardas: 2
 
 Cabos: 23
 
-Gemas: 14
+Gemas (MVP): 4
 
-Combinações possíveis:
-15 (lâminas) × 2 (guardas) × 23 (cabos) × 14 (gemas) = 9.660 espadas
+Combinações possíveis (MVP):
+15 (lâminas) × 2 (guardas) × 23 (cabos) × 4 (gemas) = 2.760 espadas
 
 🔨 Martelo
 Cabeças: 15
 
 Corpos: 15
 
-Gemas: 14
+Gemas (MVP): 4
 
-Combinações possíveis:
-15 (cabeças) × 15 (corpos) × 14 (gemas) = 3.150 martelos
+Combinações possíveis (MVP):
+15 (cabeças) × 15 (corpos) × 4 (gemas) = 900 martelos
 
 💫 Cajado
 Pontas: 15
 
 Cabos: 15
 
-Gemas: 14
+Gemas (MVP): 4
 
-Combinações possíveis:
-15 (pontas) × 15 (cabos) × 14 (gemas) = 3.150 cajados
+Combinações possíveis (MVP):
+15 (pontas) × 15 (cabos) × 4 (gemas) = 900 cajados
 
-🧮 Total geral de armas
-3.150 (cajados) + 3.150 (martelos) + 9.660 (espadas) = 15.960 armas únicas
+🧮 Total geral de armas (MVP)
+900 (cajados) + 900 (martelos) + 2.760 (espadas) = 4.560 armas únicas
+
+### ℹ️ Observação: Estes valores correspondem à versão MVP do jogo, com apenas 4 gemas disponíveis. A versão completa está planejada para incluir 14 gemas, totalizando 15.960 armas únicas no futuro.
 
 ## ✨ Raridades
 
@@ -217,20 +212,58 @@ Combinações possíveis:
 
 | Gemas |
 |--------|
-| Fogo/Lava |
-| Galático |
-| Gelo/Frio |
 | Vento/Ar |
+| Água/Mar |
+| Galático |
+| Gatinho |
+| Fogo/Lava |
+| Gelo/Frio |
 | Veneno/Ácido |
 | Pedra |
-| Água/Mar |
 | Ouro/Divino |
 | Cristais/Pedras preciosas |
 | Planta/Vinhas |
 | Unicórnio/Arco íris |
 | Pelúcia |
 | Videogame/hacker |
-| Gatinho |
+
+## Comportamentos das Armas
+
+## _**Gema do Vento**_
+Efeito: inimigos sofrem knockback (recuo).
+
+ | Armas | Descrição Habilidade |
+ |------|--------------------------------------------------------------------|
+ | Espada | Lança uma rajada com efeito de vento. |
+ | Martelo | Martelada com efeito de empurrão. |
+ | Cajado | Dispara um tornado que avança e para no final da trajetória. |
+
+## _**Gema da Água**_
+Efeito: inimigos recebem slow (lentidão).
+
+ | Armas | Descrição Habilidade |
+ |------|--------------------------------------------------------------------|
+ | Espada | Lança uma rajada com efeito de água. |
+ | Martelo | Martelada com efeito de lentidão. |
+ | Cajado | Dispara uma onda que para no final da trajetória e deixa uma poça que reduz a velocidade dos inimigos. |
+
+## _**Gema da Galáxia**_
+Efeito: inimigos são atraídos para um ponto.
+
+ | Armas | Descrição Habilidade |
+ |------|--------------------------------------------------------------------|
+ | Espada | Lança uma rajada com efeito gravitacional. |
+ | Martelo | Martelada que cria um buraco negro, atraindo inimigos e causando dano contínuo. |
+ | Cajado | Dispara um buraco negro que para no final da trajetória, atraindo inimigos e causando dano com partículas cósmicas. |
+
+## _**Gema de Gatinho**_
+Efeito: explosão.
+
+ | Armas | Descrição Habilidade |
+ |------|--------------------------------------------------------------------|
+ | Espada | Lança um projétil que explode ao atingir, liberando partículas que causam dano em inimigos próximos. |
+ | Martelo | Martelada explosiva que causa dano em área. |
+ | Cajado | Dispara um projétil que explode no final da trajetória, causando dano em uma área ampla. |
 
  ## 🎮 Balanceamento 
 
