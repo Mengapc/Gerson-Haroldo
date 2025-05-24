@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 8951745012315035225}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 14.405634, y: -43.613544, z: 39.931133}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -45,8 +45,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 155556792f5f4b7499e263d35c8c2497, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pointSprite: {x: 0, y: 0, z: 0}
   baseArm: {fileID: 8807498392011147377, guid: 15933cb14921053448af4e61f493902b, type: 3}
   player: {fileID: 0}
+  armSprits: []
   powerRate: 0
   powerDrop: 0
 --- !u!114 &3488389831455378624
@@ -151,22 +153,7 @@ MonoBehaviour:
   - {fileID: 5911848848557777878, guid: c6ef9e89d372bea469d5aa6f7ae81186, type: 3}
   - {fileID: 2115857919011793812, guid: 5132af29bc532bc4ab36e9eab3bf164e, type: 3}
   - {fileID: 621785018478575294, guid: 016fe33983401d4448291468ede6d200, type: 3}
-  "marteloCabe\xE7aP":
-  - {fileID: 6324451296870811381, guid: 1e99cc165d834d245b45e978d35131b7, type: 3}
-  - {fileID: 9136522536690907493, guid: faf10f568da0ebe4fb8f313410fc1262, type: 3}
-  - {fileID: 665824333209747622, guid: 93facaa11a19c4f4a90c0244c14b43bb, type: 3}
-  - {fileID: 2817849875838600640, guid: b429c8806dde0c841a69f8f624629d82, type: 3}
-  - {fileID: 7168409284564896870, guid: 9abcf12e85df55743be4ab324c299e9e, type: 3}
-  - {fileID: 2246159873966147292, guid: 0c6e5bd8720012a4e89c4b58a35ee43a, type: 3}
-  - {fileID: 4029695368404044854, guid: 27b6d676b8ce49541afb2d63812a95ce, type: 3}
-  - {fileID: 8636798395498421587, guid: 88c3a6b37d56b074e98a12a7c9a215c2, type: 3}
-  - {fileID: 5284483257309086388, guid: e40afc3044316644facfc8907170d1a7, type: 3}
-  - {fileID: 8719715208506826867, guid: b5bddfd34688bd2458cac04738f3fbbc, type: 3}
-  - {fileID: 498892993499488506, guid: 69095f2536acf92458cd868e232a4f9e, type: 3}
-  - {fileID: 1627619976716375953, guid: 88de3edf0579d0746906b2622c54fcf5, type: 3}
-  - {fileID: 2302489707654674172, guid: e996bdf78f857e744947b58ab30177c7, type: 3}
-  - {fileID: 5617898179639762145, guid: 390ff77e5fc4d5d40ad494a3e1a986f0, type: 3}
-  - {fileID: 6973130627259395725, guid: b20655a7d1386f6409fb1ade9378ff50, type: 3}
+  martelocabecaP: []
   marteloCabo:
   - {fileID: 4556889152263342208, guid: 5898df0df5355e4489a76aef1660280f, type: 3}
   - {fileID: 5035743296693007296, guid: 70d85860e828b404e936d6ad9e98445b, type: 3}
@@ -183,3 +170,4 @@ MonoBehaviour:
   - {fileID: 8911537738832651030, guid: 12af37739a5d02a4193898d28f0c2ab5, type: 3}
   - {fileID: 8944636817947003917, guid: 485de91ecac05ac47858f3b798df7663, type: 3}
   - {fileID: 5856586444298739291, guid: 6f0c26f3e1874eb46a43717528ded0ed, type: 3}
+  vfxObject: []
