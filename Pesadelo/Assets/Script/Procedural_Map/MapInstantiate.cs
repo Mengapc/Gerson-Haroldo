@@ -11,12 +11,13 @@ public class MapInstantiate : MonoBehaviour
 
     // Prefabs para salas especiais (spawn e loja)
     [SerializeField]
-    private GameObject SpawnRoomPrefab, ShopRoomPrefab, AltarRoomPrefab;
+    private GameObject SpawnRoomPrefab, ShopRoomPrefab, AltarRoomPrefab, PortalRoomPrefab;
 
     // M�todos para acessar os prefabs das salas especiais
     public GameObject GetSpawnRoomPrefab() => SpawnRoomPrefab;
     public GameObject GetShopRoomPrefab() => ShopRoomPrefab;
     public GameObject GetAltarRoomPrefab() => AltarRoomPrefab;
+    public GameObject GetPortalRoomPrefab() => PortalRoomPrefab;
 
     // Dicion�rio que armazena os tiles (objetos) instanciados, com a posi��o como chave
     public Dictionary<Vector3Int, GameObject> instantiatedTiles = new Dictionary<Vector3Int, GameObject>();
@@ -88,12 +89,12 @@ public class MapInstantiate : MonoBehaviour
             }
             else if (direction == Vector3Int.forward)
             {
-                rotation = Quaternion.Euler(0, 0, 0);
+                rotation = Quaternion.Euler(0, 180, 0);
                 wallOffset = new Vector3(0f, 0f, -0.5f);
             }
             else if (direction == Vector3Int.back)
             {
-                rotation = Quaternion.Euler(0, 180, 0);
+                rotation = Quaternion.Euler(0, 0, 0);
                 wallOffset = new Vector3(0f, 0f, 0.5f);
             }
 

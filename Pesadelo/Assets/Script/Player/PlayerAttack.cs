@@ -12,33 +12,33 @@ public class PlayerAttack : MonoBehaviour
     {
         if (Input.GetButtonDown("Fire1"))
         {
-            // Always get the current weapon
+            //Always get the current weapon
             ItemInstance arma = equipArm.GetComponentInChildren<ItemInstance>();
+            ShootCube();
 
-            if (arma == null)
-            {
-                Debug.LogWarning("No weapon equipped.");
-                return;
-            }
+            //    if (arma == null)
+            //    {
+            //        Debug.LogWarning("No weapon equipped.");
+            //        return;
+            //    }
 
-            switch (arma.type)
-            {
-                case Armas.ItemType.Staff:
-                    ShootCube(); // Cajado
-                    break;
-                case Armas.ItemType.Sword:
-                    Debug.Log("Attacking with Sword");
-                    break;
-                case Armas.ItemType.Hammer:
-                    Debug.Log("Attacking with Hammer");
-                    break;
-                default:
-                    Debug.LogWarning("Unknown weapon type.");
-                    break;
+            //    switch (arma.type)
+            //    {
+            //        case Armas.ItemType.Staff:
+            //            ShootCube(); // Cajado
+            //            break;
+            //        case Armas.ItemType.Sword:
+            //            Debug.Log("Attacking with Sword");
+            //            break;
+            //        case Armas.ItemType.Hammer:
+            //            Debug.Log("Attacking with Hammer");
+            //            break;
+            //        default:
+            //            Debug.LogWarning("Unknown weapon type.");
+            //            break;
+            //    }
             }
         }
-    }
-
     void ShootCube()
     {
         if (cubePrefab == null || shootOrigin == null)
