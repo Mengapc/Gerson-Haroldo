@@ -10,6 +10,7 @@ public class InventControler : MonoBehaviour
     public GameObject[] slots;
     public Image[] slotsSprit;
     public GameObject player;
+    public int slotBarSelect = 0;
 
 
     [Header("Configuracoes do inpectArm")]

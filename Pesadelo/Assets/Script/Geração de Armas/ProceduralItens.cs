@@ -6,12 +6,14 @@ using static Armas;
 
 public class ProceduralItens : MonoBehaviour
 {
+    public Vector3 pointSprite;
     public GameObject baseArm;
     public GameObject player;
     private ItemInstance ii;
     private RandomParts rp;
+    private SpriteGenerator sg;
     private GameObject newItem; 
-    [SerializeField] private List<Sprite> armSprits;
+    public List<Sprite> armSprits;
     [Header("Taxa dos itens")]
     public float powerRate;
     public float powerDrop;
@@ -40,14 +42,16 @@ public class ProceduralItens : MonoBehaviour
         Armas.ItemType newType = GenerateType();
         Debug.Log(newType);
         Armas.Rarity newRarity = GenerateRarity();
-        Sprite newSprite = SetSprite(newType);
         int newPower = GeneratePowerLevel(newRarity);
         bool newSpecialStatus = ThisSpecialStatus(newRarity);
 
         GameObject baseArmInstance = Instantiate(baseArm, position, Quaternion.identity); 
 
-        GameObject principalPart = rp.GeneratePrincipalPartArm(newType, baseArmInstance.transform); 
+        GameObject principalPart = rp.GeneratePrincipalPartArm(newType, baseArmInstance.transform);
+        
+        principalPart.transform.position = pointSprite;
 
+        Sprite newSprite = sg.CapturarSprite();
 
         if (principalPart != null)
         {
@@ -100,24 +104,5 @@ public class ProceduralItens : MonoBehaviour
     {
         return (Armas.ItemType)Random.Range(0, System.Enum.GetValues(typeof(Armas.ItemType)).Length);
     }
-    public Sprite SetSprite(Armas.ItemType type)
-    {
-        Sprite sprite = null; 
-        switch (type)
-        {
-            case Armas.ItemType.Sword:
-                sprite = armSprits[(int)Armas.ItemType.Sword];
-                break;
-            case Armas.ItemType.Staff:
-                sprite = armSprits[(int)Armas.ItemType.Staff];
-                break;
-            case Armas.ItemType.Hammer:
-                sprite = armSprits[(int)Armas.ItemType.Hammer];
-                break;
-            default:
-                Debug.LogError("Tipo de arma não reconhecido: " + type);
-                break;
-        }
-        return sprite;
-    }
+
 }
