@@ -14,30 +14,29 @@ public class PlayerAttack : MonoBehaviour
         {
             //Always get the current weapon
             ItemInstance arma = equipArm.GetComponentInChildren<ItemInstance>();
-            ShootCube();
 
-            //    if (arma == null)
-            //    {
-            //        Debug.LogWarning("No weapon equipped.");
-            //        return;
-            //    }
-
-            //    switch (arma.type)
-            //    {
-            //        case Armas.ItemType.Staff:
-            //            ShootCube(); // Cajado
-            //            break;
-            //        case Armas.ItemType.Sword:
-            //            Debug.Log("Attacking with Sword");
-            //            break;
-            //        case Armas.ItemType.Hammer:
-            //            Debug.Log("Attacking with Hammer");
-            //            break;
-            //        default:
-            //            Debug.LogWarning("Unknown weapon type.");
-            //            break;
-            //    }
+            if (arma == null)
+            {
+                Debug.LogWarning("No weapon equipped.");
+                return;
             }
+
+            switch (arma.type)
+            {
+                case Armas.ItemType.Staff:
+                    ShootCube(); // Cajado
+                    break;
+                case Armas.ItemType.Sword:
+                    Debug.Log("Attacking with Sword");
+                    break;
+                case Armas.ItemType.Hammer:
+                    Debug.Log("Attacking with Hammer");
+                    break;
+                default:
+                    Debug.LogWarning("Unknown weapon type.");
+                    break;
+            }
+        }
         }
     void ShootCube()
     {
@@ -54,11 +53,7 @@ public class PlayerAttack : MonoBehaviour
             shootOrigin.right * spawnOffset.x;
 
         GameObject cube = Instantiate(cubePrefab, offsetPosition, shootOrigin.rotation);
-
-        Rigidbody rb = cube.GetComponent<Rigidbody>();
-        if (rb != null)
-        {
-            rb.AddForce(shootOrigin.forward * shootForce);
-        }
     }
+
 }
+

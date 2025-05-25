@@ -72,47 +72,6 @@ public static class ProceduralGenerationAlgorithms
         return roomsList;
     }
 
-    // ========== MÉTODOS NOVOS ADICIONADOS ========== //
-    /// <summary>
-    /// Cria um corredor em L direcionado para um alvo (ideal para salas especiais)
-    /// </summary>
-    public static List<Vector3Int> DirectedCorridor(Vector3Int startPosition, Vector3Int targetPosition, int maxLength)
-    {
-        List<Vector3Int> corridor = new List<Vector3Int>();
-        var currentPosition = startPosition;
-        corridor.Add(currentPosition);
-
-        for (int i = 0; i < maxLength && currentPosition != targetPosition; i++)
-        {
-            Vector3Int direction = Vector3Int.zero;
-
-            // Decide se move primeiro em X ou Z baseado na maior diferença
-            int xDiff = targetPosition.x - currentPosition.x;
-            int zDiff = targetPosition.z - currentPosition.z;
-
-            if (Mathf.Abs(xDiff) > Mathf.Abs(zDiff))
-            {
-                direction = new Vector3Int(xDiff > 0 ? 1 : -1, 0, 0);
-            }
-            else
-            {
-                direction = new Vector3Int(0, 0, zDiff > 0 ? 1 : -1);
-            }
-
-            currentPosition += direction;
-            corridor.Add(currentPosition);
-        }
-
-        // Garante que chegou exatamente na posição da porta
-        if (corridor.Last() != targetPosition)
-        {
-            corridor.Add(targetPosition);
-        }
-
-        return corridor;
-    }
-
-    // ========== MÉTODOS AUXILIARES (MANTIDOS) ========== //
     private static void SplitVertically(int minWidth, Queue<BoundsInt> roomsQueue, BoundsInt room)
     {
         var xSplit = Random.Range(minWidth, room.size.x - minWidth);
