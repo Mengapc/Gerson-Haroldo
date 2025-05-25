@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 using Random = UnityEngine.Random;
 
 public class RoomFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator
@@ -108,17 +109,21 @@ public class RoomFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator
         List<BoundsInt> specialRooms = new List<BoundsInt>();
         List<Vector3Int> roomCenters = new List<Vector3Int>();
 
+        roomsList = FilterRooms(roomsList, removalChance);
+        roomsList = ApplySpacing(roomsList, spacingMargin);
+
         // Escolhe salas especiais
         var spawnRoom = roomsList[Random.Range(0, roomsList.Count)];
-        //roomsList.Remove(spawnRoom);
+        roomsList.Remove(spawnRoom);
 
         var shopRoom = roomsList[Random.Range(0, roomsList.Count)];
-        //roomsList.Remove(shopRoom);
+        roomsList.Remove(shopRoom);
 
         var altarRoom = roomsList[Random.Range(0, roomsList.Count)];
-        //roomsList.Remove(altarRoom);
+        roomsList.Remove(altarRoom);
 
         var portalRoom = roomsList[Random.Range(0, roomsList.Count)];
+        roomsList.Remove(portalRoom);
 
         specialRooms.Add(spawnRoom);
         specialRooms.Add(shopRoom);
@@ -131,6 +136,23 @@ public class RoomFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator
         GameObject altarPrefab = MapInstantiater.GetAltarRoomPrefab();
         GameObject portalPrefab = MapInstantiater.GetPortalRoomPrefab();
 
+        Vector3 spawnCenter = new Vector3(spawnRoom.center.x, 0, spawnRoom.center.z);
+        Vector3 shopCenter = new Vector3(shopRoom.center.x, 0, shopRoom.center.z);
+        Vector3 altarCenter = new Vector3(altarRoom.center.x, 0, altarRoom.center.z);
+        Vector3 portalCenter = new Vector3(portalRoom.center.x, 0, portalRoom.center.z);
+
+        // DEBUG LOG das posições de centro
+        Debug.Log($"[SPAWN] Sala center: {spawnRoom.center}, Instanciado em: {spawnCenter}");
+        Debug.Log($"[SHOP] Sala center: {shopRoom.center}, Instanciado em: {shopCenter}");
+        Debug.Log($"[ALTAR] Sala center: {altarRoom.center}, Instanciado em: {altarCenter}");
+        Debug.Log($"[PORTAL] Sala center: {portalRoom.center}, Instanciado em: {portalCenter}");
+
+        // DEBUG VISUAL com linhas na cena
+        Debug.DrawLine(spawnCenter, spawnCenter + Vector3.up * 3, Color.green, 10f);
+        Debug.DrawLine(shopCenter, shopCenter + Vector3.up * 3, Color.yellow, 10f);
+        Debug.DrawLine(altarCenter, altarCenter + Vector3.up * 3, Color.cyan, 10f);
+        Debug.DrawLine(portalCenter, portalCenter + Vector3.up * 3, Color.magenta, 10f);
+
         var spawnInstance = Instantiate(spawnPrefab, new Vector3(spawnRoom.center.x, 0, spawnRoom.center.z), Quaternion.identity);
         var shopInstance = Instantiate(shopPrefab, new Vector3(shopRoom.center.x, 0, shopRoom.center.z), Quaternion.identity);
         var altarInstance = Instantiate(altarPrefab, new Vector3(altarRoom.center.x, 0, altarRoom.center.z), Quaternion.identity);
@@ -142,8 +164,8 @@ public class RoomFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator
         mapInstantiate.instantiatedTiles[Vector3Int.RoundToInt(altarRoom.center)] = altarInstance;
         mapInstantiate.instantiatedTiles[Vector3Int.RoundToInt(portalRoom.center)] = portalInstance;
 
-        roomsList = FilterRooms(roomsList, removalChance);
-        roomsList = ApplySpacing(roomsList, spacingMargin);
+        //roomsList = FilterRooms(roomsList, removalChance);
+        //roomsList = ApplySpacing(roomsList, spacingMargin);
 
         Debug.Log($"Número de salas normais após filtragem: {roomsList.Count}");
 

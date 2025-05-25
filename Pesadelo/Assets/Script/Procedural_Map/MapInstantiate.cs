@@ -59,6 +59,13 @@ public class MapInstantiate : MonoBehaviour
         instantiatedTiles.Clear();
         GC.Collect();
 
+        var inimigos = GameObject.FindGameObjectsWithTag("basic_enemy");
+
+        foreach (var inimigo in inimigos)
+        {
+            Destroy(inimigo);
+        }
+
         var leftovers = GameObject.FindObjectsByType<GameObject>(FindObjectsSortMode.None)
             .Where(go => go.name.Contains("Parede(Clone)")).ToList();
 
