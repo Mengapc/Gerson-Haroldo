@@ -12,13 +12,13 @@ public class ProceduralItens : MonoBehaviour
     private ItemInstance ii;
     private RandomParts rp;
     private SpriteGenerator sg;
-    private GameObject newItem; 
+    private GameObject newItem;
     public List<Sprite> armSprits;
     [Header("Taxa dos itens")]
     public float powerRate;
     public float powerDrop;
 
-    void Awake() 
+    void Awake()
     {
         rp = GetComponent<RandomParts>();
         if (rp == null)
@@ -31,7 +31,7 @@ public class ProceduralItens : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.G))
         {
-           
+
             GenerateItem(new Vector3(player.transform.position.x, player.transform.position.y + 3, player.transform.position.z));
         }
     }
@@ -44,23 +44,24 @@ public class ProceduralItens : MonoBehaviour
         Armas.Rarity newRarity = GenerateRarity();
         int newPower = GeneratePowerLevel(newRarity);
         bool newSpecialStatus = ThisSpecialStatus(newRarity);
+        Sprite newSprite = SetSprite(newType);
 
-        GameObject baseArmInstance = Instantiate(baseArm, position, Quaternion.identity); 
+        GameObject baseArmInstance = Instantiate(baseArm, position, Quaternion.identity);
 
         GameObject principalPart = rp.GeneratePrincipalPartArm(newType, baseArmInstance.transform);
-        
-        principalPart.transform.position = pointSprite;
 
-        Sprite newSprite = sg.CapturarSprite();
+        principalPart.transform.position = pointSprite;
+        
+
 
         if (principalPart != null)
         {
-            principalPart.transform.SetParent(baseArmInstance.transform); 
-            principalPart.transform.localPosition = Vector3.zero; 
-            principalPart.transform.localRotation = Quaternion.identity; 
+            principalPart.transform.SetParent(baseArmInstance.transform);
+            principalPart.transform.localPosition = Vector3.zero;
+            principalPart.transform.localRotation = Quaternion.identity;
 
 
-            rp.GenerationOutherParts(newType, principalPart, newRarity); 
+            rp.GenerationOutherParts(newType, principalPart, newRarity);
         }
         else
         {
@@ -77,7 +78,7 @@ public class ProceduralItens : MonoBehaviour
             ii.SetItemData(newName, newType, newRarity, newPower, newSpecialStatus, newSprite);
         }
 
-        return baseArmInstance; 
+        return baseArmInstance;
     }
 
     public Armas.Rarity GenerateRarity()
@@ -103,6 +104,42 @@ public class ProceduralItens : MonoBehaviour
     public Armas.ItemType GenerateType()
     {
         return (Armas.ItemType)Random.Range(0, System.Enum.GetValues(typeof(Armas.ItemType)).Length);
+    }
+    public Sprite SetSprite(Armas.ItemType type)
+
+    {
+
+        Sprite spriteTemp;
+
+        switch (type)
+
+        {
+
+            case Armas.ItemType.Sword:
+
+                spriteTemp = armSprits[0];
+                break;
+
+            case Armas.ItemType.Staff:
+
+                spriteTemp = armSprits[1];
+                break;
+
+            case Armas.ItemType.Hammer:
+
+                spriteTemp = armSprits[2];
+                break;
+
+            default:
+
+                Debug.Log("Tipo de arma não clasificada");
+
+                spriteTemp = null;
+                break;
+        }
+
+        return spriteTemp;
+
     }
 
 }
