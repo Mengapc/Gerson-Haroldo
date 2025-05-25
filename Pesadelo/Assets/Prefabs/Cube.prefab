@@ -133,7 +133,7 @@ GameObject:
   - component: {fileID: 7806472515223902054}
   - component: {fileID: 1277539072055555220}
   - component: {fileID: 3300486415099081296}
-  - component: {fileID: -4372119246538208775}
+  - component: {fileID: 1425036941890114903}
   - component: {fileID: 8571733967549991570}
   m_Layer: 0
   m_Name: Cube
@@ -229,13 +229,13 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!54 &-4372119246538208775
+--- !u!54 &1425036941890114903
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -258,9 +258,9 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 0
-  m_IsKinematic: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 0
   m_CollisionDetection: 1
 --- !u!114 &8571733967549991570
 MonoBehaviour:
@@ -275,6 +275,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletDamage: 1
+  knockbackForce: 20
+  speed: 10
+  destroyDelay: 1
 --- !u!1 &3621384115364057323
 GameObject:
   m_ObjectHideFlags: 0
@@ -553,11 +556,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1915860793663527450, guid: 919b1a982e389494694b1fc973b88fc1, type: 3}
       propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3939922961126403194, guid: 919b1a982e389494694b1fc973b88fc1, type: 3}
+      propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5952576667449924314, guid: 919b1a982e389494694b1fc973b88fc1, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
