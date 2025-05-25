@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
+using UnityEngine.UIElements;
 using Random = UnityEngine.Random;
 
 public class RoomFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator
@@ -108,21 +110,35 @@ public class RoomFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator
         List<BoundsInt> specialRooms = new List<BoundsInt>();
         List<Vector3Int> roomCenters = new List<Vector3Int>();
 
-        // Escolhe salas especiais
-        var spawnRoom = roomsList[Random.Range(0, roomsList.Count)];
-        //roomsList.Remove(spawnRoom);
+        roomsList = FilterRooms(roomsList, removalChance);
+        roomsList = ApplySpacing(roomsList, spacingMargin);
 
-        var shopRoom = roomsList[Random.Range(0, roomsList.Count)];
-        //roomsList.Remove(shopRoom);
-
-        var altarRoom = roomsList[Random.Range(0, roomsList.Count)];
-        //roomsList.Remove(altarRoom);
-
-        var portalRoom = roomsList[Random.Range(0, roomsList.Count)];
-
+        BoundsInt spawnRoom;
+        do
+        {
+            spawnRoom = roomsList[Random.Range(0, roomsList.Count)];
+        } while (specialRooms.Contains(spawnRoom));
         specialRooms.Add(spawnRoom);
+
+        BoundsInt shopRoom;
+        do
+        {
+            shopRoom = roomsList[Random.Range(0, roomsList.Count)];
+        } while (specialRooms.Contains(shopRoom));
         specialRooms.Add(shopRoom);
+
+        BoundsInt altarRoom;
+        do
+        {
+            altarRoom = roomsList[Random.Range(0, roomsList.Count)];
+        } while (specialRooms.Contains(altarRoom));
         specialRooms.Add(altarRoom);
+
+        BoundsInt portalRoom;
+        do
+        {
+            portalRoom = roomsList[Random.Range(0, roomsList.Count)];
+        } while (specialRooms.Contains(portalRoom));
         specialRooms.Add(portalRoom);
 
         // Instancia os prefabs nas posições das salas
@@ -130,6 +146,11 @@ public class RoomFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator
         GameObject shopPrefab = MapInstantiater.GetShopRoomPrefab();
         GameObject altarPrefab = MapInstantiater.GetAltarRoomPrefab();
         GameObject portalPrefab = MapInstantiater.GetPortalRoomPrefab();
+
+        Vector3 spawnCenter = new Vector3(spawnRoom.center.x, 0, spawnRoom.center.z);
+        Vector3 shopCenter = new Vector3(shopRoom.center.x, 0, shopRoom.center.z);
+        Vector3 altarCenter = new Vector3(altarRoom.center.x, 0, altarRoom.center.z);
+        Vector3 portalCenter = new Vector3(portalRoom.center.x, 0, portalRoom.center.z);
 
         var spawnInstance = Instantiate(spawnPrefab, new Vector3(spawnRoom.center.x, 0, spawnRoom.center.z), Quaternion.identity);
         var shopInstance = Instantiate(shopPrefab, new Vector3(shopRoom.center.x, 0, shopRoom.center.z), Quaternion.identity);
@@ -141,9 +162,6 @@ public class RoomFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator
         mapInstantiate.instantiatedTiles[Vector3Int.RoundToInt(shopRoom.center)] = shopInstance;
         mapInstantiate.instantiatedTiles[Vector3Int.RoundToInt(altarRoom.center)] = altarInstance;
         mapInstantiate.instantiatedTiles[Vector3Int.RoundToInt(portalRoom.center)] = portalInstance;
-
-        roomsList = FilterRooms(roomsList, removalChance);
-        roomsList = ApplySpacing(roomsList, spacingMargin);
 
         Debug.Log($"Número de salas normais após filtragem: {roomsList.Count}");
 
