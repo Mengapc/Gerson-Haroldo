@@ -12,39 +12,44 @@ public class PlayerAttack : MonoBehaviour
     public bool debug = true;
 
     void Update()
-    {
-        if (Input.GetButtonDown("Fire1"))
         {
-            //Always get the current weapon
-            ItemInstance arma = equipArm.GetComponentInChildren<ItemInstance>();
-
-            if (arma == null && !debug)
+            if (Input.GetButtonDown("Fire1"))
             {
-                Debug.LogWarning("No weapon equipped.");
-                return;
-            }
-            if (arma == null && debug)
-            {
-                ShootCajado();
-            }
-
-            switch (arma.type)
-            {
-                case Armas.ItemType.Staff:
-                    ShootCajado(); // Cajado
-                    break;
-                case Armas.ItemType.Sword:
-                    Debug.Log("Attacking with Sword");
-                    break;
-                case Armas.ItemType.Hammer:
-                    Debug.Log("Attacking with Hammer");
-                    break;
-                default:
-                    Debug.LogWarning("Unknown weapon type.");
-                    break;
+                // Always get the current weapon
+                ItemInstance arma = equipArm.GetComponentInChildren<ItemInstance>();
+        
+                if (arma == null)
+                {
+                    if (debug)
+                    {
+                        ShootCajado(); // Debug mode: test staff shot
+                    }
+                    else
+                    {
+                        Debug.LogWarning("No weapon equipped.");
+                    }
+        
+                    return; // Don't proceed to switch
+                }
+        
+                switch (arma.type)
+                {
+                    case Armas.ItemType.Staff:
+                        ShootCajado();
+                        break;
+                    case Armas.ItemType.Sword:
+                        ShootSword();
+                        break;
+                    case Armas.ItemType.Hammer:
+                        Debug.Log("Attacking with Hammer");
+                        break;
+                    default:
+                        Debug.LogWarning("Unknown weapon type.");
+                        break;
+                }
             }
         }
-    }
+        
     void ShootCajado()
     {
         if (ataqueCajadoPrefab == null || shootOrigin == null)
