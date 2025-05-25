@@ -12,50 +12,33 @@ public class PlayerAttack : MonoBehaviour
     public bool debug = true;
 
     void Update()
+    {
+        if (Input.GetButtonDown("Fire1"))
         {
-            if (Input.GetButtonDown("Fire1"))
+            // Always get the current weapon
+            ItemInstance arma = equipArm.GetComponentInChildren<ItemInstance>();
+
+            if (arma == null)
             {
-                // Always get the current weapon
-                ItemInstance arma = equipArm.GetComponentInChildren<ItemInstance>();
-        
-                if (arma == null)
+                if (debug)
                 {
-                    if (debug)
-                    {
-                        ShootCajado(); // Debug mode: test staff shot
-                    }
-                    else
-                    {
-                        Debug.LogWarning("No weapon equipped.");
-                    }
-        
-                    return; // Don't proceed to switch
+                    ShootCajado(); // Debug mode: test staff shot
                 }
-        
-                switch (arma.type)
+                else
                 {
-                    case Armas.ItemType.Staff:
-                        ShootCajado();
-                        break;
-                    case Armas.ItemType.Sword:
-                        ShootSword();
-                        break;
-                    case Armas.ItemType.Hammer:
-                        Debug.Log("Attacking with Hammer");
-                        break;
-                    default:
-                        Debug.LogWarning("Unknown weapon type.");
-                        break;
+                    Debug.LogWarning("No weapon equipped.");
                 }
+
+                return; // Don't proceed to switch
             }
 
             switch (arma.type)
             {
                 case Armas.ItemType.Staff:
-                    ShootCube(); // Cajado
+                    ShootCajado();
                     break;
                 case Armas.ItemType.Sword:
-                    Debug.Log("Attacking with Sword");
+                    ShootEspada();
                     break;
                 case Armas.ItemType.Hammer:
                     Debug.Log("Attacking with Hammer");
@@ -65,13 +48,13 @@ public class PlayerAttack : MonoBehaviour
                     break;
             }
         }
-        }
-        
+    }
+
     void ShootCajado()
     {
         if (ataqueCajadoPrefab == null || shootOrigin == null)
         {
-            Debug.LogWarning("Cube Prefab or Shoot Origin is not assigned!");
+            Debug.LogWarning("Cajado Prefab or Shoot Origin is not assigned!");
             return;
         }
 
@@ -82,18 +65,12 @@ public class PlayerAttack : MonoBehaviour
             shootOrigin.right * spawnOffset.x;
 
         GameObject cube = Instantiate(ataqueCajadoPrefab, offsetPosition, shootOrigin.rotation);
-
-        Rigidbody rb = cube.GetComponent<Rigidbody>();
-        if (rb != null)
-        {
-            rb.AddForce(shootOrigin.forward * shootForce);
-        }
     }
-    void ShootSword()
+    void ShootEspada()
     {
-        if (ataqueEspadaPrefab == null || shootOrigin == null)
+        if (ataqueCajadoPrefab == null || shootOrigin == null)
         {
-            Debug.LogWarning("espada ataque Prefab or Shoot Origin is not assigned!");
+            Debug.LogWarning("Sword Prefab or Shoot Origin is not assigned!");
             return;
         }
 
@@ -103,13 +80,7 @@ public class PlayerAttack : MonoBehaviour
             shootOrigin.up * spawnOffset.y +
             shootOrigin.right * spawnOffset.x;
 
-        GameObject ataqueEspada = Instantiate(ataqueEspadaPrefab, offsetPosition, shootOrigin.rotation);
-
-        Rigidbody rb = ataqueEspada.GetComponent<Rigidbody>();
-        if (rb != null)
-        {
-            rb.AddForce(shootOrigin.forward * shootForce);
-        }
+        GameObject cube = Instantiate(ataqueCajadoPrefab, offsetPosition, shootOrigin.rotation);
     }
-}
 
+}
