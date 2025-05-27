@@ -525,7 +525,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: ArmGeneration
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 369943195769925944, guid: fcb1a38523956fa4584d0a729f77acbe, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
