@@ -23,7 +23,7 @@ public class PlayerAttackCollision : MonoBehaviour
             Debug.LogWarning("Rigidbody não encontrado no projétil.");
         }
 
-        // ✅ Projétil vai na direção para frente
+        // Projétil vai na direção para frente
         rb.linearVelocity = transform.forward * speed;
 
         Destroy(gameObject, 5f); // Destrói após 5s para segurança
