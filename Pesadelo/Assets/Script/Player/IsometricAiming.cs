@@ -54,7 +54,7 @@ namespace BarthaSzabolcs.IsometricAiming
             }
         }
 
-        // ✅ Função pública para ativar/desativar mira
+        // Função pública para ativar/desativar mira
         public void SetAiming()
         {
             isAimingEnabled = !isAimingEnabled;
