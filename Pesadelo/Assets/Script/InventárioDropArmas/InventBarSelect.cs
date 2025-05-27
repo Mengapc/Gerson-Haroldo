@@ -90,7 +90,13 @@ public class InventBarSelect : MonoBehaviour
             rb.AddForce(handPlayer.transform.forward * 2f, ForceMode.Impulse);
         }
 
-        ic.slots[slot] = null;
+        ic.slots[slot] = null; 
+        if (ic.slotsSprit != null && slot >= 0 && slot < ic.slotsSprit.Length && ic.slotsSprit[slot] != null)
+        {
+            ic.slotsSprit[slot].sprite = null; 
+            ic.slotsSprit[slot].enabled = false;
+        }
+
         Debug.Log("Item dropado do slot: " + slot);
     }
 

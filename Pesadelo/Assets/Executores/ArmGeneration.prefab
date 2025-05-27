@@ -48,7 +48,8 @@ MonoBehaviour:
   pointSprite: {x: 0, y: 0, z: 0}
   baseArm: {fileID: 8807498392011147377, guid: 15933cb14921053448af4e61f493902b, type: 3}
   player: {fileID: 0}
-  armSprits: []
+  armSprits:
+  - {fileID: 0}
   powerRate: 0
   powerDrop: 0
 --- !u!114 &3488389831455378624
