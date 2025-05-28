@@ -3,13 +3,14 @@ using UnityEngine;
 public class InventBarSelect : MonoBehaviour
 {
     private GameObject equipArm = null;
+    public GameObject icObject;
     private InventControler ic;
     public GameObject handPlayer;
     public float scroll;
 
     void Start()
     {
-        ic = FindObjectOfType<InventControler>();
+        ic = icObject.GetComponent<InventControler>();
         if (ic == null)
         {
             Debug.LogError("InventControler nao encontrado na cena!");

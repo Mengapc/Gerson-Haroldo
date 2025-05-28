@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class RandomParts : MonoBehaviour
 {
-    private Armas.Rarity rarity;
     [Header("Partes das armas")]
     [SerializeField] private List<GameObject> Gema;
     [Header("Cajado")]

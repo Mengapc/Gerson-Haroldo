@@ -4,6 +4,7 @@ public class Sacrifice : MonoBehaviour
 {
     
     InventControler ic;
+    public GameObject icObject;
     GameObject sacrifice;
     [SerializeField] private GameObject altar;
     public int sacrificLevel;
@@ -13,7 +14,7 @@ public class Sacrifice : MonoBehaviour
 
     void Start()
     {
-        ic = FindObjectOfType<InventControler>();
+        ic = icObject.GetComponent<InventControler>();
         if (ic == null)
         {
             Debug.LogError("InventControler não encontrado na cena!");
