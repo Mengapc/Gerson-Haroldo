@@ -6,13 +6,10 @@ using static Armas;
 
 public class ProceduralItens : MonoBehaviour
 {
-    public Vector3 pointSprite;
     public GameObject baseArm;
     public GameObject player;
     private ItemInstance ii;
     private RandomParts rp;
-    private SpriteGenerator sg;
-    private GameObject newItem;
     public List<Sprite> armSprits;
     [Header("Taxa dos itens")]
     public float powerRate;
@@ -49,10 +46,6 @@ public class ProceduralItens : MonoBehaviour
         GameObject baseArmInstance = Instantiate(baseArm, position, Quaternion.identity);
 
         GameObject principalPart = rp.GeneratePrincipalPartArm(newType, baseArmInstance.transform);
-
-        principalPart.transform.position = pointSprite;
-        
-
 
         if (principalPart != null)
         {
@@ -106,40 +99,32 @@ public class ProceduralItens : MonoBehaviour
         return (Armas.ItemType)Random.Range(0, System.Enum.GetValues(typeof(Armas.ItemType)).Length);
     }
     public Sprite SetSprite(Armas.ItemType type)
-
     {
-
-        Sprite spriteTemp;
+        Sprite spriteTemp = null; // Inicializa para garantir que sempre retorne algo
+        int requiredSize = 0;
 
         switch (type)
-
         {
-
             case Armas.ItemType.Sword:
-
-                spriteTemp = armSprits[0];
+                requiredSize = 1;
+                if (armSprits != null && armSprits.Count >= requiredSize && armSprits[0] != null)
+                    spriteTemp = armSprits[0];
                 break;
-
             case Armas.ItemType.Staff:
-
-                spriteTemp = armSprits[1];
+                requiredSize = 2;
+                if (armSprits != null && armSprits.Count >= requiredSize && armSprits[1] != null)
+                    spriteTemp = armSprits[1];
                 break;
-
             case Armas.ItemType.Hammer:
-
-                spriteTemp = armSprits[2];
+                requiredSize = 3;
+                if (armSprits != null && armSprits.Count >= requiredSize && armSprits[2] != null)
+                    spriteTemp = armSprits[2];
                 break;
-
             default:
-
-                Debug.Log("Tipo de arma não clasificada");
-
                 spriteTemp = null;
                 break;
         }
-
         return spriteTemp;
-
     }
 
 }

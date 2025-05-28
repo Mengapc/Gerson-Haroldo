@@ -12,13 +12,18 @@ public class PlayerAttackCollision : MonoBehaviour
 
     private void Start()
     {
-        rb = GetComponent<Rigidbody>();
-        if (rb == null)
+        Destroy(gameObject, 3f); // Destroi a bala após 5 segundos
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        // Verifica se a bala colidiu com um inimigo
+        if (collision.gameObject.CompareTag("basic_enemy"))
         {
             Debug.LogWarning("Rigidbody não encontrado no projétil.");
         }
 
-        // ✅ Projétil vai na direção para frente
+        // Projétil vai na direção para frente
         rb.linearVelocity = transform.forward * speed;
 
         Destroy(gameObject, 5f); // Destrói após 5s para segurança

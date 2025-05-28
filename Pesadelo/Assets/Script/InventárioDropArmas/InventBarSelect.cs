@@ -91,14 +91,11 @@ public class InventBarSelect : MonoBehaviour
         }
 
         ic.slots[slot] = null; 
-
-
         if (ic.slotsSprit != null && slot >= 0 && slot < ic.slotsSprit.Length && ic.slotsSprit[slot] != null)
         {
-            ic.slotsSprit[slot].sprite = null;
+            ic.slotsSprit[slot].sprite = null; 
             ic.slotsSprit[slot].enabled = false;
         }
-
 
         Debug.Log("Item dropado do slot: " + slot);
     }

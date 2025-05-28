@@ -1,6 +1,7 @@
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.UI;
+using UnityEngine.UI; 
 
 public class InventControler : MonoBehaviour
 {
@@ -11,7 +12,9 @@ public class InventControler : MonoBehaviour
     public GameObject player;
     public int slotBarSelect = 0;
 
+
     [Header("Configuracoes do inpectArm")]
+
     [SerializeField] float distanceInteractor;
 
     private void Update()
@@ -21,14 +24,15 @@ public class InventControler : MonoBehaviour
             tempArm = inspectArm();
         }
 
+
         switch (tempArm)
         {
             case null:
                 break;
             default:
-                ManagerInvetory(tempArm);
-                tempArm = null;
-                break;
+                ManagerInvetory(tempArm); 
+                tempArm = null; 
+                break; 
         }
     }
 
@@ -36,7 +40,7 @@ public class InventControler : MonoBehaviour
     {
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
-        GameObject objetoAtingido = null;
+        GameObject objetoAtingido = null; 
 
         if (Physics.Raycast(ray, out hit))
         {
@@ -44,23 +48,24 @@ public class InventControler : MonoBehaviour
             {
                 objetoAtingido = hit.collider.gameObject;
 
+              
                 if (objetoAtingido.CompareTag("Arm"))
                 {
                     if (player != null && Vector3.Distance(objetoAtingido.transform.position, player.transform.position) <= distanceInteractor)
                     {
                         Debug.Log("Objeto inspecionado: " + objetoAtingido.name);
-                        return objetoAtingido;
+                        return objetoAtingido; 
                     }
                     else
                     {
                         Debug.Log("Objeto fora do alcance.");
-                        return null;
+                        return null; 
                     }
                 }
                 else
                 {
                     Debug.Log("Objeto nao e uma arma.");
-                    return null;
+                    return null; 
                 }
             }
             else
@@ -72,7 +77,7 @@ public class InventControler : MonoBehaviour
         else
         {
             Debug.Log("Nenhum objeto atingido.");
-            return null;
+            return null; 
         }
     }
 
@@ -87,6 +92,7 @@ public class InventControler : MonoBehaviour
                 break;
             }
         }
+
         if (inventoryFull)
         {
             Debug.Log("Inventario cheio, nao foi possivel adicionar " + arm.name);
@@ -101,35 +107,39 @@ public class InventControler : MonoBehaviour
 
                 if (i < slotsSprit.Length && slotsSprit[i] != null)
                 {
-                    Image slotImage = slotsSprit[i]; 
+                    Image slotImage = slotsSprit[i].GetComponent<Image>();
 
                     if (slotImage != null)
                     {
                         ItemInstance itemInstance = arm.GetComponent<ItemInstance>();
-                        if (itemInstance != null && itemInstance.spriteArm != null) 
+                        if (itemInstance != null && itemInstance.spriteArm != null)
                         {
-                            slotImage.sprite = itemInstance.spriteArm; 
+                            slotImage.sprite = itemInstance.spriteArm;
                             slotImage.enabled = true;
                             slotImage.color = Color.white;
-                            Debug.Log($"Sprite '{itemInstance.spriteArm.name}' atribuído ao slot UI {i}");
+                            Debug.Log($"InventControler: Sprite '{itemInstance.spriteArm.name}' atribuído ao slot UI {i}.");
                         }
                         else
                         {
                             if (itemInstance == null)
                             {
-                                Debug.LogError($"ItemInstance não encontrado no objeto da arma '{arm.name}'.");
+                                Debug.LogError($"InventControler: ItemInstance não encontrado no objeto da arma '{arm.name}'.");
                             }
-                            else if (itemInstance.spriteArm == null)
+                            else
                             {
-                                Debug.LogError($"itemInstance.spriteArm é NULO para a arma '{arm.name}'. O sprite foi gerado corretamente?");
-                                slotImage.enabled = false;
+                                Debug.LogError($"InventControler: itemInstance.spriteArm é NULO para a arma '{arm.name}'. Verifique a função SetSprite e a configuração da lista armSprits no ProceduralItens.");
                             }
+                            slotImage.sprite = null;
                         }
+                    }
+                    else
+                    {
+                        Debug.LogError("Nenhum componente Image encontrado no GameObject do slotSprit no indice: " + i);
                     }
                 }
                 else
                 {
-                    Debug.LogError("Slot de sprite de inventario invalido ou nao atribuido no Inspector no indice: " + i);
+                    Debug.LogError("Slot de sprite de inventario (slotsSprit[" + i + "]) invalido ou nao atribuido no Inspector.");
                 }
 
                 arm.SetActive(false);

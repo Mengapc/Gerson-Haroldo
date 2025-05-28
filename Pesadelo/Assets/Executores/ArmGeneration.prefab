@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 3463700059307873957}
   - component: {fileID: 5770364130537343403}
   - component: {fileID: 3488389831455378624}
-  - component: {fileID: 369943195769925944}
   m_Layer: 0
   m_Name: ArmGeneration
   m_TagString: Untagged
@@ -46,10 +45,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 155556792f5f4b7499e263d35c8c2497, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pointSprite: {x: -10, y: 0, z: -10}
   baseArm: {fileID: 8807498392011147377, guid: 15933cb14921053448af4e61f493902b, type: 3}
   player: {fileID: 0}
-  armSprits: []
+  armSprits:
+  - {fileID: 0}
   powerRate: 0
   powerDrop: 0
 --- !u!114 &3488389831455378624
@@ -172,22 +171,3 @@ MonoBehaviour:
   - {fileID: 8944636817947003917, guid: 485de91ecac05ac47858f3b798df7663, type: 3}
   - {fileID: 5856586444298739291, guid: 6f0c26f3e1874eb46a43717528ded0ed, type: 3}
   vfxObject: []
---- !u!114 &369943195769925944
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8951745012315035225}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e9a0e1933b10ad4287345b644092a2d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cameraCaptura: {fileID: 4211377855953283751, guid: 61f18d1d582f534498595fe3c0d71163, type: 3}
-  larguraSprite: 256
-  alturaSprite: 256
-  fundoTransparente: 1
-  corDeFundoOpaco: {r: 0, g: 0, b: 0, a: 0}
-  salvarSpriteEmArquivo: 1
-  prefixoNomeArquivo: ArmaSprite_
