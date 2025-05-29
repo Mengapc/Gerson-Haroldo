@@ -139,39 +139,12 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_ProvidesContacts: 1
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 3.0338569, y: 4.0184665, z: 0.41780117}
   m_Center: {x: 0.000036954883, y: 0.00037550932, z: -0.00009587407}
---- !u!54 &174489386
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 174489378}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 0
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 1
 --- !u!1 &235007150 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1205676309228744926, guid: 099e14c256a3af04aa758a0faa4eab41, type: 3}
@@ -1188,7 +1161,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5652966060173783308, guid: 6ab5c36b1dba01c468572ac52ea5cbcd, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.768
+      value: -5.65
       objectReference: {fileID: 0}
     - target: {fileID: 5652966060173783308, guid: 6ab5c36b1dba01c468572ac52ea5cbcd, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1229,9 +1202,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 74785413905532094, guid: 6ab5c36b1dba01c468572ac52ea5cbcd, type: 3}
       insertIndex: -1
       addedObject: {fileID: 174489382}
-    - targetCorrespondingSourceObject: {fileID: 74785413905532094, guid: 6ab5c36b1dba01c468572ac52ea5cbcd, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 174489386}
   m_SourcePrefab: {fileID: 100100000, guid: 6ab5c36b1dba01c468572ac52ea5cbcd, type: 3}
 --- !u!1001 &1263057558441063920
 PrefabInstance:
@@ -2300,6 +2270,10 @@ PrefabInstance:
       value: " Ch\xE3o1"
       objectReference: {fileID: 0}
     - target: {fileID: 4762261272306930539, guid: b1ec898d2f10c3743a108e8f89345a93, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4762261272306930539, guid: b1ec898d2f10c3743a108e8f89345a93, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
@@ -2655,7 +2629,7 @@ MeshCollider:
   m_ProvidesContacts: 1
   m_Enabled: 1
   serializedVersion: 5
-  m_Convex: 1
+  m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -2228417370725966487, guid: 7393e7b25edf61b4b87eb6973567d8df, type: 3}
 --- !u!1001 &7018412112273605068
