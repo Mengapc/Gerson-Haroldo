@@ -3,7 +3,7 @@ using UnityEngine;
 public class PlayerAttackCollision : MonoBehaviour
 {
     public int bulletDamage = 1;
-    public float knockbackForce = 5f;
+    public float knockbackForce = 0.001f;
     public float speed = 10f;
     public float destroyDelay = 1f;
 
@@ -12,12 +12,11 @@ public class PlayerAttackCollision : MonoBehaviour
 
     private void Start()
     {
+        rb = GetComponent<Rigidbody>();
         Destroy(gameObject, 3f); // Destroi a bala após 5 segundos
-        // Projétil vai na direção para frente
         
-        rb.linearVelocity = transform.forward * speed;
+        rb.linearVelocity = transform.forward * speed; // Projétil vai na direção para frente
     }
-
     private void OnTriggerEnter(Collider other)
     {
         if (hasHit) return;
@@ -32,8 +31,8 @@ public class PlayerAttackCollision : MonoBehaviour
             Rigidbody enemyRb = other.GetComponent<Rigidbody>();
             if (enemyRb != null)
             {
-                Vector3 knockbackDir = (other.transform.position - transform.position).normalized;
-                enemyRb.AddForce(knockbackDir * knockbackForce, ForceMode.Impulse);
+                Vector3 knockbackDir = transform.forward;
+                enemyRb.AddExplosionForce(knockbackForce, transform.position, 1f, 0f, ForceMode.Impulse);
             }
 
             Destroy(gameObject);

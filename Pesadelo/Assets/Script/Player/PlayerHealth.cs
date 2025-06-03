@@ -1,7 +1,6 @@
 using UnityEngine;
 using TMPro;  // Import TextMeshPro namespace
 using System.Collections;
-using System.Collections.Generic;
 using BarthaSzabolcs.IsometricAiming;
 
 public class PlayerHealth : MonoBehaviour
@@ -56,34 +55,33 @@ public class PlayerHealth : MonoBehaviour
             enemy.SetCanMove(false);
         }
 
-        isometricAiming.SetAiming();
-        rb.constraints = RigidbodyConstraints.FreezeRotationY;
+        isometricAiming.SetAiming(false); // Desativa mira
+        rb.constraints = RigidbodyConstraints.FreezeRotation;
         StartCoroutine(DelayedDeath());
         StartCoroutine(BlinkPlayer());
     }
 
     private IEnumerator DelayedDeath()
     {
-    float remainingTime = respawnTime;
+        float remainingTime = respawnTime;
 
-    while (remainingTime > 0f)
-    {
-        deathText.text = "SE FUDEU\nRevivendo em: " + Mathf.CeilToInt(remainingTime);
-        yield return new WaitForSeconds(0.1f);
-        remainingTime -= 0.1f;
-    }
-    deathText.text = ""; // Limpa o texto
-    currentHealth = maxHealth; // Restaura a saúde
-    UpdateHealthUI();
-    playerMovement.BlockMovement(); // Libera o movimento (toggle)
-    isometricAiming.SetAiming();
-    rb.constraints &= ~RigidbodyConstraints.FreezeRotationY;
-    EnemyMovement[] allEnemies = FindObjectsByType<EnemyMovement>(FindObjectsSortMode.None);
-    foreach (EnemyMovement enemy in allEnemies)
-    {
-        enemy.SetCanMove(true);
-    }
-
+        while (remainingTime > 0f)
+        {
+            deathText.text = "SE FUDEU\nRevivendo em: " + Mathf.CeilToInt(remainingTime);
+            yield return new WaitForSeconds(0.1f);
+            remainingTime -= 0.1f;
+        }
+        deathText.text = ""; // Limpa o texto
+        currentHealth = maxHealth; // Restaura a saúde
+        UpdateHealthUI();
+        playerMovement.BlockMovement(); // Libera o movimento (toggle)
+        isometricAiming.SetAiming(true); // Reativa mira
+        rb.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ;
+        EnemyMovement[] allEnemies = FindObjectsByType<EnemyMovement>(FindObjectsSortMode.None);
+        foreach (EnemyMovement enemy in allEnemies)
+        {
+            enemy.SetCanMove(true);
+        }
     }
 
 

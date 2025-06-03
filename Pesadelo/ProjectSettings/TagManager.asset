@@ -8,6 +8,7 @@ TagManager:
   - Arm
   - VFX
   - Paredes
+  - Altar
   layers:
   - Default
   - TransparentFX
