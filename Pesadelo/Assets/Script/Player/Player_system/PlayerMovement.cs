@@ -20,61 +20,54 @@ public class PlayerMovement : MonoBehaviour
     public bool IsDashing => isDashing;
     public Vector3 CurrentMovementDirection => movementDirection;
 
+    private Rigidbody rb;
+
+    private void Awake()
+    {
+        rb = GetComponent<Rigidbody>();
+    }
+
     void FixedUpdate()
     {
-        if (isPlayerMoving)
+        if (!isPlayerMoving) return;
+
+        movementDirection = Vector3.zero;
+
+        if (Input.GetKey(KeyCode.D))
+            movementDirection += Vector3.right;
+        if (Input.GetKey(KeyCode.A))
+            movementDirection += Vector3.left;
+        if (Input.GetKey(KeyCode.W))
+            movementDirection += Vector3.forward;
+        if (Input.GetKey(KeyCode.S))
+            movementDirection += Vector3.back;
+
+        movementDirection = movementDirection.normalized;
+
+        // Atualiza cooldown do dash
+        if (dashCooldownTimer > 0)
+            dashCooldownTimer -= Time.fixedDeltaTime;
+
+        // Inicia dash se permitido
+        if (Input.GetKeyDown(KeyCode.LeftShift) && movementDirection != Vector3.zero && !isDashing && dashCooldownTimer <= 0)
         {
-            movementDirection = Vector3.zero;
-
-            if (Input.GetKey(KeyCode.D))
-            {
-                movementDirection += Vector3.right;
-            }
-            if (Input.GetKey(KeyCode.A))
-            {
-                movementDirection += Vector3.left;
-            }
-            if (Input.GetKey(KeyCode.W))
-            {
-                movementDirection += Vector3.forward;
-            }
-            if (Input.GetKey(KeyCode.S))
-            {
-                movementDirection += Vector3.back;
-            }
-
-            movementDirection = movementDirection.normalized;
-
-            // Atualiza o cooldown do dash
-            if (dashCooldownTimer > 0)
-            {
-                dashCooldownTimer -= Time.deltaTime;
-            }
-
-            // Se apertar Shift, estiver se movendo, não estiver dando dash e o cooldown já tiver acabado
-            if (Input.GetKeyDown(KeyCode.LeftShift) && movementDirection != Vector3.zero && !isDashing && dashCooldownTimer <= 0)
-            {
-                isDashing = true;
-                dashTime = dashDuration;
-                dashCooldownTimer = dashCooldown; // Reseta o cooldown
-            }
-
-            if (isDashing)
-            {
-                transform.position += movementDirection * dashSpeed * Time.deltaTime;
-                dashTime -= Time.deltaTime;
-
-                if (dashTime <= 0)
-                {
-                    isDashing = false;
-                }
-            }
-            else
-            {
-                transform.position += movementDirection * speed * Time.deltaTime;
-            }
+            isDashing = true;
+            dashTime = dashDuration;
+            dashCooldownTimer = dashCooldown;
         }
+
+        float currentSpeed = isDashing ? dashSpeed : speed;
+
+        if (isDashing)
+        {
+            dashTime -= Time.fixedDeltaTime;
+            if (dashTime <= 0)
+                isDashing = false;
+        }
+
+        rb.MovePosition(rb.position + movementDirection * currentSpeed * Time.fixedDeltaTime);
     }
+
     // Função para realizar o spawn do jogador
     public void Spawn()
     {

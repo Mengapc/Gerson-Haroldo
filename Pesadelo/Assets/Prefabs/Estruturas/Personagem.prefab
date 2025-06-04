@@ -238,6 +238,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 66d314488d915e74aa366986b66add22, type: 3}
       insertIndex: -1
       addedObject: {fileID: 7871223574384926890}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 66d314488d915e74aa366986b66add22, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2524814919325637625}
   m_SourcePrefab: {fileID: 100100000, guid: 66d314488d915e74aa366986b66add22, type: 3}
 --- !u!4 &8139840174861193899 stripped
 Transform:
@@ -314,6 +317,7 @@ MonoBehaviour:
   groundMask:
     serializedVersion: 2
     m_Bits: 1
+  rotationSpeed: 10
 --- !u!114 &8600322470855581562
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -331,7 +335,7 @@ MonoBehaviour:
   ataqueMarteloPrefab: {fileID: 0}
   shootForce: 500
   shootOrigin: {fileID: 8139840174861193899}
-  spawnOffset: {x: 0, y: 0.5, z: 1}
+  spawnOffset: {x: 0, y: 0.5, z: 0.5}
   equipArm: {fileID: 2023992879133956250}
   debug: 1
 --- !u!114 &6844583266332537385
@@ -427,3 +431,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f49e5207f63de4888b27d9dd109eb65e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2524814919325637625
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8916376500798638097}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30edbb4301f83d645b70d7c6f1c96655, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactionRange: 2
+  interactKey: 101
+  interactionText: {fileID: 0}

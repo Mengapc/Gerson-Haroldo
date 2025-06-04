@@ -232,21 +232,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ddf8b3c933a1cd73b6f7fa4de8e4364, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &567276660
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 567276644}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 30edbb4301f83d645b70d7c6f1c96655, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  interactionRange: 2
-  interactKey: 101
-  interactionText: {fileID: 1297767244}
 --- !u!1 &683166814 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 28908347148395080, guid: 122df7720dd255246b7d30843b6022c1, type: 3}
@@ -1451,10 +1436,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Personagem
       objectReference: {fileID: 0}
-    - target: {fileID: 5829688692487656599, guid: 123e39b340c818240839f939ab26b236, type: 3}
-      propertyPath: m_Name
-      value: EquipArm
-      objectReference: {fileID: 0}
+    - target: {fileID: 2524814919325637625, guid: 123e39b340c818240839f939ab26b236, type: 3}
+      propertyPath: interactionText
+      value: 
+      objectReference: {fileID: 1297767244}
     - target: {fileID: 6844583266332537385, guid: 123e39b340c818240839f939ab26b236, type: 3}
       propertyPath: deathText
       value: 
@@ -1463,10 +1448,6 @@ PrefabInstance:
       propertyPath: healthText
       value: 
       objectReference: {fileID: 2027709388}
-    - target: {fileID: 8135628444494037772, guid: 123e39b340c818240839f939ab26b236, type: 3}
-      propertyPath: m_CollisionDetection
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 8600322470855581562, guid: 123e39b340c818240839f939ab26b236, type: 3}
       propertyPath: spawnOffset.z
       value: 0.5
@@ -1511,21 +1492,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8916376500798638097, guid: 123e39b340c818240839f939ab26b236, type: 3}
-      propertyPath: m_Name
-      value: Personagem
-      objectReference: {fileID: 0}
-    - target: {fileID: 8916376500798638097, guid: 123e39b340c818240839f939ab26b236, type: 3}
-      propertyPath: m_TagString
-      value: Player
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 8916376500798638097, guid: 123e39b340c818240839f939ab26b236, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 567276660}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 123e39b340c818240839f939ab26b236, type: 3}
 --- !u!4 &1263057558441063922 stripped
 Transform:
