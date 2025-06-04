@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEngine.UIElements;
 using static Armas;
 
+[DisallowMultipleComponent]
+
 public class ProceduralItens : MonoBehaviour
 {
     public GameObject baseArm;
@@ -44,6 +46,10 @@ public class ProceduralItens : MonoBehaviour
         Sprite newSprite = SetSprite(newType);
 
         GameObject baseArmInstance = Instantiate(baseArm, position, Quaternion.identity);
+
+        InteractableItem interactable = baseArmInstance.GetComponent<InteractableItem>();
+        if (interactable == null)
+            interactable = baseArmInstance.AddComponent<InteractableItem>();
 
         GameObject principalPart = rp.GeneratePrincipalPartArm(newType, baseArmInstance.transform);
 

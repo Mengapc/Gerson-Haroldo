@@ -237,9 +237,6 @@ PrefabInstance:
       addedObject: {fileID: 1543127532061595384}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 66d314488d915e74aa366986b66add22, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 506567360782783473}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 66d314488d915e74aa366986b66add22, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 7871223574384926890}
   m_SourcePrefab: {fileID: 100100000, guid: 66d314488d915e74aa366986b66add22, type: 3}
 --- !u!4 &8139840174861193899 stripped
@@ -418,20 +415,6 @@ MonoBehaviour:
   player: {fileID: 8916376500798638097}
   slotBarSelect: 0
   distanceInteractor: 5
---- !u!114 &506567360782783473
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8916376500798638097}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6a3306c11968ca14ea10b3445ba905b2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  handPlayer: {fileID: 5829688692487656599}
-  scroll: 0
 --- !u!114 &7871223574384926890
 MonoBehaviour:
   m_ObjectHideFlags: 0

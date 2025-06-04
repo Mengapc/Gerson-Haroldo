@@ -24,15 +24,17 @@ public class EnemyMovement : MonoBehaviour
 
     private void Update()
     {
-        if (player != null && canMove)
+        if (player == null || !canMove)
         {
-            float distanceToPlayer = Vector3.Distance(transform.position, player.position);
+            return;
+        }
 
-            if (distanceToPlayer <= detectionRange)
-            {
-                RotateTowardsPlayer();
-                MoveTowardsPlayer();
-            }
+        float distanceToPlayer = Vector3.Distance(transform.position, player.position);
+
+        if (distanceToPlayer <= detectionRange)
+        {
+            RotateTowardsPlayer();
+            MoveTowardsPlayer();
         }
     }
 

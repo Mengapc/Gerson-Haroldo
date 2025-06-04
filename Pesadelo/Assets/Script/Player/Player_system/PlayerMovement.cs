@@ -17,8 +17,10 @@ public class PlayerMovement : MonoBehaviour
     private bool isDashing = false;
     private float dashTime = 0f;
     private float dashCooldownTimer = 0f; // Timer para o cooldown
+    public bool IsDashing => isDashing;
+    public Vector3 CurrentMovementDirection => movementDirection;
 
-    void Update()
+    void FixedUpdate()
     {
         if (isPlayerMoving)
         {

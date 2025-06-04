@@ -8,6 +8,7 @@ TagManager:
   - Arm
   - VFX
   - Paredes
+  - Altar
   layers:
   - Default
   - TransparentFX
@@ -17,8 +18,8 @@ TagManager:
   - UI
   - MinimapTiles
   - CaptureSprit
-  - 
-  - 
+  - LayerMask
+  - SeeTrough
   - 
   - 
   - 
