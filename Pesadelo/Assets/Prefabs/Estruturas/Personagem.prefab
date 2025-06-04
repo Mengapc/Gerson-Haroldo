@@ -228,19 +228,7 @@ PrefabInstance:
       addedObject: {fileID: 7871223574384926890}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 66d314488d915e74aa366986b66add22, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 7981520792752750092}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 66d314488d915e74aa366986b66add22, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 5751981034624526382}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 66d314488d915e74aa366986b66add22, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1514285778297179582}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 66d314488d915e74aa366986b66add22, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 4175862795743805278}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 66d314488d915e74aa366986b66add22, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 3175573417315368}
+      addedObject: {fileID: 2524814919325637625}
   m_SourcePrefab: {fileID: 100100000, guid: 66d314488d915e74aa366986b66add22, type: 3}
 --- !u!4 &8139840174861193899 stripped
 Transform:
@@ -302,6 +290,80 @@ CapsuleCollider:
   m_Height: 1.2070636
   m_Direction: 1
   m_Center: {x: 0.0040712655, y: 0.60877734, z: -0.012569517}
+--- !u!114 &3012442167818393574
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8916376500798638097}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d27d0d94e91ea445be7ac940823f425, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  groundMask:
+    serializedVersion: 2
+    m_Bits: 1
+  rotationSpeed: 10
+--- !u!114 &8600322470855581562
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8916376500798638097}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25c06a174f4772342b8282b18de31832, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ataqueCajadoPrefab: {fileID: 2025353752603184886, guid: 2e9cda8a436e6774bbebf2c53df50187, type: 3}
+  ataqueEspadaPrefab: {fileID: 5023341722270877105, guid: f864335e6482d5f459842b5042bbfd3b, type: 3}
+  ataqueMarteloPrefab: {fileID: 0}
+  shootForce: 500
+  shootOrigin: {fileID: 8139840174861193899}
+  spawnOffset: {x: 0, y: 0.5, z: 0.5}
+  equipArm: {fileID: 2023992879133956250}
+  debug: 1
+--- !u!114 &6844583266332537385
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8916376500798638097}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c12fa8be9eada8449a9a8876509b4763, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
+  currentHealth: 100
+  respawnTime: 3
+  healthText: {fileID: 0}
+  deathText: {fileID: 0}
+  playerMovement: {fileID: 6194208708669494795}
+  isometricAiming: {fileID: 3012442167818393574}
+  rb: {fileID: 8135628444494037772}
+--- !u!114 &6194208708669494795
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8916376500798638097}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ddf8b3c933a1cd73b6f7fa4de8e4364, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 2
+  dashSpeed: 6
+  dashDuration: 0.5
+  dashCooldown: 1
+  player: {fileID: 8916376500798638097}
+  spawnRoomName: Spawn(Clone)
 --- !u!114 &2910760500901700191
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -358,27 +420,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f49e5207f63de4888b27d9dd109eb65e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &7981520792752750092
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8916376500798638097}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 25c06a174f4772342b8282b18de31832, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ataqueCajadoPrefab: {fileID: 0}
-  ataqueEspadaPrefab: {fileID: 0}
-  ataqueMarteloPrefab: {fileID: 0}
-  shootForce: 500
-  shootOrigin: {fileID: 0}
-  spawnOffset: {x: 0, y: 0.5, z: 1}
-  equipArm: {fileID: 0}
-  debug: 1
---- !u!114 &5751981034624526382
+--- !u!114 &2524814919325637625
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -393,56 +435,3 @@ MonoBehaviour:
   interactionRange: 2
   interactKey: 101
   interactionText: {fileID: 0}
---- !u!114 &1514285778297179582
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8916376500798638097}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7d27d0d94e91ea445be7ac940823f425, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  groundMask:
-    serializedVersion: 2
-    m_Bits: 0
---- !u!114 &4175862795743805278
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8916376500798638097}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5ddf8b3c933a1cd73b6f7fa4de8e4364, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 2
-  dashSpeed: 6
-  dashDuration: 0.2
-  dashCooldown: 1
-  player: {fileID: 0}
-  spawnRoomName: Spawn(Clone)
---- !u!114 &3175573417315368
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8916376500798638097}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c12fa8be9eada8449a9a8876509b4763, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHealth: 100
-  currentHealth: 100
-  respawnTime: 3
-  healthText: {fileID: 0}
-  deathText: {fileID: 0}
-  playerMovement: {fileID: 0}
-  isometricAiming: {fileID: 0}
-  rb: {fileID: 0}

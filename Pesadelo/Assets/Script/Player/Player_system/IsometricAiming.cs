@@ -2,43 +2,47 @@ using UnityEngine;
 
 namespace BarthaSzabolcs.IsometricAiming
 {
+    [RequireComponent(typeof(Rigidbody))]
     public class IsometricAiming : MonoBehaviour
     {
         [SerializeField] private LayerMask groundMask;
         private Camera mainCamera;
-        private PlayerMovement playerMovement;
+        private Rigidbody rb;
 
-        private bool isAimingEnabled = true; // Nova variável de controle
+        [SerializeField] private float rotationSpeed = 10f;
 
-        private void Start()
+        private bool isAimingEnabled = true;
+
+        private void Awake()
         {
-            playerMovement = GetComponent<PlayerMovement>();
             mainCamera = Camera.main;
+            rb = GetComponent<Rigidbody>();
+
+            // Trava rotação nos eixos indesejados
+            rb.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ;
         }
 
-        private void Update()
+        private void FixedUpdate()
         {
             if (!isAimingEnabled) return;
 
-            Aim(); // Sempre mira, inclusive no dash
+            Aim();
         }
+
         private void Aim()
         {
             var (success, position) = GetMousePosition();
 
-            // Falha no Raycast OU posição inválida
             if (!success || position == Vector3.zero)
-            {
                 return;
-            }
 
-            var direction = position - transform.position;
+            Vector3 direction = position - transform.position;
             direction.y = 0;
 
-            // Só rotaciona se o vetor for válido
             if (direction.sqrMagnitude > 0.01f)
             {
-                transform.forward = direction;
+                Quaternion targetRotation = Quaternion.LookRotation(direction);
+                rb.MoveRotation(Quaternion.Slerp(rb.rotation, targetRotation, rotationSpeed * Time.fixedDeltaTime));
             }
         }
 
@@ -50,13 +54,10 @@ namespace BarthaSzabolcs.IsometricAiming
             {
                 return (true, hitInfo.point);
             }
-            else
-            {
-                return (false, Vector3.zero);
-            }
+
+            return (false, Vector3.zero);
         }
 
-        // Função pública para ativar/desativar mira
         public void SetAiming(bool state)
         {
             isAimingEnabled = state;
