@@ -1,7 +1,9 @@
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.UI; 
+using UnityEngine.UI;
+
+[DisallowMultipleComponent]
 
 public class InventControler : MonoBehaviour
 {
@@ -81,7 +83,7 @@ public class InventControler : MonoBehaviour
         }
     }
 
-    private void ManagerInvetory(GameObject arm)
+    public void ManagerInvetory(GameObject arm)
     {
         bool inventoryFull = true;
         for (int i = 0; i < slots.Length; i++)

@@ -1,6 +1,8 @@
 using UnityEngine;
 using TMPro;
 
+[DisallowMultipleComponent]
+
 public class PlayerInteractor : MonoBehaviour
 {
     public float interactionRange = 2f;
@@ -20,7 +22,7 @@ public class PlayerInteractor : MonoBehaviour
 
             if (Input.GetKeyDown(interactKey))
             {
-                currentInteractable.Collect();
+                currentInteractable.Interact();
                 interactionText.enabled = false;
             }
         }

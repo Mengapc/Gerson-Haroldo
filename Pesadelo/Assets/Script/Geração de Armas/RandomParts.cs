@@ -2,6 +2,8 @@ using System.Collections.Generic;
 using UnityEditorInternal.Profiling.Memory.Experimental;
 using UnityEngine;
 
+[DisallowMultipleComponent]
+
 public class RandomParts : MonoBehaviour
 {
     private Armas.Rarity rarity;
