@@ -9,9 +9,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7219431274882463722}
+  - component: {fileID: 2277915894410574576}
   m_Layer: 0
   m_Name: Galatico
-  m_TagString: Untagged
+  m_TagString: Gema
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -32,6 +33,22 @@ Transform:
   - {fileID: 4987862585642003580}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2277915894410574576
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3631131030051421484}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd9d5be83f3761044a8303a811e7edfd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cooldownHabilidade: 5
+  ib: {fileID: 0}
+  Gemas: {fileID: 11400000, guid: 8c8c0303b763aee4c8e9fc9dc3dcdf09, type: 2}
+  typeGem: 2
 --- !u!1001 &4806127937757268887
 PrefabInstance:
   m_ObjectHideFlags: 0

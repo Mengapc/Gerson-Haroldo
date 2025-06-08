@@ -11,6 +11,8 @@ public class ProceduralItens : MonoBehaviour
     public GameObject baseArm;
     public GameObject player;
     private ItemInstance ii;
+    private InstanceGem Gema;
+    public string tagGem = "Gema";
     private RandomParts rp;
     public List<Sprite> armSprits;
     [Header("Taxa dos itens")]
@@ -49,10 +51,10 @@ public class ProceduralItens : MonoBehaviour
 
         InteractableItem interactable = baseArmInstance.GetComponent<InteractableItem>();
         if (interactable == null)
+        { 
             interactable = baseArmInstance.AddComponent<InteractableItem>();
-
+        }
         GameObject principalPart = rp.GeneratePrincipalPartArm(newType, baseArmInstance.transform);
-
         if (principalPart != null)
         {
             principalPart.transform.SetParent(baseArmInstance.transform);
@@ -67,6 +69,9 @@ public class ProceduralItens : MonoBehaviour
             Debug.LogError("A parte principal não foi gerada corretamente!");
         }
 
+        Armas.Element newElemente = GeneretaElement(baseArmInstance);
+
+
         ii = baseArmInstance.GetComponent<ItemInstance>();
         if (ii == null)
         {
@@ -74,7 +79,7 @@ public class ProceduralItens : MonoBehaviour
         }
         else
         {
-            ii.SetItemData(newName, newType, newRarity, newPower, newSpecialStatus, newSprite);
+            ii.SetItemData(newName, newType, newRarity,newElemente, newPower, newSpecialStatus, newSprite);
         }
 
         return baseArmInstance;
@@ -89,20 +94,45 @@ public class ProceduralItens : MonoBehaviour
         if (chance < 98) return Armas.Rarity.Epic;
         return Armas.Rarity.Legendary;
     }
-
-    public bool ThisSpecialStatus(Armas.Rarity rarity)
+    public Armas.ItemType GenerateType()
     {
-        return rarity >= Armas.Rarity.Rare;
+        return (Armas.ItemType)Random.Range(0, System.Enum.GetValues(typeof(Armas.ItemType)).Length);
     }
+    public Armas.Element GeneretaElement(GameObject arm)
+        {
+        GameObject gemaObject = EncontrarFilhoPorTagRecursivo(arm.transform, "Gema");
 
+        if (gemaObject != null)
+        {
+
+            InstanceGem gemaInfo = gemaObject.GetComponent<InstanceGem>();
+
+            if (gemaInfo != null)
+            {
+                Gemas.TypeGem tipoGemaEncontrado = gemaInfo.typeGem;
+                Debug.Log(tipoGemaEncontrado);
+
+                return ConverterGemaParaElemento(tipoGemaEncontrado);
+            }
+            else
+            {
+
+                Debug.LogError($"O objeto '{gemaObject.name}' tem a tag 'Gema', mas falta o componente 'GemaInfo'.", gemaObject);
+            }
+        }
+        else
+        {
+            Debug.LogWarning($"Nenhum filho com a tag 'Gema' foi encontrado em '{arm.name}'. Retornando elemento padrão.");
+        }
+        return default(Armas.Element);
+    }
     public int GeneratePowerLevel(Armas.Rarity rarity)
     {
         return Mathf.RoundToInt(Random.Range(10, 12) * ((int)rarity + 1) * powerRate);
     }
-
-    public Armas.ItemType GenerateType()
+    public bool ThisSpecialStatus(Armas.Rarity rarity)
     {
-        return (Armas.ItemType)Random.Range(0, System.Enum.GetValues(typeof(Armas.ItemType)).Length);
+        return rarity >= Armas.Rarity.Rare;
     }
     public Sprite SetSprite(Armas.ItemType type)
     {
@@ -132,5 +162,57 @@ public class ProceduralItens : MonoBehaviour
         }
         return spriteTemp;
     }
+    public GameObject EncontrarFilhoPorTagRecursivo(Transform pai, string tag)
+    {
+        // Log para saber em qual objeto a busca está sendo feita atualmente.
+        Debug.Log($"Buscando a tag '{tag}' dentro de: {pai.name}");
 
+        // Itera por cada filho direto do objeto 'pai'.
+        foreach (Transform filho in pai)
+        {
+            // Log para mostrar qual filho está sendo inspecionado.
+            Debug.Log($"-- Verificando o filho: '{filho.name}', que possui a tag: '{filho.tag}'");
+
+            // 1. Verifica se o filho atual tem a tag procurada.
+            if (filho.CompareTag(tag))
+            {
+                // Log de sucesso, em verde para fácil visualização.
+                Debug.Log($"<color=green>SUCESSO!</color> Encontrado o objeto '{filho.name}' com a tag '{tag}'.");
+                return filho.gameObject;
+            }
+
+            // 2. Se não encontrou, chama a mesma função para o filho atual.
+            // Isso faz com que a busca continue nos "netos", "bisnetos", etc.
+            GameObject resultado = EncontrarFilhoPorTagRecursivo(filho, tag);
+
+            // 3. Verifica se a chamada recursiva (a busca nos níveis inferiores) encontrou algo.
+            if (resultado != null)
+            {
+                // Se encontrou, retorna o resultado para cima sem precisar procurar mais.
+                return resultado;
+            }
+        }
+
+        // Se o loop terminar e nada for encontrado nesta ramificação, a função retorna null.
+        // Nenhum log é necessário aqui, pois a falta de um log de "SUCESSO" já indica a falha neste nível.
+        return null;
+    }
+    private Armas.Element ConverterGemaParaElemento(Gemas.TypeGem tipoGema)
+    {
+        switch (tipoGema)
+        {
+            case Gemas.TypeGem.Water:
+                return Armas.Element.Water; // Assumindo que Armas.Element.Water existe
+
+            case Gemas.TypeGem.Wind:
+                return Armas.Element.Wind; // Assumindo que Armas.Element.Wind existe
+
+            case Gemas.TypeGem.Galaxy:
+                return Armas.Element.Galaxy; // Assumindo que Armas.Element.Galaxy existe
+
+            default:
+                Debug.LogWarning($"Mapeamento não encontrado para o tipo de gema: {tipoGema}. Retornando valor padrão.");
+                return default(Armas.Element);
+        }
+    }
 }

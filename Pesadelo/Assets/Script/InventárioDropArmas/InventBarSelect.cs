@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class InventBarSelect : MonoBehaviour
 {
-    private GameObject equipArm = null;
+    public GameObject equipArm = null;
     public GameObject icObject;
     private InventControler ic;
     public GameObject handPlayer;

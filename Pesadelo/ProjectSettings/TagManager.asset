@@ -9,6 +9,7 @@ TagManager:
   - VFX
   - Paredes
   - Altar
+  - Gema
   layers:
   - Default
   - TransparentFX
