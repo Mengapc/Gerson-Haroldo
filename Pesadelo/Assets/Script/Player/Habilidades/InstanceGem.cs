@@ -1,43 +1,35 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System;
-// A linha abaixo pode não ser necessária se você não a estiver usando para mais nada.
-// using UnityEngine.Rendering.VirtualTexturing;
+
 
 public class InstanceGem : MonoBehaviour
 {
-    [Header("Configuração da Habilidade")]
+    [Header("Configuraï¿½ï¿½o da Habilidade")]
     public float cooldownHabilidade = 5f;
+    public GameObject efectArea;
+    public float tempoArÃ©aHammer;
 
-    [Header("Referências")]
-    // Este campo agora será preenchido automaticamente via código.
-    // Não precisa mais se preocupar em arrastá-lo no Inspector do Prefab.
+    [Header("Referï¿½ncias")]
     public InventBarSelect ib;
     public Gemas Gemas;
     public Gemas.TypeGem typeGem;
-
-
     private Dictionary<Armas.ItemType, Dictionary<Armas.Element, Action>> habilidades;
-
-
     private float proximoUsoDisponivel = 0f;
 
-    // NOVO MÉTODO AWAKE
+
     private void Awake()
     {
-        // Procura na cena inteira por um componente do tipo InventBarSelect
-        // e armazena a referência na variável 'ib'.
+
         ib = FindObjectOfType<InventBarSelect>();
 
-        // É uma boa prática verificar se a referência foi encontrada.
         if (ib == null)
         {
-            Debug.LogError("Não foi possível encontrar o 'InventBarSelect' na cena! A habilidade não funcionará.");
+            Debug.LogError("Nï¿½o foi possï¿½vel encontrar o 'InventBarSelect' na cena! A habilidade nï¿½o funcionarï¿½.");
         }
 
         InicializarDicionarioHabilidades();
     }
-
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.F))
@@ -54,17 +46,17 @@ public class InstanceGem : MonoBehaviour
             return;
         }
 
-        // CORREÇÃO IMPORTANTE: Verifique se 'ib' não é nulo ANTES de tentar usar 'ib.equipArm'
+        // CORREï¿½ï¿½O IMPORTANTE: Verifique se 'ib' nï¿½o ï¿½ nulo ANTES de tentar usar 'ib.equipArm'
         if (ib == null || ib.equipArm == null)
         {
-            Debug.LogWarning("Inventário ou arma não encontrados! Não é possível usar habilidade.");
+            Debug.LogWarning("Inventï¿½rio ou arma nï¿½o encontrados! Nï¿½o ï¿½ possï¿½vel usar habilidade.");
             return;
         }
 
         ItemInstance dadosDaArma = ib.equipArm.GetComponent<ItemInstance>();
         if (dadosDaArma == null)
         {
-            Debug.LogError($"A arma equipada '{ib.equipArm.name}' não possui o script 'ItemInstance'!");
+            Debug.LogError($"A arma equipada '{ib.equipArm.name}' nï¿½o possui o script 'ItemInstance'!");
             return;
         }
 
@@ -72,8 +64,6 @@ public class InstanceGem : MonoBehaviour
 
         proximoUsoDisponivel = Time.time + cooldownHabilidade;
     }
-
-    // O resto do seu código permanece igual...
     private void ExecutarHabilidadeEspecial(Armas.ItemType tipoArma, Armas.Element elemento)
     {
         if (habilidades.TryGetValue(tipoArma, out var habilidadesPorElemento))
@@ -84,11 +74,10 @@ public class InstanceGem : MonoBehaviour
             }
             else
             {
-                Debug.LogWarning($"Habilidade não encontrada para a combinação -> Arma: {tipoArma}, Elemento: {elemento}");
+                Debug.LogWarning($"Habilidade nï¿½o encontrada para a combinaï¿½ï¿½o -> Arma: {tipoArma}, Elemento: {elemento}");
             }
         }
     }
-
     private void InicializarDicionarioHabilidades()
     {
         habilidades = new Dictionary<Armas.ItemType, Dictionary<Armas.Element, Action>>();
@@ -118,57 +107,60 @@ public class InstanceGem : MonoBehaviour
         };
     }
 
-    //funções para cada tipo de arma
+    //funï¿½ï¿½es para cada tipo de arma
 
     //Martelo
-    //Água
+    //ï¿½gua
     public void EspecialAtackHammerWhater()
     {
 
     }
-        //Vento
+    //Vento
     public void EspecialAtackHammerWind()
     {
 
     }
-        //Galáxia
+    //Galï¿½xia
     public void EspecialAtackHammerGalaxy()
     {
 
     }
     //Cajado
-        //Água
+    //ï¿½gua
     public void EspecialAtackStaffWhater()
     {
 
     }
-        //Vento
+    //Vento
     public void EspecialAtackStaffWind()
     {
 
     }
-        //Galáxia
+    //Galï¿½xia
     public void EspecialAtackStaffGalaxy()
     {
 
     }
 
     //Espada
-        //Água
+    //ï¿½gua
     public void EspecialAtackSwordWhater()
     {
 
-    }   
-        //Vento
+    }
+    //Vento
     public void EspecialAtackSwordWind()
     {
 
     }
-        //Vento
+    //Vento
     public void EspecialAtackSwordGalaxy()
     {
 
     }
 
+    private void CreatArea()
+    {
 
+    }
 }
