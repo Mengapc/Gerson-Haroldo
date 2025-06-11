@@ -195,12 +195,6 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 8ccd92c8b7d567441bc5bcb8a735d409, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 4985302666024658207}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 8ccd92c8b7d567441bc5bcb8a735d409, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1431446507801195294}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 8ccd92c8b7d567441bc5bcb8a735d409, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 8914009557656286146}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 8ccd92c8b7d567441bc5bcb8a735d409, type: 3}
       insertIndex: -1
@@ -222,33 +216,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 8ccd92c8b7d567441bc5bcb8a735d409, type: 3}
   m_PrefabInstance: {fileID: 2751247191981382130}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &4985302666024658207
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3093706241220437155}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 93cabb1e6647a6147bcafcb1ff1b7ac3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damageAmount: 10
-  attackCooldown: 1.5
---- !u!114 &1431446507801195294
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3093706241220437155}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b5a3bcd9f5d50d623b6656648a686e81, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHealth: 3
 --- !u!114 &8914009557656286146
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -266,6 +233,9 @@ MonoBehaviour:
   moveSpeed: 1.5
   detectionRange: 5
   rotationSpeed: 5
+  damageAmount: 10
+  attackCooldown: 1.5
+  maxHealth: 3
 --- !u!54 &2810316870536657392
 Rigidbody:
   m_ObjectHideFlags: 0

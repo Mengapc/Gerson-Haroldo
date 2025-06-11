@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7347738917621057639}
-  - component: {fileID: 6616746784007567604}
+  - component: {fileID: 8385979622188839886}
   m_Layer: 0
   m_Name: Vento
   m_TagString: Gema
@@ -33,7 +33,7 @@ Transform:
   - {fileID: 5307512970093698240}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6616746784007567604
+--- !u!114 &8385979622188839886
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -46,9 +46,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cooldownHabilidade: 5
-  ib: {fileID: 0}
-  Gemas: {fileID: 11400000, guid: 8c8c0303b763aee4c8e9fc9dc3dcdf09, type: 2}
-  typeGem: 1
+  "tempoAr\xE9aHammer": 0
+  habilidades2: []
+  damageHammer: 0
+  damageSword: 0
+  damageStaff: 0
+  player: {fileID: 0}
+  enemy: {fileID: 0}
+  instanceArea: {fileID: 6533218090043730666, guid: 17a3db79c60ef468c96515708abfd26a, type: 3}
+  typeGem: 0
 --- !u!1001 &5630251121169398571
 PrefabInstance:
   m_ObjectHideFlags: 0

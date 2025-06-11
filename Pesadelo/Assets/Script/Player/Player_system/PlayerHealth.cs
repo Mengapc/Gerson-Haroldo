@@ -49,8 +49,8 @@ public class PlayerHealth : MonoBehaviour
         playerMovement.BlockMovement();  // Bloqueia o movimento do player
 
         // BLOQUEIA TODOS OS INIMIGOS
-        EnemyMovement[] allEnemies = FindObjectsByType<EnemyMovement>(FindObjectsSortMode.None);
-        foreach (EnemyMovement enemy in allEnemies)
+        EnemySistem[] allEnemies = FindObjectsByType<EnemySistem>(FindObjectsSortMode.None);
+        foreach (EnemySistem enemy in allEnemies)
         {
             enemy.SetCanMove(false);
         }
@@ -77,8 +77,8 @@ public class PlayerHealth : MonoBehaviour
         playerMovement.BlockMovement(); // Libera o movimento (toggle)
         isometricAiming.SetAiming(true); // Reativa mira
         rb.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ;
-        EnemyMovement[] allEnemies = FindObjectsByType<EnemyMovement>(FindObjectsSortMode.None);
-        foreach (EnemyMovement enemy in allEnemies)
+        EnemySistem[] allEnemies = FindObjectsByType<EnemySistem>(FindObjectsSortMode.None);
+        foreach (EnemySistem enemy in allEnemies)
         {
             enemy.SetCanMove(true);
         }

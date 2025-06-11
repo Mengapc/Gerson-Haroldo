@@ -5,23 +5,29 @@ using System;
 
 public class InstanceGem : MonoBehaviour
 {
-    [Header("Configura��o da Habilidade")]
+    [Header("Configuração da Habilidade")]
     public float cooldownHabilidade = 5f;
-    public GameObject efectArea;
     public float tempoAréaHammer;
-
-    [Header("Refer�ncias")]
-    public InventBarSelect ib;
-    public Gemas Gemas;
-    public Gemas.TypeGem typeGem;
-    private Dictionary<Armas.ItemType, Dictionary<Armas.Element, Action>> habilidades;
     private float proximoUsoDisponivel = 0f;
 
+    [SerializeField] public arya[] habilidades2;
+
+    [SerializeField] private float damageHammer;
+    [SerializeField] private float damageSword;
+    [SerializeField] private float damageStaff;
+
+    [Header("Refer�ncias")]
+    public GameObject player;
+    public GameObject enemy;
+    public GameObject instanceArea;
+    private InventBarSelect ib;
+    public Gemas.TypeGem typeGem;
+    private Dictionary<Armas.ItemType, Dictionary<Armas.Element, Action>> habilidades;
 
     private void Awake()
     {
 
-        ib = FindObjectOfType<InventBarSelect>();
+        ib = ib = FindFirstObjectByType<InventBarSelect>();
 
         if (ib == null)
         {
@@ -39,6 +45,7 @@ public class InstanceGem : MonoBehaviour
     }
     public void TentarUsarHabilidade()
     {
+
         if (Time.time < proximoUsoDisponivel)
         {
             float tempoRestante = proximoUsoDisponivel - Time.time;
@@ -159,8 +166,8 @@ public class InstanceGem : MonoBehaviour
 
     }
 
-    private void CreatArea()
+    private void CreateArea(Vector3 local)
     {
-
+        Instantiate(instanceArea, local, player.transform.rotation);
     }
 }

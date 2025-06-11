@@ -43,7 +43,7 @@ public class ProceduralItens : MonoBehaviour
         Armas.ItemType newType = GenerateType();
         Debug.Log(newType);
         Armas.Rarity newRarity = GenerateRarity();
-        int newPower = GeneratePowerLevel(newRarity);
+        float newPower = GeneratePowerLevel(newRarity);
         bool newSpecialStatus = ThisSpecialStatus(newRarity);
         Sprite newSprite = SetSprite(newType);
 
@@ -128,7 +128,7 @@ public class ProceduralItens : MonoBehaviour
     }
     public int GeneratePowerLevel(Armas.Rarity rarity)
     {
-        return Mathf.RoundToInt(Random.Range(10, 12) * ((int)rarity + 1) * powerRate);
+        return (Mathf.RoundToInt(Random.Range(10, 12) * ((int)rarity + 1) * powerRate))/100;
     }
     public bool ThisSpecialStatus(Armas.Rarity rarity)
     {

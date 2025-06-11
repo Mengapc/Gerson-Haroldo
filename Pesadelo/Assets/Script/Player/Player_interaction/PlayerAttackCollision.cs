@@ -24,7 +24,7 @@ public class PlayerAttackCollision : MonoBehaviour
 
         if (other.CompareTag("basic_enemy"))
         {
-            EnemyHealth health = other.GetComponent<EnemyHealth>();
+            EnemySistem health = other.GetComponent<EnemySistem>();
             if (health != null)
                 health.TakeDamage(bulletDamage);
 
