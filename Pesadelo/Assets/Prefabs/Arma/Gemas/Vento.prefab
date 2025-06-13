@@ -45,16 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd9d5be83f3761044a8303a811e7edfd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cooldownHabilidade: 5
-  "tempoAr\xE9aHammer": 0
-  habilidades2: []
-  damageHammer: 0
-  damageSword: 0
-  damageStaff: 0
-  player: {fileID: 0}
-  enemy: {fileID: 0}
-  instanceArea: {fileID: 6533218090043730666, guid: 17a3db79c60ef468c96515708abfd26a, type: 3}
-  typeGem: 0
+  typeGem: 1
 --- !u!1001 &5630251121169398571
 PrefabInstance:
   m_ObjectHideFlags: 0

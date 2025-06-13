@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class skils : MonoBehaviour
+public class skills : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
