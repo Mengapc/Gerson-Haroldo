@@ -1219,7 +1219,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1349737452858174404, guid: 2e9cda8a436e6774bbebf2c53df50187, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1425036941890114903, guid: 2e9cda8a436e6774bbebf2c53df50187, type: 3}
       propertyPath: m_CollisionDetection
@@ -1271,7 +1271,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2773048709574988154, guid: 2e9cda8a436e6774bbebf2c53df50187, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3300486415099081296, guid: 2e9cda8a436e6774bbebf2c53df50187, type: 3}
       propertyPath: m_IsTrigger
@@ -1307,11 +1307,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7460469422556331620, guid: 2e9cda8a436e6774bbebf2c53df50187, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7959713041285288378, guid: 2e9cda8a436e6774bbebf2c53df50187, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8571733967549991570, guid: 2e9cda8a436e6774bbebf2c53df50187, type: 3}
       propertyPath: knockbackForce
