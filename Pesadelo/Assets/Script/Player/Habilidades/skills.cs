@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.Events;
 [System.Serializable]
 public struct skills
 {
@@ -8,4 +9,6 @@ public struct skills
     public Armas.ItemType typeArm;
     public float baseDamege;
     public GameObject preferbSkil;
+
+
 }

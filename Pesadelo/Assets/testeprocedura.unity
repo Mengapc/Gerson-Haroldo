@@ -318,56 +318,52 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cooldownHabilidade: 5
-  "tempoAr\xE9aHammer": 0
-  skills:
-  - skillName: Water Sword
+  habilidadesMapeadas:
+  - skillName: 
     element: 0
     typeArm: 0
     baseDamege: 0
     preferbSkil: {fileID: 0}
-  - skillName: Wind Sword
-    element: 1
+  - skillName: 
+    element: 0
     typeArm: 0
     baseDamege: 0
     preferbSkil: {fileID: 0}
-  - skillName: Galaxy Sword
-    element: 2
+  - skillName: 
+    element: 0
     typeArm: 0
     baseDamege: 0
     preferbSkil: {fileID: 0}
-  - skillName: Water  Staff
+  - skillName: 
     element: 0
-    typeArm: 1
+    typeArm: 0
     baseDamege: 0
     preferbSkil: {fileID: 0}
-  - skillName: Wind  Staff
-    element: 1
-    typeArm: 1
-    baseDamege: 0
-    preferbSkil: {fileID: 0}
-  - skillName: Galaxy  Staff
-    element: 2
-    typeArm: 1
-    baseDamege: 0
-    preferbSkil: {fileID: 0}
-  - skillName: Water Hammer
+  - skillName: 
     element: 0
-    typeArm: 2
+    typeArm: 0
     baseDamege: 0
     preferbSkil: {fileID: 0}
-  - skillName: Wind Hammer
-    element: 1
-    typeArm: 2
+  - skillName: 
+    element: 0
+    typeArm: 0
     baseDamege: 0
     preferbSkil: {fileID: 0}
-  - skillName: Galaxy Hammer
-    element: 2
-    typeArm: 2
+  - skillName: 
+    element: 0
+    typeArm: 0
     baseDamege: 0
     preferbSkil: {fileID: 0}
-  player: {fileID: 451503805}
-  enemy: {fileID: 0}
-  typeGem: 0
+  - skillName: 
+    element: 0
+    typeArm: 0
+    baseDamege: 0
+    preferbSkil: {fileID: 0}
+  - skillName: 
+    element: 0
+    typeArm: 0
+    baseDamege: 0
+    preferbSkil: {fileID: 0}
 --- !u!224 &453884103 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 5186363171667147433, guid: 9794601793d41be46ac1e2c4db8494a7, type: 3}
