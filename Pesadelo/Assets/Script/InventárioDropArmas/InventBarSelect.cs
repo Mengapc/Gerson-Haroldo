@@ -59,6 +59,19 @@ public class InventBarSelect : MonoBehaviour
             Equip(equipArm);
         }
     }
+    public void DestroyArm()
+    {
+        equipArm.transform.SetParent(null);
+
+        ic.slots[ic.slotBarSelect] = null;
+        if (ic.slotsSprit != null && ic.slotBarSelect >= 0 && ic.slotBarSelect < ic.slotsSprit.Length && ic.slotsSprit[ic.slotBarSelect] != null)
+        {
+            ic.slotsSprit[ic.slotBarSelect].sprite = null;
+            ic.slotsSprit[ic.slotBarSelect].enabled = false;
+        }
+
+        Destroy(equipArm);
+    }
 
     void Equip(GameObject arma)
     {

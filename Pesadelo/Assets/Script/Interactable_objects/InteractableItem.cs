@@ -7,6 +7,7 @@ public class InteractableItem : MonoBehaviour, IInteractable
     public string promptMessage = "Pressione [E] para interagir";
     // public string weaponName; Caso sejam adicionados nomes procedurais mais tarde no jogo
     public InventControler inventControler;
+    private InventBarSelect inventario;
 
     void Start()
     {
@@ -58,7 +59,12 @@ public class InteractableItem : MonoBehaviour, IInteractable
 
     public void Sacrifice()
     {
-        Debug.Log("Você interagiu com o altar. Sacrifício ainda não implementado.");
+        if (inventario.equipArm != null)
+        {
+            Debug.Log("Você interagiu com o altar.");
+            inventario.DestroyArm();
+        }
+
     }
 
     public string GetPrompt()
