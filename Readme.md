@@ -1,6 +1,18 @@
 # 🧸🪄👻EXP3 - Arthur Polak Furman, Gabriel Dias, Gabriel Furlan Mengarelli e Guilherme Alves
 
-Repositório relacionada ao projeto, contendo resumos sobre Git e GitHub e ideias sobre as features do jogo.
+👾 Bem-Vindo(a) ao Repositório do projeto **"Eli: into Escapsm"**
+Este repositório funciona como um **GDD(Game Desing Document)** vivo reunindo todas as informações, ideias, sistemas e anotações que fazem parte do desenvolvimento do nosso jogo.
+
+Aqui você vai encontrar:
+
+- 🛠️ **Guia de instalação e execução**
+- 🗂️ **Estrutura de pastas e scripts principais**
+- 🕹️ **Descrição do projeto**
+- 🧠 **Conceitos de gameplay e narrativa**
+- 🐛 **Roadmap e problemas conhecidos**
+- 📚 **Tutoriais, links úteis e referências**
+
+Nosso objetivo é fazer um jogo com o tema **"Gambito"**, onde o jogador precisa sacrificar suas armas para avançar, assim modificando aspectos das fases seguintes.
 
 # 📦 Instalação e Configuração
 
@@ -493,8 +505,8 @@ Eventos:
  |------|---------|
  | Git LFS em Unity | - [Link](https://www.youtube.com/watch?v=_ewoEQFEURg) |
  | Arquivos base git | - [Link](https://www.patreon.com/posts/63076977) |
- | Unity - Collaborating with version control| [Link](https://learn.unity.com/tutorial/collaborate-with-plastic-scm#631f4f5dedbc2a27152629c3) |
- | Substituir arquivos locais | [Link](https://stackoverflow.com/questions/1125968/how-do-i-force-git-pull-to-overwrite-local-files) |
+ | Unity - Collaborating with version control| - [Link](https://learn.unity.com/tutorial/collaborate-with-plastic-scm#631f4f5dedbc2a27152629c3) |
+ | Substituir arquivos locais | - [Link](https://stackoverflow.com/questions/1125968/how-do-i-force-git-pull-to-overwrite-local-files) |
  
 
 
