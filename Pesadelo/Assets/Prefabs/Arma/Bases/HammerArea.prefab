@@ -12,8 +12,9 @@ GameObject:
   - component: {fileID: 8985061383866031615}
   - component: {fileID: 2731716241244167818}
   - component: {fileID: 5516035375314738553}
+  - component: {fileID: 3989763802484482015}
   m_Layer: 0
-  m_Name: AreaEfect
+  m_Name: HammerArea
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -65,7 +66,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: 18a2ba919cccaf8b5bb3b382dac9a254, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -110,3 +111,15 @@ CapsuleCollider:
   m_Height: 21.859522
   m_Direction: 1
   m_Center: {x: 0.00000003973643, y: 0.0000026058574, z: -0.00000007947286}
+--- !u!114 &3989763802484482015
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6533218090043730666}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d00bdc06c37ff564eba8aeb7ba702a22, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
