@@ -43,11 +43,11 @@ public class AreaOfEffect : MonoBehaviour
         }
     }
 
-    // OnTriggerEnter, OnTriggerExit, e ApplyTickToTargets permanecem exatamente iguais à versão anterior.
+    // OnTriggerEnter, OnTriggerExit, e ApplyTickToTargets permanecem exatamente iguais ï¿½ versï¿½o anterior.
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Enemy"))
+        if (other.CompareTag("basic_enemy"))
         {
             EnemySistem enemy = other.GetComponent<EnemySistem>();
             if (enemy != null && !targetsInArea.Contains(enemy))
@@ -59,7 +59,7 @@ public class AreaOfEffect : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("Enemy"))
+        if (other.CompareTag("basic_enemy"))
         {
             EnemySistem enemy = other.GetComponent<EnemySistem>();
             if (enemy != null && targetsInArea.Contains(enemy))
