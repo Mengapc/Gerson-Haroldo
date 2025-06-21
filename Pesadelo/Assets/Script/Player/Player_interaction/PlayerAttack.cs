@@ -58,17 +58,15 @@ public class PlayerAttack : MonoBehaviour
             return;
         }
 
-        Vector3 offsetPosition =
-            shootOrigin.position +
-            shootOrigin.forward * spawnOffset.z +
-            shootOrigin.up * spawnOffset.y +
+        Vector3 offsetPosition = //CU
+            shootOrigin.position + shootOrigin.forward * spawnOffset.z + shootOrigin.up * spawnOffset.y +
             shootOrigin.right * spawnOffset.x;
 
         GameObject cube = Instantiate(ataqueCajadoPrefab, offsetPosition, shootOrigin.rotation);
     }
     void ShootEspada()
     {
-        if (ataqueCajadoPrefab == null || shootOrigin == null)
+        if (ataqueEspadaPrefab == null || shootOrigin == null)
         {
             Debug.LogWarning("Sword Prefab or Shoot Origin is not assigned!");
             return;
@@ -80,7 +78,7 @@ public class PlayerAttack : MonoBehaviour
             shootOrigin.up * spawnOffset.y +
             shootOrigin.right * spawnOffset.x;
 
-        GameObject cube = Instantiate(ataqueCajadoPrefab, offsetPosition, shootOrigin.rotation);
+        ataqueEspadaPrefab = Instantiate(ataqueEspadaPrefab, offsetPosition, shootOrigin.rotation);
     }
 
 }

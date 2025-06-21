@@ -242,6 +242,14 @@ PrefabInstance:
       propertyPath: healthText
       value: 
       objectReference: {fileID: 2027709388}
+    - target: {fileID: 8600322470855581562, guid: 123e39b340c818240839f939ab26b236, type: 3}
+      propertyPath: ataqueEspadaPrefab
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8600322470855581562, guid: 123e39b340c818240839f939ab26b236, type: 3}
+      propertyPath: ataqueMarteloPrefab
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 8900647505791088330, guid: 123e39b340c818240839f939ab26b236, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1173,7 +1181,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3621384115364057323, guid: 2e9cda8a436e6774bbebf2c53df50187, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4226860714526454849, guid: 2e9cda8a436e6774bbebf2c53df50187, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1197,7 +1205,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6666850559213123570, guid: 2e9cda8a436e6774bbebf2c53df50187, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7460469422556331620, guid: 2e9cda8a436e6774bbebf2c53df50187, type: 3}
       propertyPath: m_IsActive
