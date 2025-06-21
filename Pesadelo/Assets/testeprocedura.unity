@@ -245,7 +245,7 @@ PrefabInstance:
     - target: {fileID: 8600322470855581562, guid: 123e39b340c818240839f939ab26b236, type: 3}
       propertyPath: ataqueEspadaPrefab
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1030553219698821018, guid: 4ee9c60f31ad7244e8f9caf116b7f99c, type: 3}
     - target: {fileID: 8600322470855581562, guid: 123e39b340c818240839f939ab26b236, type: 3}
       propertyPath: ataqueMarteloPrefab
       value: 
@@ -330,7 +330,7 @@ MonoBehaviour:
   - skillName: EspadaDeAgua
     typeArm: 0
     element: 0
-    preferbSkil: {fileID: 1030553219698821018, guid: 4ee9c60f31ad7244e8f9caf116b7f99c, type: 3}
+    preferbSkil: {fileID: 5988241356345499465, guid: 4ee9c60f31ad7244e8f9caf116b7f99c, type: 3}
     effectType: 1
     baseEffectStrength: 7
     baseLifetime: 5
@@ -353,7 +353,7 @@ MonoBehaviour:
   - skillName: EspadaDeVento
     typeArm: 0
     element: 1
-    preferbSkil: {fileID: 1030553219698821018, guid: 4ee9c60f31ad7244e8f9caf116b7f99c, type: 3}
+    preferbSkil: {fileID: 5988241356345499465, guid: 4ee9c60f31ad7244e8f9caf116b7f99c, type: 3}
     effectType: 2
     baseEffectStrength: 1
     baseLifetime: 1
@@ -376,7 +376,7 @@ MonoBehaviour:
   - skillName: EspadaDeGalaxia
     typeArm: 0
     element: 2
-    preferbSkil: {fileID: 1030553219698821018, guid: 4ee9c60f31ad7244e8f9caf116b7f99c, type: 3}
+    preferbSkil: {fileID: 5988241356345499465, guid: 4ee9c60f31ad7244e8f9caf116b7f99c, type: 3}
     effectType: 3
     baseEffectStrength: 1
     baseLifetime: 1
@@ -1587,6 +1587,63 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 174489382}
   m_SourcePrefab: {fileID: 100100000, guid: 6ab5c36b1dba01c468572ac52ea5cbcd, type: 3}
+--- !u!1001 &1033947654006245468
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2185402443089299087, guid: 4ee9c60f31ad7244e8f9caf116b7f99c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2185402443089299087, guid: 4ee9c60f31ad7244e8f9caf116b7f99c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2185402443089299087, guid: 4ee9c60f31ad7244e8f9caf116b7f99c, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2185402443089299087, guid: 4ee9c60f31ad7244e8f9caf116b7f99c, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2185402443089299087, guid: 4ee9c60f31ad7244e8f9caf116b7f99c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2185402443089299087, guid: 4ee9c60f31ad7244e8f9caf116b7f99c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2185402443089299087, guid: 4ee9c60f31ad7244e8f9caf116b7f99c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2185402443089299087, guid: 4ee9c60f31ad7244e8f9caf116b7f99c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2185402443089299087, guid: 4ee9c60f31ad7244e8f9caf116b7f99c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2185402443089299087, guid: 4ee9c60f31ad7244e8f9caf116b7f99c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5988241356345499465, guid: 4ee9c60f31ad7244e8f9caf116b7f99c, type: 3}
+      propertyPath: m_Name
+      value: AttackEspada
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4ee9c60f31ad7244e8f9caf116b7f99c, type: 3}
 --- !u!1001 &1493031017285954689
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1967,92 +2024,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4e28df0f9a1d9bd40b9d9f499f016e56, type: 3}
---- !u!1001 &3132289073204520607
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 362137477277343008, guid: 4ee9c60f31ad7244e8f9caf116b7f99c, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 362137477277343008, guid: 4ee9c60f31ad7244e8f9caf116b7f99c, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 362137477277343008, guid: 4ee9c60f31ad7244e8f9caf116b7f99c, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 362137477277343008, guid: 4ee9c60f31ad7244e8f9caf116b7f99c, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 362137477277343008, guid: 4ee9c60f31ad7244e8f9caf116b7f99c, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 362137477277343008, guid: 4ee9c60f31ad7244e8f9caf116b7f99c, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0.70710677
-      objectReference: {fileID: 0}
-    - target: {fileID: 362137477277343008, guid: 4ee9c60f31ad7244e8f9caf116b7f99c, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 362137477277343008, guid: 4ee9c60f31ad7244e8f9caf116b7f99c, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 362137477277343008, guid: 4ee9c60f31ad7244e8f9caf116b7f99c, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 362137477277343008, guid: 4ee9c60f31ad7244e8f9caf116b7f99c, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1030553219698821018, guid: 4ee9c60f31ad7244e8f9caf116b7f99c, type: 3}
-      propertyPath: m_Name
-      value: AttackEspada
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 1030553219698821018, guid: 4ee9c60f31ad7244e8f9caf116b7f99c, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 3132289073204520609}
-  m_SourcePrefab: {fileID: 100100000, guid: 4ee9c60f31ad7244e8f9caf116b7f99c, type: 3}
---- !u!1 &3132289073204520608 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1030553219698821018, guid: 4ee9c60f31ad7244e8f9caf116b7f99c, type: 3}
-  m_PrefabInstance: {fileID: 3132289073204520607}
-  m_PrefabAsset: {fileID: 0}
---- !u!65 &3132289073204520609
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3132289073204520608}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 3.1737561, y: 1.4321139, z: 10.293956}
-  m_Center: {x: -0.013056338, y: 0, z: 0}
 --- !u!1001 &3646649523288794163
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3638,4 +3609,4 @@ SceneRoots:
   - {fileID: 2750076707634399808}
   - {fileID: 1380159727}
   - {fileID: 7547682414454846153}
-  - {fileID: 3132289073204520607}
+  - {fileID: 1033947654006245468}
