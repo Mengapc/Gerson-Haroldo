@@ -323,22 +323,14 @@ MonoBehaviour:
     typeArm: 0
     element: 0
     preferbSkil: {fileID: 1330372899}
-    effectType: 0
+    effectType: 1
     baseEffectStrength: 0
     baseLifetime: 0
     effectTickRate: 0
     isMobile: 0
     moveSpeed: 0
     scalingTiers:
-    - rarity: 0
-      scaleMultiplier: 0
-      strengthMultiplier: 0
-      lifetimeMultiplier: 0
-    - rarity: 0
-      scaleMultiplier: 0
-      strengthMultiplier: 0
-      lifetimeMultiplier: 0
-    - rarity: 0
+    - rarity: 2
       scaleMultiplier: 0
       strengthMultiplier: 0
       lifetimeMultiplier: 0
@@ -360,7 +352,19 @@ MonoBehaviour:
     effectTickRate: 0
     isMobile: 0
     moveSpeed: 0
-    scalingTiers: []
+    scalingTiers:
+    - rarity: 2
+      scaleMultiplier: 0
+      strengthMultiplier: 0
+      lifetimeMultiplier: 0
+    - rarity: 3
+      scaleMultiplier: 0
+      strengthMultiplier: 0
+      lifetimeMultiplier: 0
+    - rarity: 4
+      scaleMultiplier: 0
+      strengthMultiplier: 0
+      lifetimeMultiplier: 0
   - skillName: EspadaDeGalaxia
     typeArm: 0
     element: 2
