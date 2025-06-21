@@ -319,47 +319,47 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cooldownHabilidade: 5
   habilidadesMapeadas:
-  - skillName: Water Sword
+  - skillName: EspadaDeAgua
     element: 0
     typeArm: 0
     baseDamege: 0
-    preferbSkil: {fileID: 0}
-  - skillName: Wind Sword
+    preferbSkil: {fileID: 1330372899}
+  - skillName: EspadaDeVento
     element: 1
     typeArm: 0
     baseDamege: 0
     preferbSkil: {fileID: 0}
-  - skillName: Galaxy Sword
+  - skillName: EspadaDeGalaxia
     element: 2
     typeArm: 0
     baseDamege: 0
     preferbSkil: {fileID: 0}
-  - skillName: Water Staff
+  - skillName: CajadoDeAgua
     element: 0
     typeArm: 1
     baseDamege: 0
     preferbSkil: {fileID: 0}
-  - skillName: Wind Staff
+  - skillName: CajadoDeVento
     element: 1
     typeArm: 1
     baseDamege: 0
     preferbSkil: {fileID: 0}
-  - skillName: Galaxy Staff
+  - skillName: CajadoDeGalaxia
     element: 2
     typeArm: 1
     baseDamege: 0
     preferbSkil: {fileID: 0}
-  - skillName: Water Hammer
+  - skillName: MarteloDeAgua
     element: 0
     typeArm: 2
     baseDamege: 0
     preferbSkil: {fileID: 0}
-  - skillName: Wind Hammer
+  - skillName: MarteloDeVento
     element: 1
     typeArm: 2
     baseDamege: 0
     preferbSkil: {fileID: 0}
-  - skillName: Galaxy Hammer
+  - skillName: MarteloDeGalaxia
     element: 2
     typeArm: 2
     baseDamege: 0
@@ -508,71 +508,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   typeGem: 0
---- !u!1001 &876399451
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: -5639074414774553533, guid: 8eb8db7cf9776754f8cc494695ab841e, type: 3}
-      propertyPath: enemy
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: -5639074414774553533, guid: 8eb8db7cf9776754f8cc494695ab841e, type: 3}
-      propertyPath: player
-      value: 
-      objectReference: {fileID: 451503805}
-    - target: {fileID: 572966804482973862, guid: 8eb8db7cf9776754f8cc494695ab841e, type: 3}
-      propertyPath: m_Name
-      value: Agua
-      objectReference: {fileID: 0}
-    - target: {fileID: 9005542336745046326, guid: 8eb8db7cf9776754f8cc494695ab841e, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.89593273
-      objectReference: {fileID: 0}
-    - target: {fileID: 9005542336745046326, guid: 8eb8db7cf9776754f8cc494695ab841e, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.3538972
-      objectReference: {fileID: 0}
-    - target: {fileID: 9005542336745046326, guid: 8eb8db7cf9776754f8cc494695ab841e, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 1.6083249
-      objectReference: {fileID: 0}
-    - target: {fileID: 9005542336745046326, guid: 8eb8db7cf9776754f8cc494695ab841e, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9005542336745046326, guid: 8eb8db7cf9776754f8cc494695ab841e, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9005542336745046326, guid: 8eb8db7cf9776754f8cc494695ab841e, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9005542336745046326, guid: 8eb8db7cf9776754f8cc494695ab841e, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9005542336745046326, guid: 8eb8db7cf9776754f8cc494695ab841e, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9005542336745046326, guid: 8eb8db7cf9776754f8cc494695ab841e, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9005542336745046326, guid: 8eb8db7cf9776754f8cc494695ab841e, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 8eb8db7cf9776754f8cc494695ab841e, type: 3}
 --- !u!1 &1017713589 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1095763692358147459, guid: 8c9619d16a5e9f54bae29415352ef3fb, type: 3}
@@ -821,6 +756,11 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 80}
   m_SizeDelta: {x: 0, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &1330372899 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4197716149920341738, guid: 4e28df0f9a1d9bd40b9d9f499f016e56, type: 3}
+  m_PrefabInstance: {fileID: 2750076707634399808}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1518477152 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2207923698510195973, guid: eb491e640273a73479c602b9ad02533f, type: 3}
@@ -3394,5 +3334,4 @@ SceneRoots:
   - {fileID: 380266395}
   - {fileID: 6501502615407895942}
   - {fileID: 87911288127856552}
-  - {fileID: 876399451}
   - {fileID: 2750076707634399808}
