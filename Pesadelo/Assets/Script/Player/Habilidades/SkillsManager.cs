@@ -5,12 +5,13 @@ using static Armas;
 public class SkillsManager : MonoBehaviour
 {
     [Header("Configuração da Habilidade")]
+    [Tooltip("Tempo de recarga global em segundos entre o uso de qualquer habilidade.")]
     public float cooldownHabilidade = 5f;
     private float proximoUsoDisponivel = 0f;
 
     [Header("Mapeamento Visual de Habilidades")]
+    [Tooltip("Array principal onde todas as habilidades são configuradas. Cada elemento representa uma combinação única de arma e elemento.")]
     [SerializeField] private skills[] habilidadesMapeadas;
-
 
     private InventBarSelect ib;
 
@@ -53,51 +54,49 @@ public class SkillsManager : MonoBehaviour
     {
         if (dadosDaArma.rarity < Rarity.Rare)
         {
-            Debug.Log("Arma de raridade muito baixa para usar habilidade.");
             return;
         }
 
-        Armas.ItemType tipoArma = dadosDaArma.type;
-        Armas.Element elemento = dadosDaArma.element;
-        Rarity raridadeArma = dadosDaArma.rarity;
-
-        skills skillData = habilidadesMapeadas.FirstOrDefault(h => h.typeArm == tipoArma && h.element == elemento);
+        skills skillData = habilidadesMapeadas.FirstOrDefault(h => h.typeArm == dadosDaArma.type && h.element == dadosDaArma.element);
 
         if (string.IsNullOrEmpty(skillData.skillName) || skillData.preferbSkil == null)
         {
-            Debug.LogWarning($"Habilidade não configurada para: {tipoArma} + {elemento}");
             return;
         }
 
-        RarityScaling scalingModifier = skillData.scalingTiers.FirstOrDefault(s => s.rarity == raridadeArma);
+        RarityScaling scalingModifier = skillData.scalingTiers.FirstOrDefault(s => s.rarity == dadosDaArma.rarity);
 
         float finalStrength = skillData.baseEffectStrength;
         float finalLifetime = skillData.baseLifetime;
+        float finalDuration = skillData.baseEffectDuration;
         float finalScale = 1f;
 
-        if (scalingModifier.rarity == raridadeArma)
+        if (scalingModifier.rarity == dadosDaArma.rarity)
         {
             finalStrength *= scalingModifier.strengthMultiplier;
             finalLifetime *= scalingModifier.lifetimeMultiplier;
+            finalDuration *= scalingModifier.durationMultiplier;
             finalScale = scalingModifier.scaleMultiplier;
         }
 
-        GameObject areaGO = Instantiate(skillData.preferbSkil, transform.position, transform.rotation);
+        Vector3 spawnPosition = transform.position + transform.forward * 1.5f;
+        spawnPosition.y += 0.2f;
+
+        GameObject areaGO = Instantiate(skillData.preferbSkil, spawnPosition, transform.rotation);
 
         areaGO.transform.localScale *= finalScale;
 
         AreaOfEffect aoeScript = areaGO.GetComponent<AreaOfEffect>();
         if (aoeScript != null)
         {
-            aoeScript.Initialize(skillData.effectType, finalStrength, finalLifetime, skillData.effectTickRate,
-                                 skillData.isMobile, skillData.moveSpeed, transform.forward);
+            // O Initialize foi ajustado na versão anterior, mas o código que você me passou estava com a versão antiga.
+            // Vou corrigir para a versão que aceita todos os parâmetros calculados.
+            aoeScript.Initialize(skillData, finalStrength, finalLifetime, finalDuration, transform.forward);
 
             proximoUsoDisponivel = Time.time + cooldownHabilidade;
-            Debug.Log($"Habilidade '{skillData.skillName}' ativada com Força:{finalStrength}, Duração:{finalLifetime}, Escala:{finalScale}x");
         }
         else
         {
-            Debug.LogError($"O prefab '{skillData.preferbSkil.name}' não possui o script 'AreaOfEffect'!");
             Destroy(areaGO);
         }
     }

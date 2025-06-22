@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 
 public class EnemySistem : MonoBehaviour
 {
@@ -17,6 +18,7 @@ public class EnemySistem : MonoBehaviour
 
     private Rigidbody rb;
     private float originalMoveSpeed;
+    private Coroutine activeSlowCoroutine;
 
     private void Start()
     {
@@ -33,10 +35,6 @@ public class EnemySistem : MonoBehaviour
         if (playerObj != null)
         {
             player = playerObj.transform;
-        }
-        else
-        {
-            Debug.LogWarning("Nenhum objeto com a tag 'Player' foi encontrado na cena.");
         }
     }
 
@@ -103,15 +101,21 @@ public class EnemySistem : MonoBehaviour
         Destroy(gameObject);
     }
 
-    public void ApplyContinuousSlow(float factor)
+    public void SlowEnemy(float factor, float duration)
     {
-        factor = Mathf.Clamp01(factor);
-        moveSpeed = originalMoveSpeed * (1f - factor);
+        if (activeSlowCoroutine != null)
+        {
+            StopCoroutine(activeSlowCoroutine);
+        }
+        activeSlowCoroutine = StartCoroutine(SlowDownCoroutine(factor, duration));
     }
 
-    public void RemoveContinuousSlow()
+    private IEnumerator SlowDownCoroutine(float factor, float duration)
     {
+        moveSpeed = originalMoveSpeed * (1f - Mathf.Clamp01(factor));
+        yield return new WaitForSeconds(duration);
         moveSpeed = originalMoveSpeed;
+        activeSlowCoroutine = null;
     }
 
     public void PushFrom(Vector3 sourcePosition, float force)
