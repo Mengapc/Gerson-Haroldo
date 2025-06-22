@@ -332,9 +332,10 @@ MonoBehaviour:
     element: 0
     preferbSkil: {fileID: 5988241356345499465, guid: 4ee9c60f31ad7244e8f9caf116b7f99c, type: 3}
     effectType: 1
-    baseEffectStrength: 7
+    baseEffectStrength: 0.4
     baseLifetime: 5
-    effectTickRate: 2
+    baseEffectDuration: 3
+    effectTickRate: 0
     isMobile: 1
     moveSpeed: 5
     scalingTiers:
@@ -342,14 +343,17 @@ MonoBehaviour:
       scaleMultiplier: 1
       strengthMultiplier: 1
       lifetimeMultiplier: 1
-    - rarity: 0
+      durationMultiplier: 0
+    - rarity: 3
       scaleMultiplier: 1
       strengthMultiplier: 1
       lifetimeMultiplier: 1
-    - rarity: 0
+      durationMultiplier: 0
+    - rarity: 4
       scaleMultiplier: 1
       strengthMultiplier: 1
       lifetimeMultiplier: 1
+      durationMultiplier: 0
   - skillName: EspadaDeVento
     typeArm: 0
     element: 1
@@ -357,6 +361,7 @@ MonoBehaviour:
     effectType: 2
     baseEffectStrength: 1
     baseLifetime: 1
+    baseEffectDuration: 0
     effectTickRate: 1
     isMobile: 1
     moveSpeed: 1
@@ -365,14 +370,17 @@ MonoBehaviour:
       scaleMultiplier: 1
       strengthMultiplier: 1
       lifetimeMultiplier: 1
+      durationMultiplier: 0
     - rarity: 3
       scaleMultiplier: 1
       strengthMultiplier: 1
       lifetimeMultiplier: 1
+      durationMultiplier: 0
     - rarity: 4
       scaleMultiplier: 1
       strengthMultiplier: 1
       lifetimeMultiplier: 1
+      durationMultiplier: 0
   - skillName: EspadaDeGalaxia
     typeArm: 0
     element: 2
@@ -380,6 +388,7 @@ MonoBehaviour:
     effectType: 3
     baseEffectStrength: 1
     baseLifetime: 1
+    baseEffectDuration: 0
     effectTickRate: 1
     isMobile: 0
     moveSpeed: 1
@@ -391,6 +400,7 @@ MonoBehaviour:
     effectType: 0
     baseEffectStrength: 0
     baseLifetime: 0
+    baseEffectDuration: 0
     effectTickRate: 0
     isMobile: 0
     moveSpeed: 0
@@ -402,6 +412,7 @@ MonoBehaviour:
     effectType: 0
     baseEffectStrength: 0
     baseLifetime: 0
+    baseEffectDuration: 0
     effectTickRate: 0
     isMobile: 0
     moveSpeed: 0
@@ -413,6 +424,7 @@ MonoBehaviour:
     effectType: 0
     baseEffectStrength: 0
     baseLifetime: 0
+    baseEffectDuration: 0
     effectTickRate: 0
     isMobile: 0
     moveSpeed: 0
@@ -424,6 +436,7 @@ MonoBehaviour:
     effectType: 0
     baseEffectStrength: 0
     baseLifetime: 0
+    baseEffectDuration: 0
     effectTickRate: 0
     isMobile: 0
     moveSpeed: 0
@@ -435,6 +448,7 @@ MonoBehaviour:
     effectType: 0
     baseEffectStrength: 0
     baseLifetime: 0
+    baseEffectDuration: 0
     effectTickRate: 0
     isMobile: 0
     moveSpeed: 0
@@ -446,6 +460,7 @@ MonoBehaviour:
     effectType: 0
     baseEffectStrength: 0
     baseLifetime: 0
+    baseEffectDuration: 0
     effectTickRate: 0
     isMobile: 0
     moveSpeed: 0
