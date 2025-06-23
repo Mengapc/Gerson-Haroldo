@@ -365,7 +365,7 @@ MonoBehaviour:
     baseEffectDuration: 3
     effectTickRate: 1
     isMobile: 1
-    moveSpeed: 3
+    moveSpeed: 2
     scalingTiers:
     - rarity: 2
       scaleMultiplier: 1.25
@@ -392,7 +392,7 @@ MonoBehaviour:
     baseEffectDuration: 1
     effectTickRate: 1
     isMobile: 1
-    moveSpeed: 3
+    moveSpeed: 2
     scalingTiers:
     - rarity: 2
       scaleMultiplier: 1.25
@@ -418,8 +418,8 @@ MonoBehaviour:
     baseLifetime: 3
     baseEffectDuration: 1
     effectTickRate: 1
-    isMobile: 0
-    moveSpeed: 0
+    isMobile: 1
+    moveSpeed: 2
     scalingTiers:
     - rarity: 2
       scaleMultiplier: 1.5
@@ -446,7 +446,7 @@ MonoBehaviour:
     baseEffectDuration: 3
     effectTickRate: 1
     isMobile: 1
-    moveSpeed: 3
+    moveSpeed: 2
     scalingTiers:
     - rarity: 2
       scaleMultiplier: 1.25
@@ -473,7 +473,7 @@ MonoBehaviour:
     baseEffectDuration: 3
     effectTickRate: 1
     isMobile: 1
-    moveSpeed: 3
+    moveSpeed: 2
     scalingTiers:
     - rarity: 2
       scaleMultiplier: 1.25
@@ -499,8 +499,8 @@ MonoBehaviour:
     baseLifetime: 3
     baseEffectDuration: 3
     effectTickRate: 1
-    isMobile: 0
-    moveSpeed: 0
+    isMobile: 1
+    moveSpeed: 2
     scalingTiers:
     - rarity: 2
       scaleMultiplier: 2
