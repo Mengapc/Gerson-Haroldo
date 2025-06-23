@@ -276,7 +276,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletDamage: 1
-  knockbackForce: 20
+  knockbackForce: 0.001
   speed: 10
   destroyDelay: 1
 --- !u!1 &2346702769598934159
