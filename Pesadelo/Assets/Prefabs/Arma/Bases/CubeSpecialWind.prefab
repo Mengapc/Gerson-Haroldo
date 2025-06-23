@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 2973392032956500635}
   - component: {fileID: 1277254413149584821}
   - component: {fileID: 3026669600631257534}
-  - component: {fileID: 7114639724177733589}
   - component: {fileID: 8452544526000335848}
   m_Layer: 0
   m_Name: CubeSpecialWind
@@ -139,22 +138,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 1
---- !u!114 &7114639724177733589
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5908045426234177292}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5aabde38a715c4b42908017d8b4f973f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bulletDamage: 1
-  knockbackForce: 0.001
-  speed: 10
-  destroyDelay: 1
 --- !u!114 &8452544526000335848
 MonoBehaviour:
   m_ObjectHideFlags: 0

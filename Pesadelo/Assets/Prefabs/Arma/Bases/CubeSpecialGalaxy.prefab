@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 6418896497042969219}
   - component: {fileID: 4822332344124779283}
   - component: {fileID: 7315110320851915501}
-  - component: {fileID: 5120023618643523099}
   m_Layer: 0
   m_Name: CubeSpecialGalaxy
   m_TagString: Untagged
@@ -31,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 9038530328894323446}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 4}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -151,22 +150,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d00bdc06c37ff564eba8aeb7ba702a22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &5120023618643523099
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9038530328894323446}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5aabde38a715c4b42908017d8b4f973f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bulletDamage: 1
-  knockbackForce: 0.001
-  speed: 10
-  destroyDelay: 1
 --- !u!1001 &3734097720659044022
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -189,15 +172,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 576277189507178290, guid: 919b1a982e389494694b1fc973b88fc1, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -2
       objectReference: {fileID: 0}
     - target: {fileID: 576277189507178290, guid: 919b1a982e389494694b1fc973b88fc1, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -1.446
       objectReference: {fileID: 0}
     - target: {fileID: 576277189507178290, guid: 919b1a982e389494694b1fc973b88fc1, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -8
       objectReference: {fileID: 0}
     - target: {fileID: 576277189507178290, guid: 919b1a982e389494694b1fc973b88fc1, type: 3}
       propertyPath: m_LocalRotation.w

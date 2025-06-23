@@ -127,7 +127,6 @@ GameObject:
   - component: {fileID: 991141176469884805}
   - component: {fileID: 6762317866140953973}
   - component: {fileID: 9180388711690198087}
-  - component: {fileID: 9151551019626541898}
   - component: {fileID: 1279412976406047689}
   m_Layer: 0
   m_Name: CubeSpecial
@@ -238,22 +237,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d00bdc06c37ff564eba8aeb7ba702a22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &9151551019626541898
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4393537238013307795}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5aabde38a715c4b42908017d8b4f973f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bulletDamage: 1
-  knockbackForce: 0.001
-  speed: 10
-  destroyDelay: 1
 --- !u!54 &1279412976406047689
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -363,9 +363,9 @@ MonoBehaviour:
     baseEffectStrength: 0.4
     baseLifetime: 3
     baseEffectDuration: 3
-    effectTickRate: 1
+    effectTickRate: 0.05
     isMobile: 1
-    moveSpeed: 2
+    moveSpeed: 1
     scalingTiers:
     - rarity: 2
       scaleMultiplier: 1.25
@@ -387,12 +387,12 @@ MonoBehaviour:
     element: 1
     preferbSkil: {fileID: 5988241356345499465, guid: 4ee9c60f31ad7244e8f9caf116b7f99c, type: 3}
     effectType: 2
-    baseEffectStrength: 0.4
+    baseEffectStrength: 7
     baseLifetime: 3
     baseEffectDuration: 1
-    effectTickRate: 1
+    effectTickRate: 0.05
     isMobile: 1
-    moveSpeed: 2
+    moveSpeed: 1.25
     scalingTiers:
     - rarity: 2
       scaleMultiplier: 1.25
@@ -403,23 +403,23 @@ MonoBehaviour:
       scaleMultiplier: 1.25
       strengthMultiplier: 2
       lifetimeMultiplier: 1
-      durationMultiplier: 1
+      durationMultiplier: 2
     - rarity: 4
-      scaleMultiplier: 2
+      scaleMultiplier: 1.75
       strengthMultiplier: 4
-      lifetimeMultiplier: 1
-      durationMultiplier: 1
+      lifetimeMultiplier: 2
+      durationMultiplier: 3
   - skillName: EspadaDeGalaxia
     typeArm: 0
     element: 2
     preferbSkil: {fileID: 5988241356345499465, guid: 4ee9c60f31ad7244e8f9caf116b7f99c, type: 3}
     effectType: 3
-    baseEffectStrength: 1
+    baseEffectStrength: 5
     baseLifetime: 3
     baseEffectDuration: 1
-    effectTickRate: 1
+    effectTickRate: 0.05
     isMobile: 1
-    moveSpeed: 2
+    moveSpeed: 1
     scalingTiers:
     - rarity: 2
       scaleMultiplier: 1.5
@@ -429,13 +429,13 @@ MonoBehaviour:
     - rarity: 3
       scaleMultiplier: 3
       strengthMultiplier: 2
-      lifetimeMultiplier: 1
-      durationMultiplier: 1
+      lifetimeMultiplier: 1.5
+      durationMultiplier: 2
     - rarity: 4
       scaleMultiplier: 6
       strengthMultiplier: 2
-      lifetimeMultiplier: 1
-      durationMultiplier: 1
+      lifetimeMultiplier: 3
+      durationMultiplier: 3
   - skillName: CajadoDeAgua
     typeArm: 1
     element: 0
@@ -444,9 +444,9 @@ MonoBehaviour:
     baseEffectStrength: 0.4
     baseLifetime: 3
     baseEffectDuration: 3
-    effectTickRate: 1
+    effectTickRate: 0.05
     isMobile: 1
-    moveSpeed: 2
+    moveSpeed: 1
     scalingTiers:
     - rarity: 2
       scaleMultiplier: 1.25
@@ -468,12 +468,12 @@ MonoBehaviour:
     element: 1
     preferbSkil: {fileID: 5908045426234177292, guid: ef90669d998c72d44b68f638655ab5b3, type: 3}
     effectType: 2
-    baseEffectStrength: 0.4
+    baseEffectStrength: 7
     baseLifetime: 3
     baseEffectDuration: 3
-    effectTickRate: 1
+    effectTickRate: 0.5
     isMobile: 1
-    moveSpeed: 2
+    moveSpeed: 1
     scalingTiers:
     - rarity: 2
       scaleMultiplier: 1.25
@@ -495,12 +495,12 @@ MonoBehaviour:
     element: 2
     preferbSkil: {fileID: 9038530328894323446, guid: f10b6fac91ef62848a861c2347f15a8d, type: 3}
     effectType: 3
-    baseEffectStrength: 4
+    baseEffectStrength: 5
     baseLifetime: 3
     baseEffectDuration: 3
-    effectTickRate: 1
+    effectTickRate: 0.05
     isMobile: 1
-    moveSpeed: 2
+    moveSpeed: 1
     scalingTiers:
     - rarity: 2
       scaleMultiplier: 2
@@ -549,7 +549,7 @@ MonoBehaviour:
     element: 1
     preferbSkil: {fileID: 4383522675965784266, guid: 226e55b74c948a443988f0841c178aac, type: 3}
     effectType: 2
-    baseEffectStrength: 1
+    baseEffectStrength: 7
     baseLifetime: 4
     baseEffectDuration: 4
     effectTickRate: 1
@@ -576,7 +576,7 @@ MonoBehaviour:
     element: 2
     preferbSkil: {fileID: 4383522675965784266, guid: 226e55b74c948a443988f0841c178aac, type: 3}
     effectType: 3
-    baseEffectStrength: 1
+    baseEffectStrength: 5
     baseLifetime: 4
     baseEffectDuration: 4
     effectTickRate: 1
