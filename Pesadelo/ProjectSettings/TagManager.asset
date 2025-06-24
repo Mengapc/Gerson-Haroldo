@@ -10,6 +10,7 @@ TagManager:
   - Paredes
   - Altar
   - Gema
+  - Final
   layers:
   - Default
   - TransparentFX

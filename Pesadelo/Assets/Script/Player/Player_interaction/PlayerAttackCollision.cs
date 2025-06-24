@@ -39,10 +39,11 @@ public class PlayerAttackCollision : MonoBehaviour
 
         if (other.CompareTag("basic_enemy"))
         {
+            Debug.Log("Colidiu com o inimigo");
             EnemySistem health = other.GetComponent<EnemySistem>();
             if (health != null)
                 health.TakeDamage(bulletDamage);
-
+                Debug.Log("Dano aplicado");
             Rigidbody enemyRb = other.GetComponent<Rigidbody>();
             if (enemyRb != null)
             {

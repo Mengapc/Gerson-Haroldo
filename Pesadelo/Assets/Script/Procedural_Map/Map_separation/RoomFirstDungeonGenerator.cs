@@ -84,7 +84,7 @@ public class RoomFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator
     }
 
     //fim do código polak spawnar inimigos
-    private void CreateRooms()
+    public void CreateRooms()
     {
         // Usar a seed salva ou gerar uma nova
         if (useCustomSeed)

@@ -8,6 +8,7 @@ public class InteractableItem : MonoBehaviour, IInteractable
     // public string weaponName; Caso sejam adicionados nomes procedurais mais tarde no jogo
     public InventControler inventControler;
     private InventBarSelect inventario;
+    public RoomFirstDungeonGenerator roomFirst;
 
     void Start()
     {
@@ -37,8 +38,12 @@ public class InteractableItem : MonoBehaviour, IInteractable
                 Sacrifice();
                 break;
 
+            case "Final":
+                Endgame();
+                break;
+
             default:
-                Debug.Log("Interação padrão: nenhum comportamento definido para a tag " + gameObject.tag);
+                Debug.Log("Interaï¿½ï¿½o padrï¿½o: nenhum comportamento definido para a tag " + gameObject.tag);
                 break;
         }
     }
@@ -61,8 +66,18 @@ public class InteractableItem : MonoBehaviour, IInteractable
     {
         if (inventario.equipArm != null)
         {
-            Debug.Log("Você interagiu com o altar.");
+            Debug.Log("Vocï¿½ interagiu com o altar.");
             inventario.DestroyArm();
+        }
+
+    }
+
+public void Endgame()
+    {
+        if (inventario.equipArm != null)
+        {
+            Debug.Log("Vocï¿½ interagiu com a porta final.");
+            roomFirst.CreateRooms();
         }
 
     }
