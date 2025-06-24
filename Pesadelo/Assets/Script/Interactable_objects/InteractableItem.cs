@@ -7,7 +7,7 @@ public class InteractableItem : MonoBehaviour, IInteractable
     public string promptMessage = "Pressione [E] para interagir";
     // public string weaponName; Caso sejam adicionados nomes procedurais mais tarde no jogo
     public InventControler inventControler;
-    private InventBarSelect inventario;
+    public InventBarSelect inventario;
     public RoomFirstDungeonGenerator roomFirst;
 
     void Start()
@@ -18,6 +18,12 @@ public class InteractableItem : MonoBehaviour, IInteractable
             if (player != null)
             {
                 inventControler = player.GetComponent<InventControler>();
+                inventario = player.GetComponent<InventBarSelect>();
+            }
+            GameObject map = GameObject.FindGameObjectWithTag("Map");
+            if (map != null)
+            {
+                roomFirst = map.GetComponent<RoomFirstDungeonGenerator>();
             }
         }
     }
@@ -72,15 +78,11 @@ public class InteractableItem : MonoBehaviour, IInteractable
 
     }
 
-public void Endgame()
-    {
-        if (inventario.equipArm != null)
+    public void Endgame()
         {
             Debug.Log("Voc� interagiu com a porta final.");
             roomFirst.CreateRooms();
         }
-
-    }
 
     public string GetPrompt()
     {

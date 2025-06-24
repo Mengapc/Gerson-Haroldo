@@ -38,7 +38,7 @@ public class RoomFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator
 
     private void Start()
     {
-        CreateRooms();
+
     }
 
     // Salva a seed

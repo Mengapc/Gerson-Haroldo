@@ -158,8 +158,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   promptMessage: Pressione [E] para coletar
-  inventControler: {fileID: 0}
-  roomFirst: {fileID: 0}
+  inventControler: {fileID: 451503839}
+  inventario: {fileID: 451503840}
+  roomFirst: {fileID: 1464561669}
 --- !u!1 &174489378 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 74785413905532094, guid: 6ab5c36b1dba01c468572ac52ea5cbcd, type: 3}
@@ -622,6 +623,28 @@ CapsuleCollider:
   m_Height: 1.2070636
   m_Direction: 1
   m_Center: {x: -0.000000029802322, y: 0.60877734, z: 0.01054953}
+--- !u!114 &451503839 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1543127532061595384, guid: 123e39b340c818240839f939ab26b236, type: 3}
+  m_PrefabInstance: {fileID: 380266395}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 451503805}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7825d71b51509f144845887afacce16b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &451503840 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2910760500901700191, guid: 123e39b340c818240839f939ab26b236, type: 3}
+  m_PrefabInstance: {fileID: 380266395}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 451503805}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a3306c11968ca14ea10b3445ba905b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &453884103 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 5186363171667147433, guid: 9794601793d41be46ac1e2c4db8494a7, type: 3}
@@ -3732,13 +3755,25 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 0.19
       objectReference: {fileID: 0}
+    - target: {fileID: 5723759921686295636, guid: fcc705ec7d2d31d4697b2b0b51ea8fe4, type: 3}
+      propertyPath: roomFirst
+      value: 
+      objectReference: {fileID: 1464561669}
+    - target: {fileID: 5723759921686295636, guid: fcc705ec7d2d31d4697b2b0b51ea8fe4, type: 3}
+      propertyPath: inventario
+      value: 
+      objectReference: {fileID: 451503840}
+    - target: {fileID: 5723759921686295636, guid: fcc705ec7d2d31d4697b2b0b51ea8fe4, type: 3}
+      propertyPath: inventControler
+      value: 
+      objectReference: {fileID: 451503839}
     - target: {fileID: 8275695958193151104, guid: fcc705ec7d2d31d4697b2b0b51ea8fe4, type: 3}
       propertyPath: m_Name
       value: PortaFinal
       objectReference: {fileID: 0}
-    - target: {fileID: 8830283838976516603, guid: fcc705ec7d2d31d4697b2b0b51ea8fe4, type: 3}
+    - target: {fileID: 8275695958193151104, guid: fcc705ec7d2d31d4697b2b0b51ea8fe4, type: 3}
       propertyPath: m_TagString
-      value: Final
+      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
