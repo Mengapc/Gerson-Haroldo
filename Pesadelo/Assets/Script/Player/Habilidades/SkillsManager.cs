@@ -79,7 +79,7 @@ public class SkillsManager : MonoBehaviour
             finalScale = scalingModifier.scaleMultiplier;
         }
 
-        Vector3 spawnPosition = transform.position + transform.forward * 1.5f;
+        Vector3 spawnPosition = transform.position + transform.forward * 0.5f;
         spawnPosition.y += 0.2f;
 
         GameObject areaGO = Instantiate(skillData.preferbSkil, spawnPosition, transform.rotation);
