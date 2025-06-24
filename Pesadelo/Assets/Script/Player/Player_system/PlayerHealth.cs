@@ -67,7 +67,7 @@ public class PlayerHealth : MonoBehaviour
 
         while (remainingTime > 0f)
         {
-            deathText.text = "SE FUDEU\nRevivendo em: " + Mathf.CeilToInt(remainingTime);
+            deathText.text = "VOCE MORREU\nRevivendo em: " + Mathf.CeilToInt(remainingTime);
             yield return new WaitForSeconds(0.1f);
             remainingTime -= 0.1f;
         }
