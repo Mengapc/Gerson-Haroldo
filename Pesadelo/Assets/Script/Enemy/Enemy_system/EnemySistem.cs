@@ -105,7 +105,10 @@ public class EnemySistem : MonoBehaviour
 
     void Die()
     {
-        proceduralItens.GenerateItem(new Vector3(gameObject.transform.position.x, gameObject.transform.position.y + 2, gameObject.transform.position.z));
+        float dropArma = Random.Range(1, 1000);
+        if (dropArma > 500)
+            proceduralItens.GenerateItem(new Vector3(gameObject.transform.position.x, gameObject.transform.position.y + 2, gameObject.transform.position.z));
+
         Destroy(gameObject);
     }
 

@@ -790,6 +790,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   typeGem: 0
+--- !u!114 &821422459 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5770364130537343403, guid: fcb1a38523956fa4584d0a729f77acbe, type: 3}
+  m_PrefabInstance: {fileID: 1109957720}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 821422453}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 155556792f5f4b7499e263d35c8c2497, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &917970519
 GameObject:
   m_ObjectHideFlags: 0
@@ -2163,6 +2174,10 @@ PrefabInstance:
       propertyPath: MapInstantiater
       value: 
       objectReference: {fileID: 563896535}
+    - target: {fileID: 4042337607789921999, guid: c663d678fd069f4418734d966f4badaa, type: 3}
+      propertyPath: proceduralItens
+      value: 
+      objectReference: {fileID: 821422459}
     - target: {fileID: 4042337607789921999, guid: c663d678fd069f4418734d966f4badaa, type: 3}
       propertyPath: playerMovementScript
       value: 

@@ -28,6 +28,7 @@ public class RoomFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator
     [SerializeField] private GameObject enemyPrefab; //spawn inimigo
 
     public PlayerMovement playerMovementScript;
+    public ProceduralItens proceduralItens;
     [SerializeField] private GameObject player;
 
     private void Awake()
@@ -38,7 +39,11 @@ public class RoomFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator
 
     private void Start()
     {
-
+        GameObject armaGerar = GameObject.FindGameObjectWithTag("arma_gen");
+        if (armaGerar != null)
+        {
+            proceduralItens = armaGerar.GetComponent<ProceduralItens>();
+        }
     }
 
     // Salva a seed
@@ -337,5 +342,6 @@ public class RoomFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator
         {
             Debug.LogWarning("PlayerBoundaryManager não encontrado.");
         }
+    proceduralItens.GenerateItem(new Vector3(player.transform.position.x, player.transform.position.y + 2, player.transform.position.z));
     }
 }

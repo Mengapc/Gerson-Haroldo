@@ -28,11 +28,6 @@ public class ProceduralItens : MonoBehaviour
         }
     }
 
-    public void gerarBotao()
-    {
-        GenerateItem(new Vector3(player.transform.position.x, player.transform.position.y + 3, player.transform.position.z));
-    }
-
     public GameObject GenerateItem(Vector3 position)
     {
         string newName = "Item_" + Random.Range(1, 1000);
