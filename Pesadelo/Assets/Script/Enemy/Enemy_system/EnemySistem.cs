@@ -20,6 +20,8 @@ public class EnemySistem : MonoBehaviour
     private float originalMoveSpeed;
     private Coroutine activeSlowCoroutine;
 
+    public ProceduralItens proceduralItens;
+
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -35,6 +37,11 @@ public class EnemySistem : MonoBehaviour
         if (playerObj != null)
         {
             player = playerObj.transform;
+        }
+        GameObject armaGerar = GameObject.FindGameObjectWithTag("arma_gen");
+        if (armaGerar != null)
+        {
+            proceduralItens = armaGerar.GetComponent<ProceduralItens>();
         }
     }
 
@@ -98,6 +105,7 @@ public class EnemySistem : MonoBehaviour
 
     void Die()
     {
+        proceduralItens.GenerateItem(new Vector3(gameObject.transform.position.x, gameObject.transform.position.y + 2, gameObject.transform.position.z));
         Destroy(gameObject);
     }
 

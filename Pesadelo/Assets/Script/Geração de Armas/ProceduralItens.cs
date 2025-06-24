@@ -28,13 +28,9 @@ public class ProceduralItens : MonoBehaviour
         }
     }
 
-    void Update()
+    public void gerarBotao()
     {
-        if (Input.GetKeyDown(KeyCode.G))
-        {
-
-            GenerateItem(new Vector3(player.transform.position.x, player.transform.position.y + 3, player.transform.position.z));
-        }
+        GenerateItem(new Vector3(player.transform.position.x, player.transform.position.y + 3, player.transform.position.z));
     }
 
     public GameObject GenerateItem(Vector3 position)
@@ -51,7 +47,7 @@ public class ProceduralItens : MonoBehaviour
 
         InteractableItem interactable = baseArmInstance.GetComponent<InteractableItem>();
         if (interactable == null)
-        { 
+        {
             interactable = baseArmInstance.AddComponent<InteractableItem>();
         }
         GameObject principalPart = rp.GeneratePrincipalPartArm(newType, baseArmInstance.transform);
@@ -79,7 +75,7 @@ public class ProceduralItens : MonoBehaviour
         }
         else
         {
-            ii.SetItemData(newName, newType, newRarity,newElemente, newPower, newSpecialStatus, newSprite);
+            ii.SetItemData(newName, newType, newRarity, newElemente, newPower, newSpecialStatus, newSprite);
         }
 
         return baseArmInstance;
