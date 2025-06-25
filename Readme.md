@@ -1,6 +1,10 @@
 # 🧸🪄👻 EXP3 - Eli: Into Escapism
 
+![MenuEli](https://github.com/user-attachments/assets/985e4c86-ccfd-4663-b9d5-8ce782495324)
+
 ## 👥 Equipe de Desenvolvimento – Weird Milk Studios
+
+![Captura de tela de 2025-06-25 12-02-18](https://github.com/user-attachments/assets/30802ecc-359a-4328-9e86-d3210a1d8477)
 
 ### Arthur Polak Furman  
 **Função:** Programador e VFX  
@@ -9,6 +13,8 @@ Desenvolveu os sistemas dos inimigos e seu spawn. Além disso, criou os efeitos 
 
 ---
 
+![Captura de tela de 2025-06-25 11-58-38](https://github.com/user-attachments/assets/49a98530-e988-4097-93a3-0ab484b31e82)
+
 ### Gabriel Dias  
 **Função:** Programador e Game Designer  
 
@@ -16,12 +22,16 @@ Responsável pelas funcionalidades de inventário, geração procedural de armas
 
 ---
 
-### Gabriel Furlan Mengarelli  
+![Captura de tela de 2025-06-25 12-01-00](https://github.com/user-attachments/assets/44cc162b-24cd-430d-a749-466f37ad6278)
+
+### Gabriel Furlan Mengarelli                                                                                                                            
 **Função:** Programador e Sonorizador  
 
 Desenvolveu a geração procedural do mapa, o sistema do player, o core loop do jogo, a música do menu principal e a documentação do GitHub.
 
 ---
+
+![Captura de tela de 2025-06-25 12-00-25](https://github.com/user-attachments/assets/dd7e0c4e-e1df-438f-97e5-652acb825986)
 
 ### Guilherme Alves  
 **Função:** Artista 3D e VFX  
@@ -499,8 +509,6 @@ Mdeo do escuro: Boss final do nível do medo do escuro
  | Medo de solidão | Não há nenhum inimigo na tela, apenas vários bonecos de pelúcia que te ajudam. |
  | Medo do escuro | Nível com visão limitado devido a ausência da luz. |
 
-Eventos: 
-
 # 🚧 Roadmap & Problemas Conhecidos
 
 ## Funcionalidades
@@ -527,9 +535,11 @@ Eventos:
 
 · Código-fonte: GitHub
 
+![25231](https://github.com/user-attachments/assets/404d27a5-61c0-4625-bbff-45b3bf03d08c)
+
 · Tarefas: Hack n Plan
 
-· Labels sugeridas: bug, feature, tech-debt
+![images](https://github.com/user-attachments/assets/cb43d901-921f-4dbd-a7a6-b34029d296b2)
 
 ## 📚️📚️ Links de Auxílio
 
@@ -571,6 +581,8 @@ Eventos:
  | Bulb Boy | Inspiração | - [Link](https://store.steampowered.com/app/390290/Bulb_Boy/ ) |
  | Elden Ring | Inimigos | - [Link](https://store.steampowered.com/app/1245620/ELDEN_RING/) |
  | Little Nightmares | Player | - [Link](https://store.steampowered.com/app/424840/Little_Nightmares/ ) |
+ | HADES | Gameplay | - [Link](https://store.steampowered.com/app/1145360/Hades/) |
 
 ![littlenightmares](https://github.com/user-attachments/assets/46bd2138-b2b2-4160-b49f-3a192773f952)
 ![eldenmid](https://github.com/user-attachments/assets/12ff3fe5-0e67-4114-94c0-3a3953198cf0)
+![Captura de tela de 2025-06-25 12-09-04](https://github.com/user-attachments/assets/8030ae11-787e-4009-866f-e0796cab5d8e)
