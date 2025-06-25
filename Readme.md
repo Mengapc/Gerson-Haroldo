@@ -1,4 +1,36 @@
-# 🧸🪄👻EXP3 - Arthur Polak Furman, Gabriel Dias, Gabriel Furlan Mengarelli e Guilherme Alves
+# 🧸🪄👻 EXP3 - Eli: Into Escapism
+
+## 👥 Equipe de Desenvolvimento – Weird Milk Studios
+
+### Arthur Polak Furman  
+**Função:** Programador e VFX  
+
+Desenvolveu os sistemas dos inimigos e seu spawn. Além disso, criou os efeitos base das armas do jogo.
+
+---
+
+### Gabriel Dias  
+**Função:** Programador e Game Designer  
+
+Responsável pelas funcionalidades de inventário, geração procedural de armas e programação das mecânicas de habilidades.
+
+---
+
+### Gabriel Furlan Mengarelli  
+**Função:** Programador e Sonorizador  
+
+Desenvolveu a geração procedural do mapa, o sistema do player, o core loop do jogo, a música do menu principal e a documentação do GitHub.
+
+---
+
+### Guilherme Alves  
+**Função:** Artista 3D e VFX  
+
+Criou todas as artes e modelos 3D utilizados no jogo, além dos efeitos visuais das habilidades especiais das armas. Também foi responsável pela imagem do menu.
+
+---
+
+**Estúdio:** Weird Milk Studios
 
 👾 Bem-Vindo(a) ao Repositório do projeto **"Eli: into Escapsm"**
 Este repositório funciona como um **GDD(Game Desing Document)** vivo reunindo todas as informações, ideias, sistemas e anotações que fazem parte do desenvolvimento do nosso jogo.
