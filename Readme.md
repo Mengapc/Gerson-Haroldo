@@ -4,6 +4,10 @@
 
 ## 👥 Equipe de Desenvolvimento – Weird Milk Studios
 
+![weirdmilk_branco](https://github.com/user-attachments/assets/1a855ed0-f8e7-425f-867f-ce45523614ee)
+
+---
+
 ![Captura de tela de 2025-06-25 12-02-18](https://github.com/user-attachments/assets/30802ecc-359a-4328-9e86-d3210a1d8477)
 
 ### Arthur Polak Furman  
@@ -288,6 +292,8 @@ _Não há configurações personalizadas no Player Settings._
 
 Tema escolhido: Gambito
 
+![pilar](https://github.com/user-attachments/assets/1ca788a9-2a96-4195-a675-99425cf944dd)
+
 Mecânicas únicas:
 · A mecânica única do jogo está relacionada ao tema Gambito, onde o jogador deve sacrificar sua arma para avançar os níveis
 
@@ -306,6 +312,7 @@ Câmera: Isométrica / Top Down
  ### ⭐️⭐️ Ideia 3 foi escolhida
  
 ## 💻️ Mecânicas
+
 Geração procedural do mapa
 
 Geração procedural de armas
@@ -319,6 +326,7 @@ Mecânica do altar (sacrifício de armas)
 Movimentação do personagem (dash)
 
 ### 👀 Supostamentes
+
 Evolução de habilidades: velocidade de ataque, velocidade e vida
 
 Loja: entregue dois itens de raridade baixa para obter um de raridade maior (2x1)
@@ -485,7 +493,11 @@ Ou abrir mão de uma arma poderosa agora, para garantir um caminho mais seguro d
  
  ## 👿 Inimigos 
 
+![inimigo](https://github.com/user-attachments/assets/755405fc-a79f-43f9-a3e9-b1663c9f1ded)
+
 ### Medos (inimigos) 
+
+![barril](https://github.com/user-attachments/assets/ee6105fa-2ad8-4a8e-9454-07f951132e7c)
 
 ### MORTE (várias versões) 
 
