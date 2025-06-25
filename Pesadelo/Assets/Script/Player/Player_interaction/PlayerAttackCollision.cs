@@ -9,14 +9,29 @@ public class PlayerAttackCollision : MonoBehaviour
 
     private Rigidbody rb;
     private bool hasHit = false;
+    private Vector3 moveDirection;
 
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
-        Destroy(gameObject, 3f); // Destroi a bala após 5 segundos
-        
-        rb.linearVelocity = transform.forward * speed; // Projétil vai na direção para frente
+        moveDirection = transform.forward.normalized * speed;
+        Destroy(gameObject, 3f); // Destroy after 3 seconds
     }
+
+    private void FixedUpdate()
+    {
+        if (rb == null) return;
+
+        if (rb.isKinematic)
+        {
+            transform.position += moveDirection * Time.fixedDeltaTime;
+        }
+        else
+        {
+            rb.MovePosition(rb.position + moveDirection * Time.fixedDeltaTime);
+        }
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if (hasHit) return;
@@ -24,10 +39,11 @@ public class PlayerAttackCollision : MonoBehaviour
 
         if (other.CompareTag("basic_enemy"))
         {
-            EnemyHealth health = other.GetComponent<EnemyHealth>();
+            Debug.Log("Colidiu com o inimigo");
+            EnemySistem health = other.GetComponent<EnemySistem>();
             if (health != null)
                 health.TakeDamage(bulletDamage);
-
+                Debug.Log("Dano aplicado");
             Rigidbody enemyRb = other.GetComponent<Rigidbody>();
             if (enemyRb != null)
             {
@@ -39,15 +55,24 @@ public class PlayerAttackCollision : MonoBehaviour
         }
         else if (other.CompareTag("Paredes"))
         {
-            rb.linearVelocity = Vector3.zero;
-            rb.isKinematic = true;
+            Destroy(gameObject);
+        }
+        else
+        {
+            // Treat all other objects (walls etc.) the same
+            if (rb != null)
+            {
+                rb.linearVelocity = Vector3.zero; // replaces invalid .linearVelocity
+                rb.isKinematic = true;
+            }
+
             StartCoroutine(DestroyAfterDelay());
         }
     }
 
     private System.Collections.IEnumerator DestroyAfterDelay()
     {
-        // Coloque aqui efeitos de partículas ou som
+        // Placeholder for particle or sound effect
         yield return new WaitForSeconds(destroyDelay);
         Destroy(gameObject);
     }

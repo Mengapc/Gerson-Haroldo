@@ -9,6 +9,7 @@ public class Armas : ScriptableObject
     public string nameItem;
     public ItemType type;
     public Rarity rarity;
+    public float powerLevel;
     public bool specialStatus;
     public Sprite spriteArm;
 }

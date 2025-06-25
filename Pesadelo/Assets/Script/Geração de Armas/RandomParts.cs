@@ -1,5 +1,5 @@
 using System.Collections.Generic;
-using UnityEditorInternal.Profiling.Memory.Experimental;
+// using UnityEditorInternal.Profiling.Memory.Experimental;
 using UnityEngine;
 
 [DisallowMultipleComponent]
@@ -24,7 +24,7 @@ public class RandomParts : MonoBehaviour
 
     public GameObject GeneratePrincipalPartArm(Armas.ItemType itemType, Transform armBase)
     {
-        // ... (esta função está correta e pode continuar a mesma) ...
+        // ... (esta funo est correta e pode continuar a mesma) ...
         Debug.Log("Gerando parte principal para o tipo: " + itemType);
 
         GameObject item = null;
@@ -53,7 +53,7 @@ public class RandomParts : MonoBehaviour
                 break;
 
             default:
-                Debug.LogWarning("Tipo de item não suportado.");
+                Debug.LogWarning("Tipo de item nï¿½o suportado.");
                 return null;
         }
 
@@ -72,7 +72,7 @@ public class RandomParts : MonoBehaviour
         LockParts infoItem = newItem.GetComponent<LockParts>();
         if (infoItem == null)
         {
-            Debug.LogError($"O objeto principal '{newItem.name}' não possui o script 'LockParts'!", newItem);
+            Debug.LogError($"O objeto principal '{newItem.name}' nï¿½o possui o script 'LockParts'!", newItem);
             return;
         }
 
@@ -80,11 +80,11 @@ public class RandomParts : MonoBehaviour
         switch (itemType)
         {
             case Armas.ItemType.Sword:
-                // --- CORREÇÃO APLICADA AQUI ---
+                // --- CORREï¿½ï¿½O APLICADA AQUI ---
                 // Instancia a gema DIRETAMENTE como filha do 'lock point' (infoItem.gema).
                 randowPart = Random.Range(0, Gema.Count);
                 GameObject novaGema = Instantiate(Gema[randowPart], infoItem.gema);
-                // Opcional mas recomendado: resetar posição local após instanciar com pai.
+                // Opcional mas recomendado: resetar posiï¿½ï¿½o local apï¿½s instanciar com pai.
                 novaGema.transform.localPosition = Vector3.zero;
                 novaGema.transform.localRotation = Quaternion.identity;
 
@@ -101,7 +101,7 @@ public class RandomParts : MonoBehaviour
                 break;
 
             case Armas.ItemType.Staff:
-                // --- CORREÇÃO APLICADA AQUI ---
+                // --- CORREï¿½ï¿½O APLICADA AQUI ---
                 randowPart = Random.Range(0, Gema.Count);
                 GameObject novaGemaStaff = Instantiate(Gema[randowPart], infoItem.gema);
                 novaGemaStaff.transform.localPosition = Vector3.zero;
@@ -114,7 +114,7 @@ public class RandomParts : MonoBehaviour
                 break;
 
             case Armas.ItemType.Hammer:
-                // --- CORREÇÃO APLICADA AQUI ---
+                // --- CORREï¿½ï¿½O APLICADA AQUI ---
                 randowPart = Random.Range(0, Gema.Count);
                 GameObject novaGemaMartelo = Instantiate(Gema[randowPart], infoItem.gema);
                 novaGemaMartelo.transform.localPosition = Vector3.zero;

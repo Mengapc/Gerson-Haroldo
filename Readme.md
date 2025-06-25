@@ -1,6 +1,46 @@
 # 🧸🪄👻EXP3 - Arthur Polak Furman, Gabriel Dias, Gabriel Furlan Mengarelli e Guilherme Alves
 
-Repositório relacionada ao projeto, contendo resumos sobre Git e GitHub e ideias sobre as features do jogo.
+👾 Bem-Vindo(a) ao Repositório do projeto **"Eli: into Escapsm"**
+Este repositório funciona como um **GDD(Game Desing Document)** vivo reunindo todas as informações, ideias, sistemas e anotações que fazem parte do desenvolvimento do nosso jogo.
+
+Aqui você vai encontrar:
+
+- 🛠️ **Guia de instalação e execução**
+- 🗂️ **Estrutura de pastas e scripts principais**
+- 🕹️ **Descrição do projeto**
+- 🧠 **Conceitos de gameplay e narrativa**
+- 🐛 **Roadmap e problemas conhecidos**
+- 📚 **Tutoriais, links úteis e referências**
+
+Nosso objetivo é fazer um jogo com o tema **"Gambito"**, onde o jogador precisa sacrificar suas armas para avançar, assim modificando aspectos das fases seguintes.
+
+# 📦 Instalação e Configuração
+
+## Requisitos
+
+| Item | Versão |
+|------|--------|
+| Unity Editor | 6000.0.35f1 |
+| Render Pipeline | Universal Render Pipeline (URP) |
+| Git | 2.47.1 |
+| Git LFS | Instalado (`git lfs install`) |
+
+### Passo a passo
+
+1. Clone o repositório:
+   ```bash
+   git clone https://github.com/<org>/eli-into-escapism.git
+   cd eli-into-escapism
+   git lfs install
+   git lfs pull
+
+2. Abra o projeto no Unity (6000.0.35f1)
+
+3. Cena inicial:
+
+       · Assets/Scenes/testeprocedura.unity
+
+4. Recomendado: build manual via File > Build Settings
 
 # Documentação - Links, tutoriais, etc.
 
@@ -106,6 +146,101 @@ Explicação rápida:
   
  - --ours = pega a sua versão atual.
 
+# 🗂️ Estrutura de Pastas
+
+Assets/
+
+├── Data/                      ← ScriptableObjects e parâmetros de geração
+
+├── Editor/                    ← Scripts customizados de Editor
+
+├── Executores/                ← Objetos de cena (luz, canvas, dungeons)
+
+├── Materials/                 ← Materiais de armas e efeitos
+
+├── Prefabs/                   ← Prefabs do jogo (armas, estruturas, VFX)
+
+├── Scenes/                    ← Cenas (principal: testeprocedura.unity)
+
+├── Script/
+
+│   ├── Enemy/                 ← IA e comportamento inimigo
+
+│   ├── Geração de Armas/      ← Montagem procedural
+
+│   ├── Interactable_objects/  ← Itens interativos
+
+│   ├── InventárioDropArmas/   ← Drop e inventário
+
+│   ├── Player/                ← Controle do jogador
+
+│   ├── Procedural_Map/        ← Geração de mapa
+
+│   └── System/                ← Auxiliares gerais
+
+├── TextMesh Pro/
+
+├── TutorialInfo/
+
+├── VFX's/
+
+├── InputSystem_Actions.inputactions
+
+├── URP/
+
+└── URP_Renderer.asset
+
+# 📜 Organização do Código
+
+## Scripts principais
+
+| Script                       | Função                                           |
+| ---------------------------- | ------------------------------------------------ |
+| RoomFirstDungeonGenerator.cs | Gera o mapa procedural com dicionário de tiles.  |
+| PlayerInteractionTrigger.cs  | Gerencia interações do player com salas e itens. |
+| SkillsManager.cs             | Aplica efeitos da arma com base em tipo e gema.  |
+| EnemySistem.cs               | Mecânica base do inimigo padrão.                 |
+| ProceduralItens.cs           | Monta armas com partes combináveis.              |
+
+### Lógicas aplicadas
+
+· Armas montadas via Struct com 9 arrays:
+
+      · Tipo (espada, cajado, martelo)
+      · Gema (vento, água, galáxia)
+      · Prefabs específicos de ataque (Ex: Martelo_Vento)
+
+Sistema de mapa procedural:
+
+    · Armazena os tiles instanciados num Dictionary<Vector3, GameObject>
+    · Usa Clear() ao fim da fase para resetar o mapa
+
+Sistema de habilidades:
+
+    · SkillsManager armazena um dicionário de funções por tipo de arma
+    · Ativação dinâmica conforme ataque executado
+
+# 🎮 Build & Execução
+
+## Plataformas
+
+### 🖥️ Windows (.exe)
+
+### 🌐 WebGL (previsto para Itch.io)
+
+## Passos para build
+
+1. File > Build Settings
+
+2. Selecione a plataforma desejada
+
+3. Clique em Add Open Scenes e inclua testeprocedura.unity
+
+4. Configure se quiser em Player Settings
+
+5. Clique em Build
+
+_Não há configurações personalizadas no Player Settings._
 
 # Tema e Mecânica
 
@@ -334,14 +469,44 @@ Mdeo do escuro: Boss final do nível do medo do escuro
 
 Eventos: 
 
+# 🚧 Roadmap & Problemas Conhecidos
+
+## Funcionalidades
+
+| Status | Item                | Descrição                                    |
+| ------ | ------------------- | -------------------------------------------- |
+| ✅      | Altar de Sacrifício | Mecânica principal que ajusta a dificuldade. |
+| ✅      | Geração Procedural  | Mapas e armas com combinações únicas.        |
+| ⚙️     | Mecânicas de Armas  | Algumas feitas, outras planejadas.           |
+| 🔜     | Loja 2x1            | Troca de dois itens por um melhor.           |
+| 🔜     | IA Variada          | Novos padrões de inimigos.                   |
+| 🔜     | Bossfights          | Temáticos, como “medo do escuro”.            |
+| 🔜     | Estéticas de Fase   | Ex: fase com visibilidade reduzida.          |
+
+## Bugs Conhecidos
+
+| Área      | Problema            | Descrição                         |
+| --------- | ------------------- | --------------------------------- |
+| Knockback | Força instável      | Pode jogar inimigos fora do mapa. |
+| Player    | Rotação na morte    | Personagem revive deitado.        |
+| Dash      | Player fora do mapa | Há respawn, mas precisa melhoria. |
+
+## Organização
+
+· Código-fonte: GitHub
+
+· Tarefas: Hack n Plan
+
+· Labels sugeridas: bug, feature, tech-debt
+
 ## 📚️📚️ Links de Auxílio
 
  | Aulas | Resumos |
  |------|---------|
  | Git LFS em Unity | - [Link](https://www.youtube.com/watch?v=_ewoEQFEURg) |
  | Arquivos base git | - [Link](https://www.patreon.com/posts/63076977) |
- | Unity - Collaborating with version control| [Link](https://learn.unity.com/tutorial/collaborate-with-plastic-scm#631f4f5dedbc2a27152629c3) |
- | Substituir arquivos locais | [Link](https://stackoverflow.com/questions/1125968/how-do-i-force-git-pull-to-overwrite-local-files) |
+ | Unity - Collaborating with version control| - [Link](https://learn.unity.com/tutorial/collaborate-with-plastic-scm#631f4f5dedbc2a27152629c3) |
+ | Substituir arquivos locais | - [Link](https://stackoverflow.com/questions/1125968/how-do-i-force-git-pull-to-overwrite-local-files) |
  
 
 

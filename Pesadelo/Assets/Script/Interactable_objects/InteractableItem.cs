@@ -7,6 +7,8 @@ public class InteractableItem : MonoBehaviour, IInteractable
     public string promptMessage = "Pressione [E] para interagir";
     // public string weaponName; Caso sejam adicionados nomes procedurais mais tarde no jogo
     public InventControler inventControler;
+    public InventBarSelect inventario;
+    public RoomFirstDungeonGenerator roomFirst;
 
     void Start()
     {
@@ -16,6 +18,12 @@ public class InteractableItem : MonoBehaviour, IInteractable
             if (player != null)
             {
                 inventControler = player.GetComponent<InventControler>();
+                inventario = player.GetComponent<InventBarSelect>();
+            }
+            GameObject map = GameObject.FindGameObjectWithTag("Map");
+            if (map != null)
+            {
+                roomFirst = map.GetComponent<RoomFirstDungeonGenerator>();
             }
         }
     }
@@ -36,8 +44,12 @@ public class InteractableItem : MonoBehaviour, IInteractable
                 Sacrifice();
                 break;
 
+            case "Final":
+                Endgame();
+                break;
+
             default:
-                Debug.Log("Interação padrão: nenhum comportamento definido para a tag " + gameObject.tag);
+                Debug.Log("Interaï¿½ï¿½o padrï¿½o: nenhum comportamento definido para a tag " + gameObject.tag);
                 break;
         }
     }
@@ -58,8 +70,19 @@ public class InteractableItem : MonoBehaviour, IInteractable
 
     public void Sacrifice()
     {
-        Debug.Log("Você interagiu com o altar. Sacrifício ainda não implementado.");
+        if (inventario.equipArm != null)
+        {
+            Debug.Log("Vocï¿½ interagiu com o altar.");
+            inventario.DestroyArm();
+        }
+
     }
+
+    public void Endgame()
+        {
+            Debug.Log("Vocï¿½ interagiu com a porta final.");
+            roomFirst.CreateRooms();
+        }
 
     public string GetPrompt()
     {

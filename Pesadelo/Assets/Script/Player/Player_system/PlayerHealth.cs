@@ -49,8 +49,8 @@ public class PlayerHealth : MonoBehaviour
         playerMovement.BlockMovement();  // Bloqueia o movimento do player
 
         // BLOQUEIA TODOS OS INIMIGOS
-        EnemyMovement[] allEnemies = FindObjectsByType<EnemyMovement>(FindObjectsSortMode.None);
-        foreach (EnemyMovement enemy in allEnemies)
+        EnemySistem[] allEnemies = FindObjectsByType<EnemySistem>(FindObjectsSortMode.None);
+        foreach (EnemySistem enemy in allEnemies)
         {
             enemy.SetCanMove(false);
         }
@@ -67,7 +67,7 @@ public class PlayerHealth : MonoBehaviour
 
         while (remainingTime > 0f)
         {
-            deathText.text = "SE FUDEU\nRevivendo em: " + Mathf.CeilToInt(remainingTime);
+            deathText.text = "VOCE MORREU\nRevivendo em: " + Mathf.CeilToInt(remainingTime);
             yield return new WaitForSeconds(0.1f);
             remainingTime -= 0.1f;
         }
@@ -77,8 +77,8 @@ public class PlayerHealth : MonoBehaviour
         playerMovement.BlockMovement(); // Libera o movimento (toggle)
         isometricAiming.SetAiming(true); // Reativa mira
         rb.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ;
-        EnemyMovement[] allEnemies = FindObjectsByType<EnemyMovement>(FindObjectsSortMode.None);
-        foreach (EnemyMovement enemy in allEnemies)
+        EnemySistem[] allEnemies = FindObjectsByType<EnemySistem>(FindObjectsSortMode.None);
+        foreach (EnemySistem enemy in allEnemies)
         {
             enemy.SetCanMove(true);
         }

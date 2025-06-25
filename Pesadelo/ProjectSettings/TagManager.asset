@@ -10,6 +10,9 @@ TagManager:
   - Paredes
   - Altar
   - Gema
+  - Final
+  - Map
+  - arma_gen
   layers:
   - Default
   - TransparentFX

@@ -8,11 +8,11 @@ public class ItemInstance : MonoBehaviour
     public Armas.ItemType type;
     public Armas.Rarity rarity;
     public Armas.Element element;
-    public int powerLevel;
+    public float powerLevel;
     public bool specialStatus;
     public Sprite spriteArm;
 
-    public void SetItemData(string name, Armas.ItemType itemType, Armas.Rarity itemRarity, Armas.Element element, int power, bool specialStatus, Sprite sprite)
+    public void SetItemData(string name, Armas.ItemType itemType, Armas.Rarity itemRarity, Armas.Element element, float power, bool specialStatus, Sprite sprite)
     {
         itemName = name;
         type = itemType;
@@ -21,6 +21,7 @@ public class ItemInstance : MonoBehaviour
         this.specialStatus = specialStatus;
         spriteArm = sprite;
         this.element = element;
+        
 
 
         Debug.Log($"Item Criado -> Nome: {itemName}, " +
